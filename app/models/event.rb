@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
+  has_many :bookings, dependent: :destroy
   belongs_to :user
-  has_many :bookings, dependant: :destroy
   has_one :chatroom
   # has_many :messages, through: :chatroom ??
 
@@ -12,4 +12,5 @@ class Event < ApplicationRecord
   validates :venue_address, presence: true
   validates :price, presence: true
   validates :capacity, presence: true
+  validates :category, presence: true
 end
