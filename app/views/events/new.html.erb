@@ -1,0 +1,14 @@
+<h1>Create a new event</h1>
+<%= simple_form_for(@event) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :date %>
+  <%= f.input :time %>
+  <%= f.input :category %> <!-- this should be a drop down of preset categories -->
+  <%= f.input :description %>
+  <%= f.input :venue_name %>
+  <%= f.input :venue_address %> <!-- should be with autofill geocode -->
+  <%= f.input :capacity %>
+  <%= f.input :price %>
+  <%= f.input :image_url %> <!-- should be image upload with Cloudinary -->
+  <%= f.submit %>
+<% end %>
