@@ -11,9 +11,9 @@ require 'faker'
 User.destroy_all
 Event.destroy_all
 
-user1 = User.new(email: "louise@gmail.com", password: "123456", username: "Louise" )
+user1 = User.new(email: "louise@gmail.com", password: "123456", username: "Loulou", first_name: "Louise" )
 user1.save!
-user2 = User.new(email: "kat@gmail.com", password: "123456", username: "Kat" )
+user2 = User.new(email: "kat@gmail.com", password: "123456", username: "Katy", first_name: "Kat")
 user2.save!
 
 # # titles = [
