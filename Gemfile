@@ -80,3 +80,4 @@ gem 'faker'
 
 gem 'pry-byebug'
 
+gem "cloudinary"

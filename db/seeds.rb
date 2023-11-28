@@ -32,12 +32,12 @@ time_string = ["12:00", "14:00", "16:00", "18:30", "19:00", "20:00", "20:30", "2
 prices = ["free", "5 €", "10 €", "15 €", "20 €"]
 capacity = ["less than 20", "20-50", "50-100", "100-150", "150-200", "more than 200"]
 
-pic_art = URI.open('app/assets/images/art.jpg')
-pic_literature = URI.open('app/assets/images/literature.jpg')
-pic_cinema = URI.open('app/assets/images/cinema.jpg')
-pic_dance = URI.open('app/assets/images/dance.jpg')
-pic_forum = URI.open('app/assets/images/forum.jpg')
-pic_theater = URI.open('app/assets/images/theater.jpg')
+# pic_art = URI.open('app/assets/images/art.jpg')
+# pic_literature = URI.open('app/assets/images/literature.jpg')
+# pic_cinema = URI.open('app/assets/images/cinema.jpg')
+# pic_dance = URI.open('app/assets/images/dance.jpg')
+# pic_forum = URI.open('app/assets/images/forum.jpg')
+# pic_theater = URI.open('app/assets/images/theater.jpg')
 
 events = [
   {
@@ -51,7 +51,7 @@ events = [
     capacity: capacity.sample,
     category: "Cinema",
     user: user1,
-    image_url: pic_cinema
+    image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/cinema_kazvqq.jpg"
 },
 {
   title: "Alternative Theater Immersion",
@@ -64,7 +64,7 @@ events = [
   capacity: capacity.sample,
   category: "Theatre",
   user: user1,
-  image_url: pic_theater
+  image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/theater_osrozu.jpg"
 },
 {
   title: "Berlin History Lecture Series",
@@ -77,7 +77,7 @@ events = [
   capacity: capacity.sample,
   category: "Literature",
   user: user1,
-  image_url: pic_literature
+  image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/literature_ot4jgh.jpg"
 },
 
 {
@@ -91,7 +91,7 @@ events = [
   capacity: capacity.sample,
   category: "Art",
   user: user1,
-  image_url: pic_art
+  image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/art_b8y5x0.jpg"
 },
 {
   title: "Underground Poetry Salon",
@@ -104,7 +104,7 @@ events = [
   capacity: capacity.sample,
   category: "Literature",
   user: user2,
-  image_url: pic_literature
+  image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/literature_ot4jgh.jpg"
 },
 {
   title: "DIY Artisan Market",
@@ -117,7 +117,7 @@ events = [
   capacity: capacity.sample,
   category: "Craft",
   user: user2,
-  image_url: pic_art
+  image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/art_b8y5x0.jpg"
 },
 {
   title: "Cultural Diversity Forum",
@@ -130,7 +130,7 @@ events = [
   capacity: capacity.sample,
   category: "Forum",
   user: user2,
-  image_url: pic_forum
+  image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/forum_tgypsw.jpg"
 },
 {
   title: "Experimental Dance Performance",
@@ -143,7 +143,7 @@ events = [
   capacity: capacity.sample,
   category: "Dance",
   user: user2,
-  image_url: pic_dance
+  image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/dance_xyfuki.jpg"
 },
 {
   title: "Hidden Book Club: Literary Explorations",
@@ -156,13 +156,13 @@ events = [
   capacity: capacity.sample,
   category: "Literature",
   user: user2,
-  image_url: pic_literature
+  image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/literature_ot4jgh.jpg"
 }
 ]
 
 events.each do |event|
-  event.photo.attach(io: image_url, filename: "#{category}.jpg", content_type: "#{category}/jpg")
   Event.create!(event)
+  # event.image.attach(io: File.open(Rails.root.join("app", "assets", "images", event_data[:image_url])), filename: event_data[:image_path])
 end
 
 puts 'Creating seeds...'
