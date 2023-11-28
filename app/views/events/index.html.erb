@@ -1,0 +1,13 @@
+<h1>All events</h1>
+<div class="card p-2 m-3">
+  <% @events.each do |event| %>
+    <img src="<%= event.image_url%>" alt="event image">
+    <h2><%= link_to event.title, events_path(event.id) %></h2>
+    <p>Date: <%= event.date %></p>
+    <p>Time: <%= event.time %></p>
+    <p>Venue: <%= event.venue_name %></p>
+    <p>Address: <%= event.venue_address %></p>
+    <p>Capacity: <%= event.capacity %></p>
+    <p>Price: <%= event.price %></p>
+  <% end %>
+</div>
