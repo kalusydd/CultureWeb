@@ -32,12 +32,6 @@ time_string = ["12:00", "14:00", "16:00", "18:30", "19:00", "20:00", "20:30", "2
 prices = ["free", "5 €", "10 €", "15 €", "20 €"]
 capacity = ["less than 20", "20-50", "50-100", "100-150", "150-200", "more than 200"]
 
-# pic_art = URI.open('app/assets/images/art.jpg')
-# pic_literature = URI.open('app/assets/images/literature.jpg')
-# pic_cinema = URI.open('app/assets/images/cinema.jpg')
-# pic_dance = URI.open('app/assets/images/dance.jpg')
-# pic_forum = URI.open('app/assets/images/forum.jpg')
-# pic_theater = URI.open('app/assets/images/theater.jpg')
 
 events = [
   {
@@ -49,7 +43,7 @@ events = [
     venue_address: "address",
     price: prices.sample,
     capacity: capacity.sample,
-    category: "Cinema",
+    category: ["Cinema","Talk"],
     user: user1,
     image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/cinema_kazvqq.jpg"
 },
@@ -62,7 +56,7 @@ events = [
   venue_address: "address",
   price: prices.sample,
   capacity: capacity.sample,
-  category: "Theatre",
+  category: ["Theatre", "Drag"],
   user: user1,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/theater_osrozu.jpg"
 },
@@ -75,7 +69,7 @@ events = [
   venue_address: "address",
   price: prices.sample,
   capacity: capacity.sample,
-  category: "Literature",
+  category: ["Literature"],
   user: user1,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/literature_ot4jgh.jpg"
 },
@@ -89,7 +83,7 @@ events = [
   venue_address: "address",
   price: prices.sample,
   capacity: capacity.sample,
-  category: "Art",
+  category: ["Art", "Nature"],
   user: user1,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/art_b8y5x0.jpg"
 },
@@ -102,7 +96,7 @@ events = [
   venue_address: "address",
   price: prices.sample,
   capacity: capacity.sample,
-  category: "Literature",
+  category: ["Literature"],
   user: user2,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/literature_ot4jgh.jpg"
 },
@@ -115,7 +109,7 @@ events = [
   venue_address: "address",
   price: prices.sample,
   capacity: capacity.sample,
-  category: "Craft",
+  category: ["Craft", "Art"],
   user: user2,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/art_b8y5x0.jpg"
 },
@@ -128,7 +122,7 @@ events = [
   venue_address: "address",
   price: prices.sample,
   capacity: capacity.sample,
-  category: "Forum",
+  category: ["Talk", "Art", "Food & Drinks"],
   user: user2,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/forum_tgypsw.jpg"
 },
@@ -141,22 +135,35 @@ events = [
   venue_address: "address",
   price: prices.sample,
   capacity: capacity.sample,
-  category: "Dance",
+  category: ["Dance"],
   user: user2,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/dance_xyfuki.jpg"
 },
 {
-  title: "Hidden Book Club: Literary Explorations",
+  title: "Harmony Unleashed: A Dance and Music Spectacle",
   date: Faker::Date.between(from: 1.days.from_now, to: Date.today),
   time: Time.zone.parse(time_string.sample),
-  description: "Join a community of literary explorers in our Hidden Book Club, where hidden gems and literary treasures are uncovered, discussed, and celebrated in an atmosphere of intellectual curiosity and camaraderie.",
-  venue_name: "Poetry Lounge Berlin",
+  description: 'Immerse yourself in the enchanting world of "Harmony Unleashed," where the rhythmic synergy of dance and music creates an extraordinary spectacle. Experience the fluid elegance of dance intertwined with soul-stirring melodies, promising an evening of unparalleled artistic fusion. Join us for a celebration of movement and sound, where every beat tells a story, and every step resonates with the melody of pure joy. Let "Harmony Unleashed" captivate your senses and ignite the spirit of creative collaboration.',
+  venue_name: "Innovative Dance Studio",
   venue_address: "address",
   price: prices.sample,
   capacity: capacity.sample,
-  category: "Literature",
+  category: ["Dance", "Music"],
   user: user2,
-  image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/literature_ot4jgh.jpg"
+  image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/dance_xyfuki.jpg"
+}
+{
+  title: "Zen Oasis Retreat: Nourish Your Mind, Body, and Soul",
+  date: Faker::Date.between(from: 1.days.from_now, to: Date.today),
+  time: Time.zone.parse(time_string.sample),
+  description: 'Embark on a journey of self-discovery at the "Zen Oasis Retreat." Immerse yourself in rejuvenating practices that harmonize mind, body, and soul. From guided meditation to invigorating yoga sessions, indulge in a holistic experience designed to cultivate inner peace and well-being. Escape the hustle and embrace tranquility, as expert instructors lead you through a transformative day of self-care. Rediscover balance, vitality, and a renewed sense of serenity at the "Zen Oasis Retreat.',
+  venue_name: "Serenity Center",
+  venue_address: "address",
+  price: prices.sample,
+  capacity: capacity.sample,
+  category: ["Welness"],
+  user: user2,
+  image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701186309/wellness_lk23h8.jpg"
 }
 ]
 

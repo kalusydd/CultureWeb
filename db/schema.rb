@@ -64,7 +64,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_142909) do
     t.string "title"
     t.date "date"
     t.time "time"
-    t.string "category"
+    t.text "category", default: [], array: true
     t.string "description"
     t.string "venue_name"
     t.string "venue_address"
