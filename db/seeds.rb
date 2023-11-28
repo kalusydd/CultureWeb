@@ -32,9 +32,12 @@ time_string = ["12:00", "14:00", "16:00", "18:30", "19:00", "20:00", "20:30", "2
 prices = ["free", "5 €", "10 €", "15 €", "20 €"]
 capacity = ["less than 20", "20-50", "50-100", "100-150", "150-200", "more than 200"]
 
-# pic_art = URI.open('app/assets/images/art.jpg')
-# user.photo.attach(io: pic, filename: 'art.jpg', content_type: 'image/jpg')
-# user.save
+pic_art = URI.open('app/assets/images/art.jpg')
+pic_literature = URI.open('app/assets/images/literature.jpg')
+pic_cinema = URI.open('app/assets/images/cinema.jpg')
+pic_dance = URI.open('app/assets/images/dance.jpg')
+pic_forum = URI.open('app/assets/images/forum.jpg')
+pic_theater = URI.open('app/assets/images/theater.jpg')
 
 events = [
   {
@@ -47,7 +50,8 @@ events = [
     price: prices.sample,
     capacity: capacity.sample,
     category: "Cinema",
-    user: user1
+    user: user1,
+    image_url: pic_cinema
 },
 {
   title: "Alternative Theater Immersion",
@@ -59,7 +63,8 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: "Theatre",
-  user: user1
+  user: user1,
+  image_url: pic_theater
 },
 {
   title: "Berlin History Lecture Series",
@@ -71,7 +76,8 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: "Literature",
-  user: user1
+  user: user1,
+  image_url: pic_literature
 },
 
 {
@@ -84,7 +90,8 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: "Art",
-  user: user1
+  user: user1,
+  image_url: pic_art
 },
 {
   title: "Underground Poetry Salon",
@@ -96,7 +103,8 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: "Literature",
-  user: user2
+  user: user2,
+  image_url: pic_literature
 },
 {
   title: "DIY Artisan Market",
@@ -108,7 +116,8 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: "Craft",
-  user: user2
+  user: user2,
+  image_url: pic_art
 },
 {
   title: "Cultural Diversity Forum",
@@ -120,7 +129,8 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: "Forum",
-  user: user2
+  user: user2,
+  image_url: pic_forum
 },
 {
   title: "Experimental Dance Performance",
@@ -132,7 +142,8 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: "Dance",
-  user: user2
+  user: user2,
+  image_url: pic_dance
 },
 {
   title: "Hidden Book Club: Literary Explorations",
@@ -144,11 +155,13 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: "Literature",
-  user: user2
+  user: user2,
+  image_url: pic_literature
 }
 ]
 
 events.each do |event|
+  event.photo.attach(io: image_url, filename: "#{category}.jpg", content_type: "#{category}/jpg")
   Event.create!(event)
 end
 
