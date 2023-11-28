@@ -10,5 +10,5 @@ class User < ApplicationRecord
   # what about bookings where they are the organiser? has_many :bookings, through :events ???
 
   validates :username, presence: true, uniqueness: true
-  validates :first_name, presence: true, uniqueness: true
+  validates :first_name, presence: true
 end

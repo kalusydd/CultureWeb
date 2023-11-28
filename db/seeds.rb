@@ -12,14 +12,14 @@ User.destroy_all
 Event.destroy_all
 
 user1 = User.new(email: "louise@gmail.com", password: "123456", username: "Loulou", first_name: "Louise")
-# cat2 = URI.open('app/assets/images/cat2.jpg')
-# user1.photo.attach(io: cat2, filename: 'cat2.jpg', content_type: 'image/jpg')
+cat2 = URI.open('https://res.cloudinary.com/dnx58st8e/image/upload/v1701199970/development/kv38o0s6xp77zqxly9q4nu56ewp3.jpg')
+user1.photo.attach(io: cat2, filename: 'cat2.jpg', content_type: 'image/jpg')
 user1.save!
 
 user1.save!
 user2 = User.new(email: "kat@gmail.com", password: "123456", username: "Katy", first_name: "Kat")
-# cat1 = cat2 = URI.open('app/assets/images/cat1.jpg')
-# user1.photo.attach(io: cat1, filename: 'cat1.jpg', content_type: 'image/jpg')
+cat1 = URI.open('https://res.cloudinary.com/dnx58st8e/image/upload/v1701201117/cat1_sx541t.jpg')
+user2.photo.attach(io: cat1, filename: 'cat1.jpg', content_type: 'image/jpg')
 user2.save!
 
 # # titles = [
