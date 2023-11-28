@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_many :chatrooms, through: :messages
   # what about bookings where they are the organiser? has_many :bookings, through :events ???
 
