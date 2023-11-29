@@ -3,6 +3,8 @@ class Event < ApplicationRecord
   belongs_to :user
   has_one :chatroom
   has_one_attached :photo
+  has_many :event_categories
+  has_many :categories, through: :event_categories
   # has_many :messages, through: :chatroom ??
 
   validates :title, presence: true
@@ -13,5 +15,5 @@ class Event < ApplicationRecord
   validates :venue_address, presence: true
   validates :price, presence: true
   validates :capacity, presence: true
-  validates :category, presence: true
+  # validates :category, presence: true
 end
