@@ -11,17 +11,17 @@ require 'faker'
 User.destroy_all
 Event.destroy_all
 
-user_louise = User.new(email: "louise@gmail.com", password: "123456", username: "Loulou44", first_name: "Louise")
+user_louise = User.new(email: "louise@gmail.com", password: "123456", username: "Loulou44")
 cat2 = URI.open('https://res.cloudinary.com/dnx58st8e/image/upload/v1701199970/development/kv38o0s6xp77zqxly9q4nu56ewp3.jpg')
 user_louise.photo.attach(io: cat2, filename: 'cat2.jpg', content_type: 'image/jpg')
 user_louise.save!
 
-user_kat = User.new(email: "kat@gmail.com", password: "123456", username: "Orange_Katy", first_name: "Kat")
+user_kat = User.new(email: "kat@gmail.com", password: "123456", username: "Orange_Katy")
 cat1 = URI.open('https://res.cloudinary.com/dnx58st8e/image/upload/v1701201117/cat1_sx541t.jpg')
 user_kat.photo.attach(io: cat1, filename: 'cat1.jpg', content_type: 'image/jpg')
 user_kat.save!
 
-user_pascal = User.new(email: "pascal@gmail.com", password: "123456", username: "Pascou", first_name: "Pascal")
+user_pascal = User.new(email: "pascal@gmail.com", password: "123456", username: "Pascou")
 cat3 = URI.open('https://res.cloudinary.com/dnx58st8e/image/upload/v1701246465/cat3_fhpmtx.jpg')
 user_pascal.photo.attach(io: cat3, filename: 'cat3.jpg', content_type: 'image/jpg')
 user_pascal.save!
@@ -181,6 +181,7 @@ events.each do |event|
   Event.create!(event)
   # event.image.attach(io: File.open(Rails.root.join("app", "assets", "images", event_data[:image_url])), filename: event_data[:image_path])
 end
+
 
 puts 'Creating seeds...'
 puts 'Finished!'
