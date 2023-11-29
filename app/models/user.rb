@@ -7,7 +7,9 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :chatrooms, through: :messages
   has_one_attached :photo
-  # what about bookings where they are the organiser? has_many :bookings, through :events ???
+  has_many :events
+  has_many :bookings
+  has_many :bookings_as_org, through: :events, source: :bookings
 
   validates :username, presence: true, uniqueness: true
   validates :first_name, presence: true

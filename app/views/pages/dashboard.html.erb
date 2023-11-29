@@ -1,0 +1,18 @@
+<h1>✨ My upcoming events ✨</h1>
+<div class="container">
+  <% if current_user.bookings.exists? %>
+    <%= render "bookings_as_attendee" %>
+  <% else %>
+    <p>You aren't attending any upcoming events (yet 😉)</p>
+    <p>Check out cool events near you <%= link_to "here", root_path %></p>
+  <% end %>
+</div>
+
+<div class="container">
+  <% if current_user.events.joins(:bookings).exists? %>
+    <%= render "events_as_org" %>
+  <% else %>
+    <p>You haven't organised any upcoming events</p>
+    <p>Want to organise an event? <%= link_to "Click here!", new_event_path %></p>
+  <% end %>
+</div>
