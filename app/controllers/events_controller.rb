@@ -16,6 +16,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     if @event.save!
+      @chatroom = Chatroom.new
       redirect_to event_path(@event)
     else
       render :new, status: :unprocessable_entity

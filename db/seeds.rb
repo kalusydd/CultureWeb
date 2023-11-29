@@ -39,7 +39,7 @@ user_pascal.save!
 # # ]
 
 time_string = ["12:00", "14:00", "16:00", "18:30", "19:00", "20:00", "20:30", "21:00"]
-prices = ["free", "5 €", "10 €", "15 €", "20 €"]
+prices = ["free", "5", "10", "15", "20"]
 capacity = 20, 50, 100, 150, 200
 
 
@@ -179,8 +179,10 @@ events = [
 
 events.each do |event|
   Event.create!(event)
-  # event.image.attach(io: File.open(Rails.root.join("app", "assets", "images", event_data[:image_url])), filename: event_data[:image_path])
+  # Chatroom.create(event, event[:user])
 end
+
+
 
 
 puts 'Creating seeds...'

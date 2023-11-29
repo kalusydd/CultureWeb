@@ -4,11 +4,7 @@
   <% @events.each do |event| %>
     <%= render "index_event_image", event: event %>
     <h2><%= link_to event.title, event_path(event) %></h2>
-    <p>Date: <%= event.date %></p>
-    <p>Time: <%= event.time %></p>
-    <p>Venue: <%= event.venue_name %></p>
-    <p>Address: <%= event.venue_address %></p>
-    <p>Capacity: <%= event.capacity %></p>
-    <p>Price: <%= event.price %></p>
+    <p><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
+    <p><%= event.venue_name %></p>
   <% end %>
 </div>
