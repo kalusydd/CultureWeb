@@ -26,19 +26,19 @@ cat3 = URI.open('https://res.cloudinary.com/dnx58st8e/image/upload/v1701246465/c
 user_pascal.photo.attach(io: cat3, filename: 'cat3.jpg', content_type: 'image/jpg')
 user_pascal.save!
 
-art_category = Category.new(name: "art", icon: "fas fa-palette")
-dance_category = Category.new(name: "dance", icon: "fas fa-fire-flame-curved")
-theatre_category = Category.new(name: "theatre", icon: "fas fa-masks-theater")
-cinema_category = Category.new(name: "cinema", icon: "fas fa-film")
-craft_category = Category.new(name: "craft", icon: "fas fa-pen-ruler")
-fooddrink_category = Category.new(name: "food&drink", icon: "fas fa-carrot")
-sport_category = Category.new(name: "sport", icon: "fas fa-table-tennis-paddle-ball")
-nature_category = Category.new(name: "nature", icon: "fas fa-pagelines")
-music_category = Category.new(name: "music", icon: "fas fa-music")
-talks_category = Category.new(name: "talks", icon: "fas fa-comments")
-literature_category = Category.new(name: "literature", icon: "fas fa-book")
-drag_category = Category.new(name: "drag", icon: "fas fa-crown")
-wellness_category = Category.new(name: "wellness", icon: "fas fa-spa")
+art_category = Category.create!(name: "art", icon: "fas fa-palette")
+dance_category = Category.create!(name: "dance", icon: "fas fa-fire-flame-curved")
+theatre_category = Category.create!(name: "theatre", icon: "fas fa-masks-theater")
+cinema_category = Category.create!(name: "cinema", icon: "fas fa-film")
+craft_category = Category.create!(name: "craft", icon: "fas fa-pen-ruler")
+fooddrink_category = Category.create!(name: "food&drink", icon: "fas fa-carrot")
+sport_category = Category.create!(name: "sport", icon: "fas fa-table-tennis-paddle-ball")
+nature_category = Category.create!(name: "nature", icon: "fas fa-leaf")
+music_category = Category.create!(name: "music", icon: "fas fa-music")
+talks_category = Category.create!(name: "talks", icon: "fas fa-comments")
+literature_category = Category.create!(name: "literature", icon: "fas fa-book")
+drag_category = Category.create!(name: "drag", icon: "fas fa-crown")
+wellness_category = Category.create!(name: "wellness", icon: "fas fa-spa")
 
 # # titles = [
 # #   "Alternative Theater Immersion",
@@ -188,7 +188,7 @@ events = [
 #   # event.image.attach(io: File.open(Rails.root.join("app", "assets", "images", event_data[:image_url])), filename: event_data[:image_path])
 # end
 
-film_festival = Event.create(title: "Avant-Garde Film Festival",
+film_festival = Event.create!(title: "Avant-Garde Film Festival",
 date: Faker::Date.between(from: 1.days.from_now, to: Date.today),
 time: Time.parse(time_string.sample),
 description: "Immerse yourself in cinematic innovation at our Avant-Garde Film Festival, showcasing boundary-pushing works that challenge traditional storytelling and visual conventions.",
@@ -326,8 +326,6 @@ user: user_pascal,
 image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701186309/wellness_lk23h8.jpg"
 )
 EventCategory.create!(event: oasis_retreat, category: wellness_category)
-
-
 
 puts 'Creating seeds...'
 puts 'Finished!'
