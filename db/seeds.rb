@@ -53,7 +53,7 @@ wellness_category = Category.create!(name: "wellness", icon: "fas fa-spa")
 # # ]
 
 time_string = ["12:00", "14:00", "16:00", "18:30", "19:00", "20:00", "20:30", "21:00"]
-prices = ["free", "5 €", "10 €", "15 €", "20 €"]
+prices = ["free", "5", "10", "15", "20"]
 capacity = 20, 50, 100, 150, 200
 
 
@@ -326,6 +326,8 @@ user: user_pascal,
 image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701186309/wellness_lk23h8.jpg"
 )
 EventCategory.create!(event: oasis_retreat, category: wellness_category)
+
+
 
 puts 'Creating seeds...'
 puts 'Finished!'
