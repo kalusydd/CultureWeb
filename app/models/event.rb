@@ -15,5 +15,15 @@ class Event < ApplicationRecord
   validates :venue_address, presence: true
   validates :price, presence: true
   validates :capacity, presence: true
-  # validates :category, presence: true
+  # validates :category_ids, presence: true
 end
+
+# validate :validate_category_selection
+
+# private
+
+# def validate_category_selection
+#   if category_ids.length < 1 || category_ids.length > 3
+#     errors.add(:base, "Please select 1-3 categories.")
+#   end
+# end
