@@ -12,5 +12,4 @@ class User < ApplicationRecord
   has_many :bookings_as_org, through: :events, source: :bookings
 
   validates :username, presence: true, uniqueness: true
-  validates :first_name, presence: true
 end

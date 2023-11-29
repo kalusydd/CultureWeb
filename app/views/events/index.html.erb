@@ -2,7 +2,7 @@
 <p><%= link_to "Create new event", new_event_path %></p>
 <div class="card p-2 m-3">
   <% @events.each do |event| %>
-    <img src="<%= event.image_url%>" alt="event image">
+    <%= render "index_event_image", event: event %>
     <h2><%= link_to event.title, event_path(event) %></h2>
     <p>Date: <%= event.date %></p>
     <p>Time: <%= event.time %></p>
