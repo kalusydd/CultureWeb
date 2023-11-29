@@ -51,12 +51,28 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_163912) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "chatrooms", force: :cascade do |t|
     t.integer "status"
     t.bigint "event_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_chatrooms_on_event_id"
+  end
+
+  create_table "event_categories", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_event_categories_on_category_id"
+    t.index ["event_id"], name: "index_event_categories_on_event_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -106,6 +122,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_163912) do
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users"
   add_foreign_key "chatrooms", "events"
+  add_foreign_key "event_categories", "categories"
+  add_foreign_key "event_categories", "events"
   add_foreign_key "events", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"

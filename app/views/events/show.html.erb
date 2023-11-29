@@ -8,6 +8,13 @@
 <p>Price: <%= @event.price%> €</p>
 <p>Accessibilty: </p>
 <p>So far, <strong><%= @event.attendees %></strong> people are attending this event</p>
+<% if @event.categories.length == 1 %>
+  <p><i class="<%=@event.categories.first.icon%>"></i> <%= @event.categories.first.name %></p>
+<% else %>
+  <% @event.categories.each do |category| %>
+    <p><i class="<%=category.icon%>"></i> <%= category.name %></p>
+  <% end %>
+<% end %>
 
 <%= link_to "I'm going!", event_bookings_path(@event.id), class:"btn btn-primary", data: {turbo_method: :post}  %>
 <%= link_to "Let's talk!", event_chatrooms_path(@event), class:"btn btn-primary", data: {turbo_method: :post}  %>
