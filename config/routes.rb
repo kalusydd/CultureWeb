@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :events, only: [:show, :new, :create] do
     resources :bookings, only: [:create]
   end
+
+  resources :bookings, only: [:destroy]
   get "dashboard", to: "pages#dashboard"
 
   # Defines the root path route ("/")
