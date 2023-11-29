@@ -11,16 +11,20 @@ require 'faker'
 User.destroy_all
 Event.destroy_all
 
-user1 = User.new(email: "louise@gmail.com", password: "123456", username: "Loulou", first_name: "Louise")
+user_louise = User.new(email: "louise@gmail.com", password: "123456", username: "Loulou44", first_name: "Louise")
 cat2 = URI.open('https://res.cloudinary.com/dnx58st8e/image/upload/v1701199970/development/kv38o0s6xp77zqxly9q4nu56ewp3.jpg')
-user1.photo.attach(io: cat2, filename: 'cat2.jpg', content_type: 'image/jpg')
-user1.save!
+user_louise.photo.attach(io: cat2, filename: 'cat2.jpg', content_type: 'image/jpg')
+user_louise.save!
 
-user1.save!
-user2 = User.new(email: "kat@gmail.com", password: "123456", username: "Katy", first_name: "Kat")
+user_kat = User.new(email: "kat@gmail.com", password: "123456", username: "Orange_Katy", first_name: "Kat")
 cat1 = URI.open('https://res.cloudinary.com/dnx58st8e/image/upload/v1701201117/cat1_sx541t.jpg')
-user2.photo.attach(io: cat1, filename: 'cat1.jpg', content_type: 'image/jpg')
-user2.save!
+user_kat.photo.attach(io: cat1, filename: 'cat1.jpg', content_type: 'image/jpg')
+user_kat.save!
+
+user_pascal = User.new(email: "pascal@gmail.com", password: "123456", username: "Pascou", first_name: "Pascal")
+cat3 = URI.open('https://res.cloudinary.com/dnx58st8e/image/upload/v1701246465/cat3_fhpmtx.jpg')
+user_pascal.photo.attach(io: cat3, filename: 'cat3.jpg', content_type: 'image/jpg')
+user_pascal.save!
 
 # # titles = [
 # #   "Alternative Theater Immersion",
@@ -50,7 +54,7 @@ events = [
     price: prices.sample,
     capacity: capacity.sample,
     category: ["Cinema","Talk"],
-    user: user1,
+    user: user_louise,
     image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/cinema_kazvqq.jpg"
 },
 {
@@ -63,7 +67,7 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: ["Theatre", "Drag"],
-  user: user1,
+  user: user_pascal,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/theater_osrozu.jpg"
 },
 {
@@ -76,7 +80,7 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: ["Literature"],
-  user: user1,
+  user: user_louise,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/literature_ot4jgh.jpg"
 },
 
@@ -90,7 +94,7 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: ["Art", "Nature"],
-  user: user1,
+  user: user_louise,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/art_b8y5x0.jpg"
 },
 {
@@ -103,7 +107,7 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: ["Literature"],
-  user: user2,
+  user: user_kat,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/literature_ot4jgh.jpg"
 },
 {
@@ -116,7 +120,7 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: ["Craft", "Art"],
-  user: user2,
+  user: user_kat,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/art_b8y5x0.jpg"
 },
 {
@@ -129,7 +133,7 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: ["Talk", "Art", "Food & Drinks"],
-  user: user2,
+  user: user_kat,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/forum_tgypsw.jpg"
 },
 {
@@ -142,7 +146,7 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: ["Dance"],
-  user: user2,
+  user: user_kat,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/dance_xyfuki.jpg"
 },
 {
@@ -155,7 +159,7 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: ["Dance", "Music"],
-  user: user2,
+  user: user_kat,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/dance_xyfuki.jpg"
 },
 {
@@ -168,7 +172,7 @@ events = [
   price: prices.sample,
   capacity: capacity.sample,
   category: ["Welness"],
-  user: user2,
+  user: user_pascal,
   image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701186309/wellness_lk23h8.jpg"
 }
 ]
