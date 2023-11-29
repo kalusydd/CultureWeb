@@ -1,1 +1,8 @@
 <h2>Upcoming events I've organised</h2>
+<% @events_as_org.each do |event| %>
+  <h3><%=event.title%></h3>
+  <p><strong><%=event.date%></strong> // <%=event.time%></p>
+  <p><%= event.venue_name %></p>
+  <p><%= event.attendees %></p>
+  <%= link_to "Delete event", event_path(event.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this event?"}, class:"btn btn-primary" %>
+<% end %>

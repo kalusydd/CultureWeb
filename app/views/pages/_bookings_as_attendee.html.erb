@@ -1,1 +1,7 @@
 <h2>Events I'm going to</h2>
+<% @bookings_as_attendee.each do |booking| %>
+  <h3><%= booking.event.title %></h3>
+  <p><strong><%=booking.event.date%></strong> // <%=booking.event.time%></p>
+  <p><%= booking.event.venue_name %></p>
+  <%= link_to "Cancel", booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this booking?"}, class:"btn btn-primary" %>
+<% end %>
