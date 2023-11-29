@@ -9,6 +9,6 @@
   <%= f.input :venue_address %> <!-- should be with autofill geocode -->
   <%= f.input :capacity %>
   <%= f.input :price %>
-  <%= f.input :image_url %> <!-- should be image upload with Cloudinary -->
+  <%= f.input :photo, as: :file %> <!-- should be image upload with Cloudinary -->
   <%= f.submit %>
 <% end %>
