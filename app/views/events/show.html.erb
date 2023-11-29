@@ -6,7 +6,7 @@
 <p>What to excepect: <%= @event.description %></p>
 <p>Capacity: <%= @event.capacity %></p>
 <p>Price: <%= @event.price%> €</p>
-<p>Accessibilty:</p>
+<p>Accessibilty: </p>
 <p>So far, <strong><%= @event.attendees %></strong> people are attending this event</p>
 
 <%= link_to "I'm going!", event_bookings_path(@event.id), class:"btn btn-primary", data: {turbo_method: :post}  %>
