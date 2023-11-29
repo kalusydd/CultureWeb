@@ -13,5 +13,5 @@ class Event < ApplicationRecord
   validates :venue_address, presence: true
   validates :price, presence: true
   validates :capacity, presence: true
-  validates :category, presence: true
+  # validates :category, presence: true
 end
