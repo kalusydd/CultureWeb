@@ -34,8 +34,12 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event.destroy
-    redirect_to root_path
+    if @event.user == current_user
+      @event.destroy
+      redirect_to root_path, status: :see_other
+    else
+      redirect_to _path(@event)
+    end
   end
 
   private
