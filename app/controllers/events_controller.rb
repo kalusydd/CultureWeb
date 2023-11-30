@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @booking = Booking.new
+    # @chatroom = Chatroom.find(params[:id])
   end
 
   def new
