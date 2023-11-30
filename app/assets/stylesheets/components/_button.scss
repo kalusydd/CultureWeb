@@ -1,0 +1,16 @@
+.btn-ghost-neutral {
+  color: #F4F4F4;
+  border: 3px solid #F4F4F4;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: medium;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+.btn-ghost:hover {
+  opacity: 2;
+}
