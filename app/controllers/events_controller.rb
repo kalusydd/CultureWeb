@@ -15,7 +15,8 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    if @event.save!
+    if @event.save
+      @chatroom = Chatroom.new
       @event.category_ids = params[:event][:category_ids]
       redirect_to event_path(@event)
     else

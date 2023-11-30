@@ -1,13 +1,13 @@
 <%= render "show_page_image" %>
 <h1><%= @event.title %></h1>
-<p><strong>Date: <%= @event.date %></strong></p>
-<p>Time: <%= @event.time %></p>
-<p><strong>Venue: <%= @event.venue_name %></strong></p>
-<p>Address: <%= @event.venue_address %></p>
-<p>Description: <%= @event.description %></p>
+<p><%= @event.date.day%>.<%= @event.date.month%>.<%= @event.date.year%>  <%= @event.time.hour %>:<%= @event.time.min %></p>
+<p><strong><%= @event.venue_name %></strong></p>
+<p><%= @event.venue_address %></p>
+<p>What to excepect: <%= @event.description %></p>
 <p>Capacity: <%= @event.capacity %></p>
+<p>Price: <%= @event.price%> €</p>
+<p>Accessibilty: </p>
 <p>So far, <strong><%= @event.attendees %></strong> people are attending this event</p>
-<p>Price: <%= @event.price %></p>
 <% if @event.categories.length == 1 %>
   <p><i class="<%=@event.categories.first.icon%>"></i> <%= @event.categories.first.name %></p>
 <% else %>
@@ -17,3 +17,4 @@
 <% end %>
 
 <%= link_to "I'm going!", event_bookings_path(@event.id), class:"btn btn-primary", data: {turbo_method: :post}  %>
+<%= link_to "Let's talk!", event_chatrooms_path(@event), class:"btn btn-primary", data: {turbo_method: :post}  %>
