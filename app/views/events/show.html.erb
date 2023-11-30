@@ -17,4 +17,5 @@
 <% end %>
 
 <%= link_to "I'm going!", event_bookings_path(@event.id), class:"btn btn-primary", data: {turbo_method: :post}  %>
-<%= link_to "Let's talk!", event_chatrooms_path(@event), class:"btn btn-primary", data: {turbo_method: :post}  %>
+
+<%= link_to "Let's talk!", event_chatroom_path(@event.id, @event.chatroom.id), class:"btn btn-primary" %>

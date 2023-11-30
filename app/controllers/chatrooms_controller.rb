@@ -1,16 +1,16 @@
 class ChatroomsController < ApplicationController
   before_action :authenticate_user!
 
-  def create
-    @chatroom.new(chatroom_params)
-    @chatroom.save
-  end
+  # def create
+  #   @chatroom.new(chatroom_params)
+  #   @chatroom.save
+  # end
 
   def show
-    # @chatroom.event = Event.find(params[:event_id])
-    @chatroom.save
+    @event = Event.find(params[:id])
+    @chatroom = Chatroom.find(params[:id])
     @message = Message.new
-    redirect_to chatroom_path(@chatroom)
+    # redirect_to chatroom_path(@chatroom)
   end
 
   private
