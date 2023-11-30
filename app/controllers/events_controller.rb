@@ -7,7 +7,6 @@ class EventsController < ApplicationController
 
   def show
     @booking = Booking.new
-    # @chatroom = Chatroom.find(params[:id])
   end
 
   def new
@@ -39,7 +38,7 @@ class EventsController < ApplicationController
       @event.destroy
       redirect_to root_path, status: :see_other
     else
-      redirect_to event_path(@event)
+      redirect_to _path(@event)
     end
   end
 
