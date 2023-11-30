@@ -1,18 +1,15 @@
-<div class="event-background" style="background;">
+<div class="event-background">
 
+  <div>
+    <h1 class="header-all">Hey XXXX,<br>wanna do some<br>culture?</h1>
+  </div>
 
-<div>
-  <h1 class="header-all">All events</h1>
-  <h3 class="sub-header-all">All events</h3>
-  <p class="body-all">Here is some text to see our bold body font hehe</p>
-</div>
-
-<p><%= link_to "Create new event", new_event_path, class: "btn btn-ghost-neutral" %></p>
-<div class="card p-2 m-3">
-  <% @events.each do |event| %>
-    <%= render "index_event_image", event: event %>
-    <h2><%= link_to event.title, event_path(event) %></h2>
-    <p><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
-    <p><%= event.venue_name %></p>
-  <% end %>
+  <div class="card p-2 m-3">
+    <% @events.each do |event| %>
+      <%= render "index_event_image", event: event %>
+      <h2><%= link_to event.title, event_path(event) %></h2>
+      <p><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
+      <p><%= event.venue_name %></p>
+    <% end %>
+  </div>
 </div>
