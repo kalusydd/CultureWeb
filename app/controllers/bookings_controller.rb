@@ -1,10 +1,11 @@
 class BookingsController < ApplicationController
   def create
     @booking = Booking.new
-    @booking.event = Event.find(params[:event_id])
+    @event = Event.find(params[:event_id])
+    @booking.event = @event
     @booking.user = current_user
     if @booking.event.attendees.to_i < @booking.event.capacity.to_i
-      @booking.event.attendees += 1
+      @event.update(attendees: @event.attendees + 1)
       @booking.save
       redirect_to @booking.event, notice: "Woohoo! You're going to #{@booking.event.title} on #{@booking.event.date}!" # change redirect to dashboard
     else
