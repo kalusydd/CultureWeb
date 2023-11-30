@@ -35,6 +35,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
+    redirect_to root_path, status: :see_other
   end
 
   private

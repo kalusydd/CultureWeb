@@ -41,7 +41,7 @@ export default class extends Controller {
     if(this.clickedArray.length === 3) {
 
       this.inputTargets.forEach(element => {
-        element.classList.add("kat")
+        console.log(element)
       })
     }
   }
