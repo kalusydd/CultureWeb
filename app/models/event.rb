@@ -1,9 +1,9 @@
 class Event < ApplicationRecord
   has_many :bookings, dependent: :destroy
   belongs_to :user
-  has_one :chatroom
+  has_one :chatroom, dependent: :destroy
   has_one_attached :photo
-  has_many :event_categories
+  has_many :event_categories, dependent: :destroy
   has_many :categories, through: :event_categories
   # has_many :messages, through: :chatroom ??
 

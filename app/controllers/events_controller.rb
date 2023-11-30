@@ -7,7 +7,6 @@ class EventsController < ApplicationController
 
   def show
     @booking = Booking.new
-    # @chatroom = Chatroom.find(params[:id])
   end
 
   def new
@@ -36,6 +35,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
+    redirect_to root_path
   end
 
   private
