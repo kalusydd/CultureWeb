@@ -3,8 +3,18 @@
   <%= f.input :title %>
   <%= f.input :date %>
   <%= f.input :time %>
-  <%= f.input :category %> <!-- this should be a drop down of preset categories -->
   <%= f.input :description %>
+  <%= f.label :category_ids, "Categories - please choose between 1-3:" %>
+  <div data-controller="categoryselect">
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name_with_icon do |category| %>
+    <div class = "tag-item">
+      <%= category.check_box class:"tag-selector", data: {action: "click->categoryselect#activate", categoryselect_target: "input" }%>
+      <%= category.label do %>
+        <%= content_tag(:i, '', class: category.object.icon) %> <%= category.object.name %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
   <%= f.input :venue_name %>
   <%= f.input :venue_address %> <!-- should be with autofill geocode -->
   <%= f.input :capacity %>
