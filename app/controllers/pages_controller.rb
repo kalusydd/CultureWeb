@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  def home
-  end
+  # def home
+  # end
 
   def dashboard
     @bookings_as_attendee = current_user.bookings

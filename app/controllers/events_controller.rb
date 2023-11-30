@@ -17,8 +17,8 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     if @event.save
-      @chatroom = Chatroom.new
       @event.category_ids = params[:event][:category_ids]
+      create_chatroom_event(@event)
       redirect_to event_path(@event)
     else
       render :new, status: :unprocessable_entity
@@ -43,6 +43,10 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def create_chatroom_event(event)
+    Chatroom.create(event: event)
+  end
 
   def set_event
     @event = Event.find(params[:id])
