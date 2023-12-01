@@ -9,7 +9,8 @@ class EventsController < ApplicationController
       # @events = @events.where(sql_subquery, query: "%#{params[:query]}%")
     end
     if params[:location].present?
-      @events = @events.where("venue_address ILIKE ?", "%#{params[:location]}%")
+      # @events = @events.where("venue_address ILIKE ?", "%#{params[:location]}%")
+      @events = @events.near(params[:location], 5)
     end
   end
 

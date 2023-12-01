@@ -4,13 +4,18 @@
     <h1 class="header-all">Hey XXXX,<br>wanna do some<br>culture?</h1>
   </div>
 
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
+  <div class="card p-2 m-3">
+    <% @events.each do |event| %>
+      <%= render "index_event_image", event: event %>
+        <div class="sub-header-all">
+        <h2><%= link_to event.title, event_path(event) %></h2>
+        <div class="body-all">
+        <p><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
+      <p><%= event.venue_name %></p>
+  <% end %>
+      </div>
+    </div>
+  </div>
 
   <div class="search_form_container">
     <div class="search_form_with">
@@ -23,19 +28,6 @@
                           placeholder: "Location" %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
-    </div>
-  </div>
-
-  <div class="card p-2 m-3">
-    <% @events.each do |event| %>
-      <%= render "index_event_image", event: event %>
-        <div class="sub-header-all">
-        <h2><%= link_to event.title, event_path(event) %></h2>
-        <div class="body-all">
-        <p><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
-      <p><%= event.venue_name %></p>
-  <% end %>
-      </div>
     </div>
   </div>
 

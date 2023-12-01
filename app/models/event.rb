@@ -22,6 +22,9 @@ class Event < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+
+  geocoded_by :venue_address
+  after_validation :geocode, if: :will_save_change_to_venue_address?
 end
 
 # validate :validate_category_selection
