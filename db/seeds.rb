@@ -202,7 +202,7 @@ venue_address: "Kurfürstendamm 123, 10711 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_louise,
-image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/cinema_kazvqq.jpg",
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701442606/Bildschirm_foto_2023-12-01_um_15.56.32_dqyffv.png",
 )
 EventCategory.create!(event: film_festival, category: art_category)
 EventCategory.create!(event: film_festival, category: cinema_category)
@@ -217,7 +217,7 @@ venue_address: "Friedrichstraße 45, 10117 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_pascal,
-image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/theater_osrozu.jpg"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701443252/michael-kucharski-BxGI5vaNlAk-unsplash_y8gbiu.jpg"
 )
 EventCategory.create!(event: theater_immersion, category: theatre_category)
 EventCategory.create!(event: theater_immersion, category: literature_category)
@@ -232,7 +232,7 @@ venue_address: "Prenzlauer Allee 78, 10405 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_louise,
-image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/literature_ot4jgh.jpg"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701443099/Bildschirm_foto_2023-12-01_um_16.04.42_v4bsxh.png"
 )
 EventCategory.create!(event: history_lecture, category: talks_category)
 Chatroom.create!(event: history_lecture)
@@ -246,7 +246,7 @@ venue_address: "Prenzlauer Allee 78, 10405 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_louise,
-image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/art_b8y5x0.jpg"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701442764/Bildschirm_foto_2023-12-01_um_15.58.57_x854ys.png"
 )
 EventCategory.create!(event: sculpture_tour, category: art_category)
 Chatroom.create!(event: sculpture_tour)
@@ -260,7 +260,7 @@ venue_address: "Wrangelstraße 66, 10997 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/literature_ot4jgh.jpg"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701443224/Bildschirm_foto_2023-11-28_um_16.29.02_ijswda.png"
 )
 EventCategory.create!(event: underground_poetry, category: art_category)
 EventCategory.create!(event: underground_poetry, category: literature_category)
@@ -291,7 +291,7 @@ venue_address: "Invalidenstraße 50, 10557 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/forum_tgypsw.jpg"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701443356/randall-meng-fEtrdG0PCPM-unsplash_ok671j.jpg"
 )
 EventCategory.create!(event: cultural_forum, category: talks_category)
 EventCategory.create!(event: cultural_forum, category: dance_category)
@@ -306,7 +306,7 @@ venue_address: "Karl-Marx-Straße 33, 12043 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/dance_xyfuki.jpg"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701443347/hulki-okan-tabak-spmbpgtvOiw-unsplash_kr9ufp.jpg"
 )
 EventCategory.create!(event: experimental_dance, category: dance_category)
 EventCategory.create!(event: experimental_dance, category: music_category)
