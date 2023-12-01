@@ -15,6 +15,7 @@ class EventsController < ApplicationController
     if params[:date].present?
       @events = @events.where(date: params[:date])
     end
+    map_markers(@events)
   end
 
   def show
@@ -56,6 +57,15 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def map_markers(events)
+    @markers = events.geocoded.map do |event|
+    {
+      lat: event.latitude,
+      lng: event.longitude,
+    }
+    end
+  end
 
   def create_chatroom_event(event)
     Chatroom.create(event: event)
