@@ -3,8 +3,6 @@
 <p>Capacity: <%= @event.capacity %></p>
 <p>EVENT</p>
 <h1><%= @event.title %></h1>
-<p><strong><%= @event.venue_name %></strong></p>
-<p><%= @event.venue_address %></p>
 <p>What to excepect: <%= @event.description %></p>
 <p>Price: <%= @event.price%> €</p>
 <p>Accessibilty: </p>
@@ -17,7 +15,11 @@
 <% end %>
 <p>So far, <strong><%= @event.attendees %></strong> people are attending this event</p>
 <p>ORGANISER</p>
-<h2><%= @event.user.username %></h2>
+<h3><%= @event.user.username %></h3>
 <p>BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO</p>
+
+<p><strong><%= @event.venue_name %></strong></p>
+<p><%= @event.venue_address %></p>
+<%= render "show_map" %>
 
 <%= render "show_page_booker_btn" %>

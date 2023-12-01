@@ -4,6 +4,37 @@
     <h1 class="header-all">Hey XXXX,<br>wanna do some<br>culture?</h1>
   </div>
 
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+
+  <div class="search_form">
+    <%= form_with url: root_path, method: :get do |form| %>
+      <%= text_field_tag :query, params[:query],
+                        class: "form-control",
+                        placeholder: "I'm looking for..." %>
+      <%= text_field_tag :location, params[:location],
+                        class: "form-control",
+                        placeholder: "Location" %>
+      <%= form.date_field :date, value: params[:date], class: "form-control", placeholder: "Select a date" %>
+      <fieldset>
+        <% Category.all.each do |category| %>
+          <div class="tag-item">
+            <%= check_box_tag "category_ids[]", category.id, params[:category_ids]&.include?(category.id), id: "category_#{category.id}", class: "tag-selector form-control" %>
+            <%= label_tag "category_#{category.id}" do %>
+              <%= content_tag(:i, '', class: category.icon) %> <%= category.name %>
+            <% end %>
+          </div>
+        <% end %>
+      </fieldset>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  
     <% @events.each do |event| %>
     <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
       <div class="event-title">
@@ -15,20 +46,7 @@
       </div>
     </div>
     <% end %>
+  
 
-  <div class="search_form_with">
-    <%= form_with url: root_path, method: :get do |form| %>
-      <%= form.select :capacity, options_for_select(['<10', '10-30', '>30'],
-                        params[:capacity]), prompt: 'Select capacity' %>
-      <%= form.check_box :price, { checked: params[:price] == "FREE" } %>
-      <%= form.label :price, "FREE" %>
-      <%= text_field_tag :query, params[:query],
-                        class: "form-control",
-                        placeholder: "I'm looking for..." %>
-      <%= text_field_tag :location, params[:location],
-                        class: "form-control",
-                        placeholder: "Kiez..." %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+  <%= render "index_map" %>
 </div>

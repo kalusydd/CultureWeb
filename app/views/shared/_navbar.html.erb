@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-<div class="icon-button">
+  <div class="icon-button">
     <%= link_to "",  user_session_path, class:"fa-regular fa-user" %>
-    <i class="fa-regular fa-comment"></i>
+    <%= link_to "", chat_dashboard_path, class:"fa-regular fa-comment" %>
     <%= link_to "", root_path, class:"fa-regular fa-square-minus" %>
     <%= link_to "", new_event_path, class:"fa-regular fa-calendar-plus" %>
     <%= link_to "", dashboard_path, class:"fa-regular fa-calendar-days" %>
@@ -9,13 +9,9 @@
 </div>
 
 
-
-
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>

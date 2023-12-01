@@ -7,10 +7,6 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    # @chatroom = Chatroom.new
-    # @event = Event.find(params[:event_id])
-    # @chatroom.event = @event
-    # @chatroom.save
   end
 
   private
