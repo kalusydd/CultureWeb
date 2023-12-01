@@ -9,7 +9,7 @@
 </div>
 
 <div class="container">
-  <% if current_user.events.joins(:bookings).exists? %>
+  <% if current_user.events.exists? %>
     <%= render "events_as_org" %>
   <% else %>
     <p>You haven't organised any upcoming events</p>
