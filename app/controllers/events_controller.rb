@@ -12,6 +12,7 @@ class EventsController < ApplicationController
       # @events = @events.where("venue_address ILIKE ?", "%#{params[:location]}%")
       @events = @events.near(params[:location], 5)
     end
+    map_markers(@events)
   end
 
   def show
@@ -53,6 +54,16 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def map_markers
+    @markers = @events.geocoded.map do |event|
+    {
+      lat: event.latitude,
+      lng: event.longitude,
+      info_window_html: render_to_string(partial: "info_window", locals: {flat: flat})
+    }
+    end
+  end
 
   def create_chatroom_event(event)
     Chatroom.create(event: event)
