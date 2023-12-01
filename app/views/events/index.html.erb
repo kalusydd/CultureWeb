@@ -17,19 +17,18 @@
     </div>
   </div>
 
-  <div class="search_form_with">
-    <%= form_with url: root_path, method: :get do |form| %>
-      <%= form.select :capacity, options_for_select(['<10', '10-30', '>30'],
-                        params[:capacity]), prompt: 'Select capacity' %>
-      <%= form.check_box :price, { checked: params[:price] == "FREE" } %>
-      <%= form.label :price, "FREE" %>
-      <%= text_field_tag :query, params[:query],
-                        class: "form-control",
-                        placeholder: "I'm looking for..." %>
-      <%= text_field_tag :location, params[:location],
-                        class: "form-control",
-                        placeholder: "Kiez..." %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+  <div class="search_form_container">
+    <div class="search_form_with">
+      <%= form_with url: root_path, method: :get do |form| %>
+        <%= text_field_tag :query, params[:query],
+                          class: "form-control",
+                          placeholder: "I'm looking for..." %>
+        <%= text_field_tag :location, params[:location],
+                          class: "form-control",
+                          placeholder: "Location" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
+
 </div>
