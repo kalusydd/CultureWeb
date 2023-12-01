@@ -21,4 +21,5 @@ Rails.application.routes.draw do
 
   get "dashboard", to: "pages#dashboard"
   get "chat_dashboard", to: "pages#chat_dashboard"
+  get "profile", to: "pages#profile"
 end

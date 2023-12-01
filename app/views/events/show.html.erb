@@ -16,8 +16,8 @@
 <p>So far, <strong><%= @event.attendees %></strong> people are attending this event</p>
 <p>ORGANISER</p>
 <h3><%= @event.user.username %></h3>
-<p>BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO BIO</p>
-
+<p><%= @event.user.bio %></p>
+<p>VENUE</p>
 <p><strong><%= @event.venue_name %></strong></p>
 <p><%= @event.venue_address %></p>
 <%= render "show_map" %>
