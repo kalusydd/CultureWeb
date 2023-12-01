@@ -1,0 +1,20 @@
+.event-background {
+  background: rgb(155,71,169);
+  // background: linear-gradient(0deg, rgba(155,71,169,1) 0%, rgba(255,116,74,1) 100%);
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  }
+
+.card-p-2-m-3 {
+overflow: hidden;
+flex-direction: row;
+
+  }
+
+  img {
+border-radius: 20px;
+height: 100%;
+width: 100%;
+
+  }
