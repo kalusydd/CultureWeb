@@ -47,5 +47,20 @@
       </div>
     </div>
   </div>
+  
+  <div class="search_form_container">
+    <div class="search_form_with">
+      <%= form_with url: root_path, method: :get do |form| %>
+        <%= text_field_tag :query, params[:query],
+                          class: "form-control",
+                          placeholder: "I'm looking for..." %>
+        <%= text_field_tag :location, params[:location],
+                          class: "form-control",
+                          placeholder: "Location" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 
+  <%= render "index_map" %>
 </div>
