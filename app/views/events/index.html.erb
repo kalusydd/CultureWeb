@@ -7,9 +7,13 @@
   <div class="card p-2 m-3">
     <% @events.each do |event| %>
       <%= render "index_event_image", event: event %>
-      <h2><%= link_to event.title, event_path(event) %></h2>
-      <p><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
+        <div class="sub-header-all">
+        <h2><%= link_to event.title, event_path(event) %></h2>
+        <div class="body-all">
+        <p><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
       <p><%= event.venue_name %></p>
-    <% end %>
+  <% end %>
+      </div>
+    </div>
   </div>
 </div>

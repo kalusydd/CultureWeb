@@ -5,16 +5,25 @@
   margin: 35PX;
   position: fixed;
   z-index: 100;
+  line-height: 55px;
+  color: #FF744A;
 
 }
 
 .sub-header-all {
   font-family: $headers-font;
   font-weight: 700;
+  font-size: 25px;
+  line-height: 25px;
+
 }
 
 .body-all {
   font-family: $body-font;
   font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+
+
 
 }
