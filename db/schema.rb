@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_29_202002) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_01_111711) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -91,6 +91,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_202002) do
     t.string "price"
     t.integer "capacity"
     t.bigint "chatroom_id"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["chatroom_id"], name: "index_events_on_chatroom_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
