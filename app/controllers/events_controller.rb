@@ -3,6 +3,25 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    if params[:query].present?
+      @events = @events.where("title ILIKE ?", "%#{params[:query]}%")
+    end
+    if params[:location].present?
+      @events = @events.where("venue_address ILIKE ?", "%#{params[:location]}%")
+    end
+    if params[:capacity.present?]
+      case params[:capacity]
+      when "<10"
+        @events = @events.where(:capacity < 10)
+      when "10-30"
+        @events = @events.where(10 < :capacity && :capacity < 30)
+      when ">30"
+        @events = @events.where(:capacity > 30)
+      end
+    end
+    if params[:price] == "FREE"
+      @events = @events.where(price: "FREE")
+    end
   end
 
   def show
