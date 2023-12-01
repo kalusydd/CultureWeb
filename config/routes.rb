@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   resources :messages, only: [:destroy]
 
   get "dashboard", to: "pages#dashboard"
+  get "chat_dashboard", to: "pages#chat_dashboard"
 end

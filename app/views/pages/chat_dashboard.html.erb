@@ -1,0 +1,10 @@
+<h1>Let's talk!</h1>
+<h3>About events I will be attending ✨:</h3>
+<% @bookings_as_attendee.each do |booking| %>
+  <h4><%=link_to "💬 #{booking.event.title}", event_chatroom_path(booking.event.id, booking.event.chatroom.id)%></h4>
+<% end %>
+
+<h3>About events I am organizing ✨:</h3>
+<% @events_as_org.each do |event| %>
+  <h4><%=link_to "💬 #{event.title}", event_chatroom_path(event.id, event.chatroom.id)%></h4>
+<% end %>
