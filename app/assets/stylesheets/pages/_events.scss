@@ -6,15 +6,26 @@
   height: auto;
   }
 
-.card-p-2-m-3 {
-overflow: hidden;
-flex-direction: row;
+.event-card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  margin: 20px auto;
 
-  }
+  width: 300px;
+  height: 360px;
+  padding: 20px;
+}
 
-  img {
-border-radius: 20px;
-height: 100%;
-width: 100%;
+.event-title {
+  color: white;
 
-  }
+}
+
+.event-infos {
+  color:#FF744A;
+}
+
+.body-all-venue {
+  color: white;
+}
