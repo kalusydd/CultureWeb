@@ -81,3 +81,5 @@ gem 'faker'
 gem 'pry-byebug'
 
 gem "cloudinary"
+
+gem "pg_search"

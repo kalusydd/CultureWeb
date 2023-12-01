@@ -16,6 +16,12 @@ class Event < ApplicationRecord
   validates :price, presence: true
   validates :capacity, presence: true
   # validates :category_ids, presence: true
+  include PgSearch::Model
+  pg_search_scope :search_by_title_and_description,
+    against: [ :title, :description ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
 
 # validate :validate_category_selection
