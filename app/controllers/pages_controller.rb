@@ -13,4 +13,7 @@ class PagesController < ApplicationController
     @bookings_as_org = current_user.bookings_as_org
     @events_as_org = current_user.events
   end
+
+  def profile
+  end
 end
