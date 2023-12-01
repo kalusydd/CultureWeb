@@ -4,32 +4,49 @@
     <h1 class="header-all">Hey XXXX,<br>wanna do some<br>culture?</h1>
   </div>
 
-  <div class="card p-2 m-3">
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+
+  <div class="search_form">
+    <%= form_with url: root_path, method: :get do |form| %>
+      <%= text_field_tag :query, params[:query],
+                        class: "form-control",
+                        placeholder: "I'm looking for..." %>
+      <%= text_field_tag :location, params[:location],
+                        class: "form-control",
+                        placeholder: "Location" %>
+      <%= form.date_field :date, value: params[:date], class: "form-control", placeholder: "Select a date" %>
+      <fieldset>
+        <% Category.all.each do |category| %>
+          <div class="tag-item">
+            <%= check_box_tag "category_ids[]", category.id, params[:category_ids]&.include?(category.id), id: "category_#{category.id}", class: "tag-selector form-control" %>
+            <%= label_tag "category_#{category.id}" do %>
+              <%= content_tag(:i, '', class: category.icon) %> <%= category.name %>
+            <% end %>
+          </div>
+        <% end %>
+      </fieldset>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  
     <% @events.each do |event| %>
-      <%= render "index_event_image", event: event %>
-        <div class="sub-header-all">
-        <h2><%= link_to event.title, event_path(event) %></h2>
-        <div class="body-all">
-        <p><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
-      <p><%= event.venue_name %></p>
-  <% end %>
+    <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
+      <div class="event-title">
+        <h3 class="h3"><%= event.title %></h3>
+      </div>
+      <div class="event-infos">
+        <p class="body-all"><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
+        <p class="body-all-venue"><%= event.venue_name %></p>
       </div>
     </div>
-  </div>
-
-  <div class="search_form_container">
-    <div class="search_form_with">
-      <%= form_with url: root_path, method: :get do |form| %>
-        <%= text_field_tag :query, params[:query],
-                          class: "form-control",
-                          placeholder: "I'm looking for..." %>
-        <%= text_field_tag :location, params[:location],
-                          class: "form-control",
-                          placeholder: "Location" %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
+    <% end %>
+  
 
   <%= render "index_map" %>
 </div>

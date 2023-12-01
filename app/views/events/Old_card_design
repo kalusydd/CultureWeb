@@ -1,0 +1,12 @@
+<% @events.each do |event| %>
+      <div class="card p-2 m-3">
+          <%= render "index_event_image", event: event %>
+            <div class="event-title sub-header-all">
+              <h2><%= link_to event.title, event_path(event) %></h2>
+            </div>
+            <div class="event-infos body-all">
+              <p><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
+              <p><%= event.venue_name %></p>
+            </div>
+      </div>
+    <% end %>

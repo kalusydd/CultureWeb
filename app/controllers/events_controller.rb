@@ -5,12 +5,15 @@ class EventsController < ApplicationController
     @events = Event.all
     if params[:query].present?
       @events = Event.search_by_title_and_description(params[:query])
-      # sql_subquery = "title ILIKE :query OR description ILIKE :query"
-      # @events = @events.where(sql_subquery, query: "%#{params[:query]}%")
     end
     if params[:location].present?
-      # @events = @events.where("venue_address ILIKE ?", "%#{params[:location]}%")
       @events = @events.near(params[:location], 5)
+    end
+    if params[:category_ids].present?
+      @events = @events.joins(:categories).where(categories: { id: params[:category_ids] }).distinct
+    end
+    if params[:date].present?
+      @events = @events.where(date: params[:date])
     end
     map_markers(@events)
   end
