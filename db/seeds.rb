@@ -40,6 +40,8 @@ talks_category = Category.create!(name: "talks", icon: "fas fa-comments")
 literature_category = Category.create!(name: "literature", icon: "fas fa-book")
 drag_category = Category.create!(name: "drag", icon: "fas fa-crown")
 wellness_category = Category.create!(name: "wellness", icon: "fas fa-spa")
+comedy_category = Category.create!(name: "comedy", icon: "fas fa-face-grin-tears")
+education_category = Category.create!(name: "education", icon: "fas fa-book-open-reader")
 
 
 

@@ -17,9 +17,10 @@
       <%= text_field_tag :query, params[:query],
                         class: "form-control",
                         placeholder: "I'm looking for..." %>
-      <%= text_field_tag :location, params[:location],
-                        class: "form-control",
-                        placeholder: "Location" %>
+      <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        <%= form.text_field :location, id: "location", placeholder: "Location", class: "d-none",
+                            data: {address_autocomplete_target: "location" }%>
+      </div>
       <%= form.date_field :date, value: params[:date], placeholder: "Date", class: "form-control", placeholder: "Select a date" %>
       <div class="row">
         <div class="col-6">
