@@ -64,11 +64,22 @@
       <%= text_field_tag :query, params[:query],
                         class: "form-control",
                         placeholder: "I'm looking for..." %>
-      <%= text_field_tag :location, params[:location],
-                        input_html: {data: {address_autocomplete_target: "location"}},
-                        class: "form-control" %>
-                        # placeholder: "Location"
-      <%= form.date_field :date, value: params[:date], class: "form-control", placeholder: "Select a date" %>
+      <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        <%= form.text_field :location, id: "location", placeholder: "Location", class: "d-none",
+                            data: {address_autocomplete_target: "location" }%>
+      </div>
+      <%= form.date_field :date, value: params[:date], placeholder: "Date", class: "form-control", placeholder: "Select a date" %>
+      <div class="row">
+        <div class="col-6">
+          <%= form.label :capacity, "Capacity" %>
+          <%= form.select :capacity, [["All events", "ALL"] ,["Keep it cozy", "<30"], ["I'm feeling social", "30-60"], ["The bigger the better!", "60+"]], selected: "ALL" %>
+        </div>
+        <div class="col-3"></div>
+        <div class="col-3">
+          <%= form.check_box :price %>
+          <%= form.label :price, "FREE" %>
+        </div>
+      </div>
       <fieldset>
         <% Category.all.each do |category| %>
           <div class="tag-item">
