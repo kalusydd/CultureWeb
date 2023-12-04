@@ -56,8 +56,8 @@ wellness_category = Category.create!(name: "wellness", icon: "fas fa-spa")
 # # ]
 
 time_string = ["12:00", "14:00", "16:00", "18:30", "19:00", "20:00", "20:30", "21:00"]
-prices = ["free", "5", "10", "15", "20"]
-capacity = 20, 50, 100, 150, 200
+prices = [0, 5, 10, 15, 20]
+capacity = [10, 20, 30, 50, 70, 100]
 
 
 

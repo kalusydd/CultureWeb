@@ -16,10 +16,8 @@ class EventsController < ApplicationController
     when "60+"
       @events = @events.where("capacity > ?", 60)
     end
-    if params[:price].present? == 1
+    if params[:price].present? && params[:price] == "1"
       @events = @events.where(price: 0)
-    else
-      @events = Event.all
     end
     @events = @events.joins(:categories).where(categories: { id: params[:category_ids] }).distinct if params[:category_ids].present?
     map_markers(@events)
