@@ -18,8 +18,9 @@
                         class: "form-control",
                         placeholder: "I'm looking for..." %>
       <%= text_field_tag :location, params[:location],
-                        class: "form-control",
-                        placeholder: "Location" %>
+                        input_html: {data: {address_autocomplete_target: "location"}},
+                        class: "form-control" %>
+                        # placeholder: "Location"
       <%= form.date_field :date, value: params[:date], class: "form-control", placeholder: "Select a date" %>
       <fieldset>
         <% Category.all.each do |category| %>
