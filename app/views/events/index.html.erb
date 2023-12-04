@@ -93,18 +93,10 @@
     <% end %>
   </div>
 
+  <div class="toggle">
+    <button class="btn-ghost-neutral">LIST</button><button class="btn-ghost-neutral">MAP</button>
+  </div>
 
-<button class="btn-ghost-neutral">LIST</button><button class="btn-ghost-neutral">MAP</button>
-
-  <%# <div class="toggle-button-cover">
-        <div class="button-cover">
-          <div class="button r" id="button-2">
-            <input type="checkbox" class="btn-ghost-neutral" />
-            <div class="knobs"></div>
-            <div class="layer"></div>
-          </div>
-        </div>
-  </div> %>
 
     <% @events.each do |event| %>
     <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
