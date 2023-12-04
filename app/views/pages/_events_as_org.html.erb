@@ -1,4 +1,4 @@
-<h2>Upcoming events I've organised</h2>
+<h3>Upcoming events I've organised</h3>
 <% @events_as_org.each do |event| %>
   <h3><%=link_to event.title, event_path(event)%></h3>
   <p><strong><%=event.date%></strong> // <%=event.time%></p>

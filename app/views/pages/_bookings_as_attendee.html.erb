@@ -1,4 +1,4 @@
-<h2>Events I'm going to</h2>
+<h3>Events I'm going to</h3>
 <% @bookings_as_attendee.each do |booking| %>
   <h3><%= link_to booking.event.title, event_path(booking.event) %></h3>
   <p><strong><%=booking.event.date%></strong> // <%=booking.event.time%></p>
