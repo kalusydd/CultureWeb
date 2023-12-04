@@ -1,3 +1,11 @@
 .map-show {
   margin: 0 auto;
 }
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+}
