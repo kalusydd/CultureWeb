@@ -1,8 +1,12 @@
 <div class="event-background">
 
-  <div>
-    <h1 class="header-all">Hey XXXX,<br>wanna do some<br>culture?</h1>
-  </div>
+<div data-controller="headline" data-headline-name-value="<%= current_user.username %>">
+    <h1 class="header-all"></h1>
+</div>
+<div>
+  <%= submit_tag "Search", class: "btn btn-ghost-orange" %>
+</div>
+
 
   <h1>...</h1>
   <h1>...</h1>
@@ -31,10 +35,9 @@
           </div>
         <% end %>
       </fieldset>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
-  
+
     <% @events.each do |event| %>
     <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
       <div class="event-title">
@@ -46,7 +49,7 @@
       </div>
     </div>
     <% end %>
-  
+
 
   <%= render "index_map" %>
 </div>
