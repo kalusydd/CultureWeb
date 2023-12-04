@@ -22,8 +22,9 @@
                         class: "form-control",
                         placeholder: "I'm looking for..." %>
       <%= text_field_tag :location, params[:location],
-                        class: "form-control",
-                        placeholder: "Location" %>
+                        input_html: {data: {address_autocomplete_target: "location"}},
+                        class: "form-control" %>
+                        # placeholder: "Location"
       <%= form.date_field :date, value: params[:date], class: "form-control", placeholder: "Select a date" %>
       <fieldset>
         <% Category.all.each do |category| %>
@@ -41,7 +42,7 @@
     <% @events.each do |event| %>
     <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
       <div class="event-title">
-        <h3 class="h3"><%= event.title %></h3>
+        <h3 class="h3"><%= link_to event.title, event_path(event) %></h3>
       </div>
       <div class="event-infos">
         <p class="body-all"><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
