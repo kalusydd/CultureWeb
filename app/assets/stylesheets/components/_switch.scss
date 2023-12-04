@@ -1,0 +1,32 @@
+.toggle {
+  margin: auto;
+  border: 3px solid #F4F4F4;
+  border-radius: 50px;
+  width: fit-content;
+
+  .btn-ghost-neutral-list {
+    color: #F4F4F4;
+    border: 3px solid $violet;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: medium;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #f4f4f400;
+  }
+
+  .btn-ghost-neutral-map {
+    background-color: #ffffff;
+    color: #FF744A;
+    border: 3px solid #F4F4F4;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: medium;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #f4f4f400;
+  }
+
+}

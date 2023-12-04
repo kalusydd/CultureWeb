@@ -93,6 +93,11 @@
     <% end %>
   </div>
 
+  <div class="toggle" data-controller="toggle_controller">
+      <button class="btn-ghost-neutral-list">LIST</button><button class="btn-ghost-neutral-map">MAP</button>
+  </div>
+
+
     <% @events.each do |event| %>
     <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
       <div class="event-title">
