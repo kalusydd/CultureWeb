@@ -34,6 +34,14 @@
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
+  
+  <div class="toogle">
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider"></span>
+      <span class="labels" data-on="List" data-off="Map"></span>
+    </label>
+  </div>
 
     <% @events.each do |event| %>
     <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
