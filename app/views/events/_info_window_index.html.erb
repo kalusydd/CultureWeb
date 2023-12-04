@@ -1,0 +1,8 @@
+<% if event.photo.attached? %>
+  <%= cl_image_tag event.photo.key, class: "mapbox-index-img"%>
+<% else %>
+  <img src="<%= event.image_url%>" alt="event image", class="mapbox-index-img">
+<% end %>
+<h6><strong><%= link_to "#{event.title}", event_path(event)%></strong></h6>
+<h6><%=event.venue_name %></h6>
+<p><%= event.venue_address %></p>
