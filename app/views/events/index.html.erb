@@ -1,8 +1,12 @@
 <div class="event-background">
 
-  <div>
-    <h1 class="header-all">Hey <%=current_user.username%>,<br>wanna do some<br>culture?</h1>
-  </div>
+<div data-controller="headline" data-headline-name-value="<%= current_user.username %>">
+    <h1 class="header-all"></h1>
+</div>
+<div>
+  <%= submit_tag "Search", class: "btn btn-ghost-orange" %>
+</div>
+
 
   <h1>...</h1>
   <h1>...</h1>
@@ -11,6 +15,49 @@
   <h1>...</h1>
   <h1>...</h1>
   <h1>...</h1>
+
+
+
+
+<button class="open-button" onclick="openForm()">Open Form</button>
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="search_form">
+    <%= form_with url: root_path, method: :get do |form| %>
+      <%= text_field_tag :query, params[:query],
+                        class: "form-control",
+                        placeholder: "I'm looking for..." %>
+      <%= text_field_tag :location, params[:location],
+                        input_html: {data: {address_autocomplete_target: "location"}},
+                        class: "form-control" %>
+                        # placeholder: "Location"
+      <%= form.date_field :date, value: params[:date], class: "form-control", placeholder: "Select a date" %>
+      <fieldset>
+        <% Category.all.each do |category| %>
+          <div class="tag-item">
+            <%= check_box_tag "category_ids[]", category.id, params[:category_ids]&.include?(category.id), id: "category_#{category.id}", class: "tag-selector form-control" %>
+            <%= label_tag "category_#{category.id}" do %>
+              <%= content_tag(:i, '', class: category.icon) %> <%= category.name %>
+            <% end %>
+          </div>
+        <% end %>
+      </fieldset>
+    <% end %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <div class="search_form">
     <%= form_with url: root_path, method: :get do |form| %>
@@ -43,7 +90,6 @@
           </div>
         <% end %>
       </fieldset>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
 
@@ -58,7 +104,13 @@
       </div>
     </div>
     <% end %>
-
-
   <%= render "index_map" %>
+
+
+
+
+
+
+
+
 </div>

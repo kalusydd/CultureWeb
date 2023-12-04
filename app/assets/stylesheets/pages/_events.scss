@@ -10,21 +10,38 @@
   background-size: cover;
   background-position: center;
   border-radius: 20px;
-  margin: 20px auto;
-  width: 300px;
-  height: 360px;
+  margin: 30px auto;
+
+  width: 360px;
+  height: 400px;
   padding: 20px;
 }
 
 .event-title {
   color: white;
+  text-shadow: 1px 1px 1px black;
 
 }
 
 .event-infos {
   color:#FF744A;
+  text-shadow: 1px 1px 1px black;
 }
 
 .body-all-venue {
   color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.search_form {
+  border-radius: 20px;
+  margin: 30px auto;
+  width: 360px;
+  height: 400px;
+  padding: 20px;
+}
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }

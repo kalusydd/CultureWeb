@@ -14,3 +14,23 @@
 .btn-ghost:hover {
   opacity: 2;
 }
+
+.btn-ghost-orange {
+  color: #FF744A;
+  border: 3px solid #FF744A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: medium;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 10px;
+  margin-left: 300px;
+  position: fixed;
+  z-index: 100;
+  text-shadow: 2px 2px 2px black;
+}
+
+.btn-ghost:hover {
+  opacity: 2;
+}
