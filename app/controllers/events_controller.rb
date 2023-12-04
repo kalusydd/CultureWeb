@@ -64,7 +64,7 @@ class EventsController < ApplicationController
     {
       lat: event.latitude,
       lng: event.longitude,
-      info_window_index_html: render_to_string(partial: "info_window_index", locals: {event: event})
+      info_window_index_html: render_to_string(partial: "info_window_index", locals: {event: event}),
     }
     end
   end
