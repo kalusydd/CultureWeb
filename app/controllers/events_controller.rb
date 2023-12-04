@@ -25,7 +25,8 @@ class EventsController < ApplicationController
 
   def show
     @booking = Booking.new
-    @marker = [{ lat: @event.latitude, lng: @event.longitude }]
+    @marker = [{ lat: @event.latitude, lng: @event.longitude,
+    info_window_event_html: render_to_string(partial: "info_window_event", locals: {event: @event}) }]
   end
 
   def new
@@ -68,6 +69,7 @@ class EventsController < ApplicationController
     {
       lat: event.latitude,
       lng: event.longitude,
+      info_window_index_html: render_to_string(partial: "info_window_index", locals: {event: event}),
     }
     end
   end
