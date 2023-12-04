@@ -6,6 +6,17 @@
   height: auto;
   }
 
+
+.event-background-two {
+  background: rgb(255,116,74);
+  background: linear-gradient(0deg, rgba(255,116,74,1) 0%, rgba(255,116,74,0) 100%);
+}
+
+.event-background-three {
+background: rgb(255,116,74);
+background: linear-gradient(0deg, rgba(255,116,74,0) 34%, rgba(155,71,169,1) 76%);
+}
+
 .event-card {
   background-size: cover;
   background-position: center;

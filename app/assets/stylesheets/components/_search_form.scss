@@ -3,9 +3,26 @@
   padding: 10px;
   background-color: white;
   border-radius: 10px;
+  width: 100%;
+
 
   .form-control {
     padding: 10px;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+
   }
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color:  #FF744A;;
+  color: var(--bs-modal-color);
+  pointer-events: auto;
+  background-clip: padding-box;
+  border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+  border-radius: 20px;
+  outline: 0;
 }
