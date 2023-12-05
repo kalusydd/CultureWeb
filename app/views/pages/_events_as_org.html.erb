@@ -1,7 +1,10 @@
 <h3>Upcoming events I've organised</h3>
-<% @events_as_org.each do |event| %>
+
+<div class= "my-bookings">
+  <% @events_as_org.each do |event| %>
   <h3><%=link_to event.title, event_path(event)%></h3>
   <p><strong><%=event.date%></strong> // <%=event.time%></p>
   <p><%= event.venue_name %></p>
   <p><%= event.attendees %></p>
 <% end %>
+</div>
