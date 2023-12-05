@@ -73,7 +73,7 @@ data-controller="headline" data-headline-name-value="<%= current_user.username %
         </label>
       </div>
 
-      <div data-toggle-target="list">
+      <div class="events-list" data-toggle-target="list">
         <% @events.each do |event| %>
           <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
             <div class="event-title">
@@ -87,7 +87,7 @@ data-controller="headline" data-headline-name-value="<%= current_user.username %
         <% end %>
       </div>
 
-      <div data-toggle-target="map">
+      <div class="mapbox" data-toggle-target="map">
         <%= render "index_map" %>
       </div>
     </div>

@@ -1,6 +1,8 @@
 .toggle {
-  display: flex;
-  justify-content: center;
+  display: block;
+  position: fixed;
+  margin-top: -70px;
+  margin-left: 160px;
 }
 
 .switch {
