@@ -51,6 +51,7 @@ data-controller="headline" data-headline-name-value="<%= current_user.username %
           </div>
         <% end %>
       </fieldset>
+    <%= submit_tag "Search", class: "btn btn-ghost-orange-search" %>
     <% end %>
   </div>
 
@@ -59,45 +60,37 @@ data-controller="headline" data-headline-name-value="<%= current_user.username %
       </div>
     </div>
   </div>
-</div>
+</div>   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="toggle" data-controller="toggle_controller">
-    <label class="switch">
-      <input type="checkbox" id="togBtn">
-      <div class="slider round">
-        <span class="list">LIST</span>
-        <span class="map">MAP</span>
+    <div data-controller="toggle">
+      <div class="toggle">
+        <label class="switch">
+          <input type="checkbox" id="togBtn" data-action="click->toggle#checked">
+            <div class="slider round">
+              <span class="list">LIST</span>
+              <span class="map">MAP</span>
+            </div>
+        </label>
       </div>
-  </label>
-  </div>
 
-
-
-    <% @events.each do |event| %>
-    <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
-      <div class="event-title">
-        <h3 class="h3"><%= link_to event.title, event_path(event) %></h3>
+      <div data-toggle-target="list">
+        <% @events.each do |event| %>
+          <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
+            <div class="event-title">
+              <h3 class="h3"><%= event.title %></h3>
+            </div>
+            <div class="event-infos">
+              <p class="body-all"><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
+              <p class="body-all-venue"><%= event.venue_name %></p>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <div class="event-infos">
-        <p class="body-all"><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
-        <p class="body-all-venue"><%= event.venue_name %></p>
+
+      <div data-toggle-target="map">
+        <%= render "index_map" %>
       </div>
     </div>
-    <% end %>
-    <%= render "index_map" %>
+
+  </div>
 </div>
