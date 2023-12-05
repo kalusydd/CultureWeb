@@ -1,10 +1,51 @@
-<h1>Let's talk!</h1>
-<h3>About events I will be attending ✨:</h3>
-<% @bookings_as_attendee.each do |booking| %>
-  <h4><%=link_to "💬 #{booking.event.title}", event_chatroom_path(booking.event.id, booking.event.chatroom.id)%></h4>
-<% end %>
+<div class="chat-dashboard-background">
+  <div data-controller="headline" data-headline-talk-value="Let's talk about events I'm...">
+    <h1 class="header-all"></h1>
+  </div>
 
-<h3>About events I am organizing ✨:</h3>
-<% @events_as_org.each do |event| %>
-  <h4><%=link_to "💬 #{event.title}", event_chatroom_path(event.id, event.chatroom.id)%></h4>
-<% end %>
+  <div class="chatroom-list">
+    <div data-controller="toggle">
+      <div class="chat-toggle">
+        <label class="chat-switch">
+          <input type="checkbox" id="togBtn" data-action="click->toggle#chat_checked">
+            <div class="chat-slider round">
+              <span class="attending">attending</span>
+              <span class="organising">organising</span>
+            </div>
+        </label>
+      </div>
+
+      <div class="attendee-chat-list" data-toggle-target="attending">
+        <h1>...about events I'm attending:</h1>
+        <% if @bookings_as_attendee.exists? %>
+          <% @bookings_as_attendee.each do |booking| %>
+            <div class="chatroom-card">
+              <h3><u><%=link_to "#{booking.event.title}", event_chatroom_path(booking.event.id, booking.event.chatroom.id)%></u></h3>
+              <p><%= booking.event.date.strftime('%a. %e %b')%></p>
+            </div>
+          <% end %>
+        <% else %>
+          <p>You aren't attending any upcoming events (yet 😉) - check out events near you <%= link_to "here", root_path%></p>
+        <% end %>
+      </div>
+
+      <div class="org-chat-list" data-toggle-target="organising">
+        <h1>...about events I'm organizing:</h1>
+        <% @events_as_org.each do |event| %>
+          <div class="chatroom-card">
+            <div class="row">
+              <div class="col-9">
+                <h3><u><%=link_to "#{event.title}", event_chatroom_path(event.id, event.chatroom.id)%></u></h3>
+              </div>
+              <div class="col-3" style="display: flex; justify-content: flex-end;">
+                <h3><i class="fa-regular fa-user"></i> <%= event.attendees %><h3>
+              </div>
+            </div>
+            <p><%= event.date.strftime('%a. %e %b')%></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
