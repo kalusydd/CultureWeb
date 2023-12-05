@@ -20,50 +20,6 @@ data-controller="headline" data-headline-name-value="<%= current_user.username %
       </div>
       <div class="modal-body">
 
-        <div class="search_form">
-          <%= form_with url: root_path, method: :get do |form| %>
-            <%= text_field_tag :query, params[:query],
-                              class: "form-control",
-                              placeholder: "I'm looking for..." %>
-            <%= text_field_tag :location, params[:location],
-                              class: "form-control",
-                              placeholder: "Location" %>
-            <%= form.date_field :date, value: params[:date], class: "form-control", placeholder: "Select a date" %>
-            <fieldset>
-              <% Category.all.each do |category| %>
-                <div class="tag-item">
-                  <%= check_box_tag "category_ids[]", category.id, params[:category_ids]&.include?(category.id), id: "category_#{category.id}", class: "tag-selector form-control" %>
-                  <%= label_tag "category_#{category.id}" do %>
-                    <%= content_tag(:i, '', class: category.icon) %> <%= category.name %>
-                  <% end %>
-                </div>
-              <% end %>
-            </fieldset>
-            <%= submit_tag "Search", class: "btn btn-ghost-orange-search" %>
-          <% end %>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <div class="search_form">
     <%= form_with url: root_path, method: :get do |form| %>
       <%= text_field_tag :query, params[:query],
@@ -97,6 +53,28 @@ data-controller="headline" data-headline-name-value="<%= current_user.username %
       </fieldset>
     <% end %>
   </div>
+
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <div class="toggle" data-controller="toggle_controller">
       <button class="btn-ghost-neutral-list">LIST</button><button class="btn-ghost-neutral-map">MAP</button>
