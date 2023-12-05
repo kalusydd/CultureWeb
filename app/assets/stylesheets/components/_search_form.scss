@@ -1,28 +1,83 @@
 .search_form {
-  margin: 10px;
   padding: 10px;
-  background-color: white;
+  background-color:  #FF744A;
   border-radius: 10px;
   width: 100%;
 
-
-  .form-control {
-    padding: 10px;
-    margin-bottom: 10px;
-
-  }
 }
 
+.form-control {
+  background-color:  #FF744A;
+  border-radius: 10px;
+  background-color: white;
+  margin: 10px auto;
+  color:  #FF744A;
+
+
+}
 .modal-content {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color:  #FF744A;;
+  background-color:  #FF744A;
   color: var(--bs-modal-color);
   pointer-events: auto;
   background-clip: padding-box;
   border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
   border-radius: 20px;
   outline: 0;
+}
+
+
+
+.btn-ghost-orange-search {
+  color: #FF744A;;
+  border: 3px solid #ffffff;
+  background-color:   #ffffff;
+  border-radius: 50px;
+  font-weight: medium;
+  transition: opacity 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+
+}
+
+.btn-ghost:hover {
+  opacity: 2;
+}
+
+
+// This is for category pills
+.tag-item {
+  display: inline-block;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #ffffff;
+  color: #FF744A;
+  border: 1px solid #FF744A;
+  // margin-right: 0.6rem;
+  // margin-bottom: 0.4rem;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.tag-selector:checked + label {
+  background-color:  #FF744A;
+  color: white;
+}
+
+price {
+  color: white;
 }
