@@ -1,33 +1,47 @@
-<%= render "show_page_image" %>
-<p><%= @event.date.day%>.<%= @event.date.month%>.<%= @event.date.year%>  <%= @event.time.hour %>:<%= @event.time.min %></p>
-<p>Capacity: <%= @event.capacity %></p>
-<p>EVENT</p>
-<h1><%= @event.title %></h1>
-<p>What to excepect: <%= @event.description %></p>
-<p>Price: <%= @event.price%> €</p>
-<p>Accessibilty: </p>
-<% if @event.categories.length == 1 %>
-  <p><i class="<%=@event.categories.first.icon%>"></i> <%= @event.categories.first.name %></p>
-<% else %>
-  <% @event.categories.each do |category| %>
-    <p><i class="<%=category.icon%>"></i> <%= category.name %></p>
-  <% end %>
-<% end %>
-<p>So far, <strong><%= @event.attendees %></strong> people are attending this event</p>
-<p>ORGANISER</p>
-<h3><%= @event.user.username %></h3>
-<p><%= @event.user.bio %></p>
-<p>VENUE</p>
-<p><strong><%= @event.venue_name %></strong></p>
-<p><%= @event.venue_address %></p>
-<%= render "show_map" %>
+<div class="show-background">
+  <%= render "show_page_image" %>
+  <p><%= @event.date.day%>.<%= @event.date.month%>.<%= @event.date.year%>  <%= @event.time.hour %>:<%= @event.time.min %></p>
+  <div class="infos">
+    <div class="event_info">
+      <div class="row">
+        <div class="col-9">
+          <h3><u><%= @event.title %></u></h3>
+        </div>
+        <div class="col-3">
+          <h3><i class="fa-regular fa-user"></i> <%= @event.capacity %></h3>
+        </div>
+      </div>
+      <p>What to excepect: <%= @event.description %></p>
+      <div>
+        <% @event.categories.each do |category| %>
+          <span class="category_display">
+            <i class="<%=category.icon%>"></i> <%= category.name %>
+          </span>
+        <% end %>
+      </div>
+      <p>So far, <strong><%= @event.attendees %></strong> people are attending this event</p>
+      <p>Price: <%= @event.price%> €</p>
+    </div>
+    <div class="venue_info">
+      <p><strong><%= @event.venue_name %></strong></p>
+      <p><%= @event.venue_address %></p>
+      <p>Accessibilty: </p>
+    </div>
+    <div class="org_info">
+      <h3><%= @event.user.username %></h3>
+      <p><%= @event.user.bio %></p>
+    </div>
+  </div>
 
-<%= render "show_page_booker_btn" %>
+  <%= render "show_map" %>
 
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
+  <%= render "show_page_booker_btn" %>
+
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+</div>

@@ -3,18 +3,23 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    if params[:query].present?
-      @events = Event.search_by_title_and_description(params[:query])
+    @events = Event.search_by_title_and_description(params[:query]) if params[:query].present?
+    @events = @events.near(params[:location], 2) if params[:location].present?
+    @events = @events.where(date: params[:date]) if params[:date].present?
+    case params[:capacity]
+    when "ALL"
+      # Do nothing, get all events
+    when "<30"
+      @events = @events.where("capacity < ?", 30)
+    when "30-60"
+      @events = @events.where(capacity: 30..60)
+    when "60+"
+      @events = @events.where("capacity > ?", 60)
     end
-    if params[:location].present?
-      @events = @events.near(params[:location], 5)
+    if params[:price].present? && params[:price] == "1"
+      @events = @events.where(price: 0)
     end
-    if params[:category_ids].present?
-      @events = @events.joins(:categories).where(categories: { id: params[:category_ids] }).distinct
-    end
-    if params[:date].present?
-      @events = @events.where(date: params[:date])
-    end
+    @events = @events.joins(:categories).where(categories: { id: params[:category_ids] }).distinct if params[:category_ids].present?
     map_markers(@events)
   end
 
