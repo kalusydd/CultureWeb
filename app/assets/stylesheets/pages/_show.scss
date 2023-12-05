@@ -3,25 +3,112 @@
   background: rgb(155,71,169);
   background: linear-gradient(0deg, rgba(155,71,169,1) 0%, rgba(255,116,74,1) 51%);
   background-color: $light-orange;
+  padding: 20px;
 
-  .infos {
-    margin: 30px;
-    color: $light-gray;
-    font-family: $body-font;
+  .image_container {
+    position: relative;
+    text-align: left;
+    color: white;
+    margin-bottom: 30px;
 
+    .show_pic {
+      display: block;
+      width: 330px;
+      // margin-left: auto;
+      // margin-right: auto;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
+    .text_overlay {
+      h1 {
+        font-size: 50px;
+        text-shadow: 0 0 5px $light-gray;
+      }
+      position: absolute;
+      top: 10px;
+      left: 30px;
+      color: $violet;
+      margin-left: 10px;
+
+    }
   }
 
-}
+  .buffer {
+    h1 {
+      color: $light-orange;
+    }
+  }
 
-.category-display {
-  display: inline-block;
-  font-size: 0.7rem;
-  border-radius: 50rem;
-  padding: 0.1rem 0.5rem;
-  background-color: #ECEAFF;
-  color: #7E73FF;
-  border: 1px solid #7E73FF;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
+  .infos {
+    margin: 20px;
+    font-family: $body-font;
+
+    .info_heading{
+      color: $dark-gray;
+    }
+
+    p {
+      margin: 2px 0px;
+    }
+
+    .event_info {
+      margin-bottom: 30px;
+      color: $light-gray;
+
+      .category_show_display {
+        display: inline-block;
+        font-size: 0.7rem;
+        border-radius: 50rem;
+        padding: 0.1rem 0.5rem;
+        background-color: $violet;
+        color: $light-gray;
+        border: 1px solid $violet;
+        margin-right: 0.6rem;
+        margin-bottom: 0.4rem;
+      }
+    }
+
+    .venue_info {
+      margin-bottom: 30px;
+      color: $light-gray;
+    }
+
+    .org_info {
+      margin-bottom: 30px;
+      color: $light-gray;
+    }
+  }
+  .show_map {
+    margin-bottom: 30px;
+  }
+
+  .show_buttons_three {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px; /* Adjust the gap between buttons as needed */
+    margin: 0 30px;
+
+    .btn-ghost-neutral:nth-child(1) {
+      grid-column-start: 2;
+      grid-row-start: 1;
+    }
+
+    .btn-ghost-neutral:nth-child(2) {
+      grid-column-start: 1;
+      grid-row-start: 2;
+    }
+
+    .btn-ghost-neutral:nth-child(3) {
+      grid-column-start: 2;
+      grid-row-start: 2;
+    }
+  }
+
+  .show_button_one {
+    margin-left: 30px;
+  }
+
 
 }
