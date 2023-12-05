@@ -1,49 +1,54 @@
 <div class="event-background">
+<div class="event-background-two">
 
-<div data-controller="headline" data-headline-name-value="<%= current_user.username %>">
-    <h1 class="header-all"></h1>
+<div
+data-controller="headline" data-headline-name-value="<%= current_user.username %>">
+  <h1 class="header-all"></h1>
 </div>
-<div>
-  <%= submit_tag "Search", class: "btn btn-ghost-orange" %>
-</div>
 
+<!-- Button to trigger Popup -->
+<button type="button" class="btn btn-ghost-orange-filter" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Filter
+</button>
 
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
+<!-- Popup -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
 
+        <div class="search_form">
+          <%= form_with url: root_path, method: :get do |form| %>
+            <%= text_field_tag :query, params[:query],
+                              class: "form-control",
+                              placeholder: "I'm looking for..." %>
+            <%= text_field_tag :location, params[:location],
+                              class: "form-control",
+                              placeholder: "Location" %>
+            <%= form.date_field :date, value: params[:date], class: "form-control", placeholder: "Select a date" %>
+            <fieldset>
+              <% Category.all.each do |category| %>
+                <div class="tag-item">
+                  <%= check_box_tag "category_ids[]", category.id, params[:category_ids]&.include?(category.id), id: "category_#{category.id}", class: "tag-selector form-control" %>
+                  <%= label_tag "category_#{category.id}" do %>
+                    <%= content_tag(:i, '', class: category.icon) %> <%= category.name %>
+                  <% end %>
+                </div>
+              <% end %>
+            </fieldset>
+            <%= submit_tag "Search", class: "btn btn-ghost-orange-search" %>
+          <% end %>
+        </div>
 
-
-
-<button class="open-button" onclick="openForm()">Open Form</button>
-
-<div class="form-popup" id="myForm">
-  <form action="/action_page.php" class="search_form">
-    <%= form_with url: root_path, method: :get do |form| %>
-      <%= text_field_tag :query, params[:query],
-                        class: "form-control",
-                        placeholder: "I'm looking for..." %>
-      <%= text_field_tag :location, params[:location],
-                        input_html: {data: {address_autocomplete_target: "location"}},
-                        class: "form-control" %>
-                        # placeholder: "Location"
-      <%= form.date_field :date, value: params[:date], class: "form-control", placeholder: "Select a date" %>
-      <fieldset>
-        <% Category.all.each do |category| %>
-          <div class="tag-item">
-            <%= check_box_tag "category_ids[]", category.id, params[:category_ids]&.include?(category.id), id: "category_#{category.id}", class: "tag-selector form-control" %>
-            <%= label_tag "category_#{category.id}" do %>
-              <%= content_tag(:i, '', class: category.icon) %> <%= category.name %>
-            <% end %>
-          </div>
-        <% end %>
-      </fieldset>
-    <% end %>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
   </div>
+</div>
 
 
 
@@ -108,7 +113,7 @@
     <% @events.each do |event| %>
     <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
       <div class="event-title">
-        <h3 class="h3"><%= link_to event.title, event_path(event) %></h3>
+        <h3 class="h3"><%= event.title %></h3>
       </div>
       <div class="event-infos">
         <p class="body-all"><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
