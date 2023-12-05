@@ -3,7 +3,7 @@ class ChatroomsController < ApplicationController
     @event = Event.find(params[:id])
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
-    # redirect_to chatroom_path(@chatroom)
+    #redirect_to event_chatroom_path(@chatroom)
   end
 
   def create
