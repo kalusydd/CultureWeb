@@ -1,95 +1,106 @@
 <div class="event-background">
 <div class="event-background-two">
 
-<div data-controller="headline" data-headline-name-value="<%= current_user.username %>">
-  <h1 class="header-all"></h1>
-</div>
+  <div
+  data-controller="headline" data-headline-name-value="<%= current_user.username %>">
+    <h1 class="header-all"></h1>
+  </div>
 
-<!-- Button to trigger Popup -->
-<button type="button" class="btn btn-ghost-orange-filter" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Filter
-</button>
+  <!-- Button to trigger Popup -->
+  <button type="button" class="btn btn-ghost-orange-filter" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Filter
+  </button>
 
-<!-- Popup -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
+  <!-- Popup -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
-  <div class="search_form">
-    <%= form_with url: root_path, method: :get do |form| %>
-      <%= text_field_tag :query, params[:query],
-                        class: "form-control",
-                        placeholder: "I'm looking for..." %>
-      <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        <%= form.text_field :location, id: "location", placeholder: "Location", class: "d-none",
-                            data: {address_autocomplete_target: "location" }%>
-      </div>
-      <%= form.date_field :date, value: params[:date], placeholder: "Date", class: "form-control", placeholder: "Select a date" %>
-      <div class="row">
-        <div class="col-6">
-          <%= form.label :capacity, "Capacity" %>
-          <%= form.select :capacity, [["All events", "ALL"] ,["Keep it cozy", "<30"], ["I'm feeling social", "30-60"], ["The bigger the better!", "60+"]], selected: "ALL" %>
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="col-3"></div>
-        <div class="col-3">
-          <%= form.check_box :price %>
-          <%= form.label :price, "FREE" %>
-        </div>
-      </div>
-      <fieldset>
-        <% Category.all.each do |category| %>
-          <div class="tag-item">
-            <%= check_box_tag "category_ids[]", category.id, params[:category_ids]&.include?(category.id), id: "category_#{category.id}", class: "tag-selector form-control" %>
-            <%= label_tag "category_#{category.id}" do %>
-              <%= content_tag(:i, '', class: category.icon) %> <%= category.name %>
+
+        <div class="modal-body">
+          <div class="search_form">
+            <%= form_with url: root_path, method: :get do |form| %>
+              <%= text_field_tag :query, params[:query],
+                                class: "form-control",
+                                placeholder: "I'm looking for..." %>
+              <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+                <%= form.text_field :location, id: "location", placeholder: "Location", class: "d-none",
+                                    data: {address_autocomplete_target: "location" }%>
+              </div>
+              <%= form.date_field :date, value: params[:date], placeholder: "Date", class: "form-control", placeholder: "Select a date" %>
+              <div class="row">
+                <div class="col-6">
+                  <%= form.label :capacity, "Capacity" %>
+                  <%= form.select :capacity, [["All events", "ALL"] ,["Keep it cozy", "<30"], ["I'm feeling social", "30-60"], ["The bigger the better!", "60+"]], selected: "ALL" %>
+                </div>
+                <div class="col-3"></div>
+                <div class="col-3">
+                  <%= form.check_box :price %>
+                  <%= form.label :price, "FREE" %>
+                </div>
+              </div>
+              <fieldset>
+                <% Category.all.each do |category| %>
+                  <div class="tag-item">
+                    <%= check_box_tag "category_ids[]", category.id, params[:category_ids]&.include?(category.id), id: "category_#{category.id}", class: "tag-selector form-control" %>
+                    <%= label_tag "category_#{category.id}" do %>
+                      <%= content_tag(:i, '', class: category.icon) %> <%= category.name %>
+                    <% end %>
+                  </div>
+                <% end %>
+              </fieldset>
+            <%= submit_tag "Search", class: "btn btn-ghost-orange-search" %>
             <% end %>
           </div>
-        <% end %>
-      </fieldset>
-    <%= submit_tag "Search", class: "btn btn-ghost-orange-search" %>
-    <% end %>
-  </div>
+        </div>
 
-      </div>
-      <div class="modal-footer">
+        <div class="modal-footer">
+        </div>
+
       </div>
     </div>
   </div>
-</div>
 
 
-    <div data-controller="toggle">
-      <div class="toggle">
-        <label class="switch">
-          <input type="checkbox" id="togBtn" data-action="click->toggle#checked">
-            <div class="slider round">
-              <span class="list">LIST</span>
-              <span class="map">MAP</span>
-            </div>
-        </label>
-      </div>
-
-      <div class="events-list" data-toggle-target="list">
-        <% @events.each do |event| %>
-          <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
-            <div class="event-title">
-              <h3 class="h3"><%= link_to event.title, event_path(event) %></h3>
-            </div>
-            <div class="event-infos">
-              <p class="body-all"><%= event.date.day%>.<%= event.date.month%>.<%= event.date.year%>  <%= event.time.hour %>:<%= event.time.min %></p>
-              <p class="body-all-venue"><%= event.venue_name %></p>
-            </div>
+  <div data-controller="toggle">
+    <div class="toggle">
+      <label class="switch">
+        <input type="checkbox" id="togBtn" data-action="click->toggle#checked">
+          <div class="slider round">
+            <span class="list">List</span>
+            <span class="map">Map</span>
           </div>
-        <% end %>
+      </label>
+    </div>
+
+    <div class="events-list" data-toggle-target="list">
+      <% @events.each do |event| %>
+        <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
+
+          <div class="event-title">
+            <h3 class="h3"><%= link_to event.title, event_path(event) %></h3>
+          </div>
+
+          <div class="event-infos">
+            <p class="body-all"><%= event.date.strftime('%a. %e %b')%>  <%= event.time.strftime('%-l%P').downcase%></p>
+            <p class="body-all-venue"><%= event.venue_name %></p>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+
+      <%# <%= render "index_map" %> %>
+      <div class="mapstyle d-none" data-toggle-target="mapstyle">
+        <div
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        </div>
       </div>
 
-      <div class="mapbox" data-toggle-target="map">
-        <%= render "index_map" %>
-      </div>
-    </div>
-  </div>
+</div>
 </div>

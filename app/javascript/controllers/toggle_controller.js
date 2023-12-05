@@ -2,17 +2,21 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="popup"
 export default class extends Controller {
-  static targets = ["list", "map", "attending", "organising"]
+
+static targets = ["list", "mapstyle", "attending", "organising"]
 
   connect() {
     console.log("hello");
-    console.log(this.mapTarget);
+    // this.mapTarget.style.display = 'none'
   }
 
   checked(event) {
     const isChecked = event.target.checked;
     this.listTarget.style.display = isChecked ? 'none' : 'block';
-    this.mapTarget.style.display = isChecked ? 'block' : 'none';
+    this.mapstyleTarget.classList.toggle("d-none")
+
+    // this.listTarget.classList.toggle("map")
+    // this.mapTarget.classList.toggle("list")
   }
 
   chat_checked(event) {
