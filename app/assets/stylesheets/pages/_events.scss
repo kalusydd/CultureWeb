@@ -26,6 +26,10 @@ background: linear-gradient(0deg, rgba(255,116,74,0) 34%, rgba(155,71,169,1) 76%
   width: 360px;
   height: 400px;
   padding: 20px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .event-title {
