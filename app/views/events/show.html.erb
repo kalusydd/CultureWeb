@@ -5,7 +5,7 @@
     <div class="event_info">
       <div class="row">
         <div class="col-9">
-          <h3><u><%= @event.title %></u></h3>
+          <h3><u><%= link_to @event.title, event_path(@event) %></u></h3>
         </div>
         <div class="col-3">
           <h3><i class="fa-regular fa-user"></i> <%= @event.capacity %></h3>
