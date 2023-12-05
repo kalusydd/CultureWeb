@@ -7,6 +7,8 @@ export default class extends Controller {
     talk: String,
     bookings: String,
     events: String
+
+    talk: String
   }
 
   connect() {

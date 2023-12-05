@@ -2,13 +2,13 @@
   background: rgb(155,71,169);
   min-height: 100%;
   width: 100%;
-  height: auto;
   }
 
 
 .event-background-two {
   background: rgb(255,116,74);
   background: linear-gradient(0deg, rgba(255,116,74,1) 0%, rgba(255,116,74,0) 100%);
+  padding-bottom: 40px;
 }
 
 .event-background-three {
@@ -21,10 +21,14 @@ background: linear-gradient(0deg, rgba(255,116,74,0) 34%, rgba(155,71,169,1) 76%
   background-position: center;
   border-radius: 20px;
   margin: 30px auto;
-
   width: 360px;
   height: 400px;
   padding: 20px;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .event-title {
@@ -54,4 +58,12 @@ background: linear-gradient(0deg, rgba(255,116,74,0) 34%, rgba(155,71,169,1) 76%
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
   background-color: #ddd;
   outline: none;
+}
+
+.events-list {
+  margin-top: 380px;
+}
+
+.mapstyle {
+  margin-top: 380px;
 }
