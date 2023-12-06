@@ -1,5 +1,13 @@
-.map-show .map-index {
+.map-show {
   margin: 0 auto;
+}
+
+.mapboxgl-canvas-container {
+  height: 400px;
+}
+
+.mapbox-canvas {
+  height: 400px !important;
 }
 
 .mapboxgl-popup {
@@ -10,7 +18,9 @@
 .mapboxgl-popup-content {
   text-align: center;
   border-radius: 10px;
-  padding: 16px
+  padding: 16px;
+  background-color: #ff744abf;
+  font-size: 14px;
 }
 
 .mapbox-index-img {
@@ -19,4 +29,14 @@
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+
+.mapstyle {
+  margin: 380px auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  width: 360px;
+  height: 400px;
+  // padding: 20px;
 }

@@ -1,66 +1,67 @@
 .event-background {
   background: rgb(155,71,169);
-  // background: linear-gradient(0deg, rgba(155,71,169,1) 0%, rgba(255,116,74,1) 100%);
   min-height: 100%;
   width: 100%;
-  }
 
 
-.event-background-two {
+  .event-background-two {
   background: rgb(255,116,74);
   background: linear-gradient(0deg, rgba(255,116,74,1) 0%, rgba(255,116,74,0) 100%);
-  padding-bottom: 40px;
-}
+  min-height: 100vh;
+  // padding-bottom: 40px;
 
-.event-background-three {
-background: rgb(255,116,74);
-background: linear-gradient(0deg, rgba(255,116,74,0) 34%, rgba(155,71,169,1) 76%);
-}
+    .event-background-three {
+    background: rgb(255,116,74);
+    background: linear-gradient(0deg, rgba(255,116,74,0) 34%, rgba(155,71,169,1) 76%);
+    }
 
-.event-card {
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  margin: 30px auto;
+    .event-card {
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      margin: 30px auto;
+      width: 360px;
+      height: 400px;
+      padding: 20px;
 
-  width: 360px;
-  height: 400px;
-  padding: 20px;
-}
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
 
-.event-title {
-  color: white;
-  text-shadow: 1px 1px 1px black;
+    .event-title {
+      color: white;
+      text-shadow: 1px 1px 1px black;
 
-}
+    }
 
-.event-infos {
-  color:#FF744A;
-  text-shadow: 1px 1px 1px black;
-}
+    .event-infos {
+      color:#FF744A;
+      text-shadow: 1px 1px 1px black;
+    }
 
-.body-all-venue {
-  color: white;
-  text-shadow: 1px 1px 1px black;
-}
+    .body-all-venue {
+      color: white;
+      text-shadow: 1px 1px 1px black;
+    }
 
-.search_form {
-  border-radius: 20px;
-  margin: 30px auto;
-  width: 360px;
-  height: 400px;
-  padding: 20px;
-}
+    .search_form {
+      border-radius: 20px;
+      margin: 30px auto;
+      width: 360px;
+      height: 400px;
+      padding: 20px;
+    }
 
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
+    .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
 
-.events-list {
-  margin-top: 380px;
-}
+    .events-list {
+      margin-top: 380px;
+    }
 
-.mapbox {
-  margin-top: 380px;
+  }
 }
