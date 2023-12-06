@@ -1,13 +1,15 @@
 .event-background {
   background: rgb(155,71,169);
   min-height: 100%;
-  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
 
 
   .event-background-two {
   background: rgb(255,116,74);
   background: linear-gradient(0deg, rgba(255,116,74,1) 0%, rgba(255,116,74,0) 100%);
   min-height: 100vh;
+  min-width: 100vw;
   // padding-bottom: 40px;
 
     .event-background-three {
@@ -60,7 +62,7 @@
     }
 
     .events-list {
-      margin-top: 380px;
+      margin-top: 45px;
     }
 
     .no-match {

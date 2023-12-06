@@ -14,6 +14,7 @@ export default class extends Controller {
 
   connect() {
     const headerElement = this.element.querySelector('.header-all');
+    const headertwoElement = this.element.querySelector('.htwo');
 
     if (this.hasNameValue) {
       this.activateTyped(headerElement, `Hey ${this.nameValue},<br>wanna do some<br>culture?`);
@@ -23,6 +24,8 @@ export default class extends Controller {
       this.activateTyped(headerElement, this.bookingsValue);
     } else if (this.hasEventsValue) {
       this.activateTyped(headerElement, this.eventsValue);
+    } else if (this.hasChatValue) {
+      this.activateTyped(headertwoElement, this.chatValue);
     } else if (this.hasNewValue) {
       this.activateTyped(headerElement, this.newValue);
     } else if (this.hasEditValue) {

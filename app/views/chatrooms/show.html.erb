@@ -3,7 +3,9 @@
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 >
   <div class="flex-grow-1 align-content-start chat-title" >
-    <h2>About: <%= @chatroom.event.title %></h2>
+    <div data-controller="headline" data-headline-chat-value="About joining <%= @chatroom.event.title %>...">
+    <h2 class="htwo"></h2>
+  </div>
   </div>
 
   <div class="messages" data-chatroom-subscription-target="messages">
@@ -12,18 +14,18 @@
     <% end %>
   </div>
 
+<div class="chat-form">
   <%= simple_form_for [@event, @chatroom, @message],
-    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
+    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "chat-form"} do |f|
   %>
     <%= f.input :content,
       label: false,
       placeholder: "Message ##{@chatroom.event.title}",
-      wrapper_html: {class: "flex-grow-1 align-content-end"}
+      wrapper_html: {class: "chat-typing-box"},
+      input_html: {class: "chat-input-box", }
     %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+    <%= f.submit "Send", class: "chat-btn" %>
   <% end %>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
+</div>
+
 </div>
