@@ -6,8 +6,7 @@ export default class extends Controller {
     name: String,
     talk: String,
     bookings: String,
-    events: String
-
+    events: String,
     talk: String
   }
 
