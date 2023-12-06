@@ -34,12 +34,6 @@
     }
   }
 
-  .buffer {
-    h1 {
-      color: $light-orange;
-    }
-  }
-
   .infos {
     margin: 20px;
     font-family: $body-font;
@@ -50,6 +44,7 @@
 
     p {
       margin: 2px 0px;
+      text-align: justify;
     }
 
     .event_info {
@@ -79,8 +74,17 @@
       color: $light-gray;
     }
   }
-  .show_map {
-    margin-bottom: 30px;
+  .show-map {
+    margin: 0 auto 30px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 330px;
+    height: auto;
+  }
+
+  .show-buttons {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .show_buttons_three {
