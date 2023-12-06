@@ -1,49 +1,50 @@
 <div class="show-background">
-  <%= render "show_page_image" %>
-  <p><%= @event.date.day%>.<%= @event.date.month%>.<%= @event.date.year%>  <%= @event.time.hour %>:<%= @event.time.min %></p>
+  <div class="image_container">
+    <%= render "show_page_image" %>
+    <div class="text_overlay">
+      <h1><strong><%=@event.date.strftime('%a. %e %b')%>,</strong></h1>
+      <h1><strong><%= @event.time.strftime('%-l%P').downcase %></strong></h1>
+    </div>
+  </div>
   <div class="infos">
     <div class="event_info">
+      <p class="info_heading">EVENT</p>
       <div class="row">
         <div class="col-9">
-          <h3><u><%= link_to @event.title, event_path(@event) %></u></h3>
+          <h3><u><%= @event.title %></u></h3>
         </div>
-        <div class="col-3">
+        <div class="col-3" style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
           <h3><i class="fa-regular fa-user"></i> <%= @event.capacity %></h3>
+          <p><%= @event.price%> €</p>
         </div>
       </div>
       <p>What to excepect: <%= @event.description %></p>
       <div>
         <% @event.categories.each do |category| %>
-          <span class="category_display">
+          <span class="category_show_display">
             <i class="<%=category.icon%>"></i> <%= category.name %>
           </span>
         <% end %>
       </div>
       <p>So far, <strong><%= @event.attendees %></strong> people are attending this event</p>
-      <p>Price: <%= @event.price%> €</p>
-    </div>
-    <div class="venue_info">
-      <p><strong><%= @event.venue_name %></strong></p>
-      <p><%= @event.venue_address %></p>
-      <p>Accessibilty: </p>
     </div>
     <div class="org_info">
-      <h3><%= @event.user.username %></h3>
+      <p class="info_heading">ORGANISER</p>
+      <h3><u><%= @event.user.username %></u></h3>
       <p><%= @event.user.bio %></p>
+    </div>
+    <div class="venue_info">
+      <p class="info_heading">VENUE</p>
+      <h3><u><%= @event.venue_name %></u></h3>
+      <p><%= @event.venue_address %></p>
+      <!--<p>Accessibilty: </p>-->
     </div>
   </div>
 
-  <%= render "show_map" %>
-
-  <%= render "show_page_booker_btn" %>
-
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-  <h1>...</h1>
-
+  <div class="show-map">
+    <%= render "show_map" %>
+  </div>
+  <div class="show-buttons">
+    <%= render "show_page_booker_btn" %>
+  </div>
 </div>

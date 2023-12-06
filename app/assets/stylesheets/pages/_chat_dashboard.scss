@@ -1,0 +1,54 @@
+.chat-dashboard-background {
+  background-color: $dark-gray;
+  color: $light-gray;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 20px;
+
+  .toggle-row {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .chat-toggle {
+    position: relative;
+    display: inline;
+    left: 71%;
+    top: 53px;
+  }
+
+  h1 {
+    margin: 10px 10px 20px 10px;
+  }
+
+  a {
+    color: $light-gray;
+    text-decoration: none;
+  }
+
+  .attendee-chat-list {
+
+    h1 {
+      color: $light-orange;
+      font-weight: bolder;
+    }
+  }
+
+  .org-chat-list {
+    h1 {
+      color: $light-orange;
+      font-weight: bolder;
+    }
+  }
+
+  .chatroom-card {
+    background-color: rgba($violet, 0.8);
+    margin: 15px auto;
+    padding: 10px 15px;
+    border-radius: 10px;
+
+    p {
+      margin-bottom: 5px;
+    }
+  }
+}

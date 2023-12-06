@@ -1,13 +1,21 @@
 <% if (@event.user != current_user) && (!(@event.bookings.select { |booking| booking.user == current_user }.empty?)) %>
-  <button class="btn btn-warning">Attending</button>
-  <%= link_to "Let's talk!", event_chatroom_path(@event.id, @event.chatroom.id), class:"btn btn-primary" %>
-  <%= link_to "View my bookings", dashboard_path(@event.id, @event.chatroom.id), class:"btn btn-primary" %>
+  <div class="show_buttons_three">
+    <%= link_to "Let's talk!", event_chatroom_path(@event.id, @event.chatroom.id), class:"btn-ghost-neutral" %>
+    <button class="btn-orange">Attending</button>
+    <%= link_to "My bookings", dashboard_path(@event.id, @event.chatroom.id), class:"btn-ghost-neutral" %>
+  </div>
 <% elsif @event.user == current_user %>
-  <%= link_to "Delete event", event_path(@event.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this event?"}, class:"btn btn-primary" %>
-  <%= link_to "Edit event", edit_event_path(@event.id), class:"btn btn-primary" %>
-  <%= link_to "Let's talk!", event_chatroom_path(@event.id, @event.chatroom.id), class:"btn btn-primary" %>
+  <div class="show_buttons_three">
+    <%= link_to "Delete event", event_path(@event.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this event?"}, class:"btn-ghost-neutral" %>
+    <%= link_to "Edit event", edit_event_path(@event.id), class:"btn-ghost-neutral" %>
+    <%= link_to "Let's talk!", event_chatroom_path(@event.id, @event.chatroom.id), class:"btn-ghost-neutral" %>
+  </div>
 <% elsif (@event.user != current_user) && (@event.attendees == @event.capacity) %>
-  <button class="btn btn-warning">Join the waiting list</button>
+  <div class="show_button_one">
+    <button class="btn-ghost-neutral">Join the waiting list</button>
+  </div>
 <% elsif @event.user != current_user %>
-  <%= link_to "I'm going!", event_bookings_path(@event.id), class:"btn btn-primary", data: {turbo_method: :post} %>
+<div class="show_button_one">
+  <%= link_to "I'm going!", event_bookings_path(@event.id), class:"btn-ghost-neutral", data: {turbo_method: :post} %>
+</div>
 <% end %>

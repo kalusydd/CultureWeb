@@ -2,28 +2,28 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 >
-<div class="flex-grow-1 align-content-start chat-title" >
-  <h2>About: <%= @chatroom.event.title %></h2>
-</div>
-
-  <div class="messages" data-chatroom-subscription-target="messages">
-  <% @chatroom.messages.each do |message| %>
-    <%= render "messages/message", message: message %>
-  <% end %>
+  <div class="flex-grow-1 align-content-start chat-title" >
+    <h2>About: <%= @chatroom.event.title %></h2>
   </div>
 
-<%= simple_form_for [@event, @chatroom, @message],
-  html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
-%>
-  <%= f.input :content,
-    label: false,
-    placeholder: "Message ##{@chatroom.event.title}",
-    wrapper_html: {class: "flex-grow-1 align-content-end"}
+  <div class="messages" data-chatroom-subscription-target="messages">
+    <% @chatroom.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+
+  <%= simple_form_for [@event, @chatroom, @message],
+    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
   %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-<% end %>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Message ##{@chatroom.event.title}",
+      wrapper_html: {class: "flex-grow-1 align-content-end"}
+    %>
+    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+  <% end %>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
+  <h1>...</h1>
 </div>

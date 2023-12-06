@@ -1,6 +1,12 @@
-.toggle {
-  display: flex;
-  justify-content: center;
+// .toggle {
+//   height: 400px;
+// }
+
+.toggle-btn {
+  display: block;
+  position: fixed;
+  margin-top: -70px;
+  margin-left: 160px;
 }
 
 .switch {
@@ -59,7 +65,7 @@ input:checked + .slider:before {
 {
   color: $light-orange;
   position: absolute;
-  transform: translate(-135%,-50%);
+  transform: translate(-140%,-50%);
   top: 50%;
   left: 65%;
   font-size: 16px;
