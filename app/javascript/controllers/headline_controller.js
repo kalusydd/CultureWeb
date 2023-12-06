@@ -7,11 +7,13 @@ export default class extends Controller {
     talk: String,
     bookings: String,
     events: String,
-    talk: String
+    talk: String,
+    chat: String
   }
 
   connect() {
     const headerElement = this.element.querySelector('.header-all');
+    const headertwoElement = this.element.querySelector('.htwo');
 
     if (this.hasNameValue) {
       this.activateTyped(headerElement, `Hey ${this.nameValue},<br>wanna do some<br>culture?`);
@@ -21,6 +23,8 @@ export default class extends Controller {
       this.activateTyped(headerElement, this.bookingsValue);
     } else if (this.hasEventsValue) {
       this.activateTyped(headerElement, this.eventsValue);
+    } else if (this.hasChatValue) {
+      this.activateTyped(headertwoElement, this.chatValue);
     }
   }
 

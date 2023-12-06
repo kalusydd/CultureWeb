@@ -13,7 +13,7 @@
     padding: 1rem;
     position: fixed;
     color: white;
-    background-color: $light-orange;
+    background-color: $violet;
   }
 
   .messages {
@@ -30,8 +30,29 @@
       margin-bottom: 0;
     }
   }
+
+  .chat-btn {
+    color: #ffffff;
+    border: 3px solid #FF744A;
+    background-color:  #FF744A;
+    padding: 5px 27px;
+    border-radius: 50px;
+    font-weight: medium;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 310px;
+    margin-left: 35px;
+    position: fixed;
+    z-index: 100;
+  }
 }
 
 .chat-title {
   margin-bottom: 100px;
+}
+
+.chatform {
+  display: flex;
+  justify-content: baseline;
 }

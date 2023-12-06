@@ -3,7 +3,9 @@
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 >
   <div class="flex-grow-1 align-content-start chat-title" >
-    <h2>About: <%= @chatroom.event.title %></h2>
+    <div data-controller="headline" data-headline-chat-value="About joining <%= @chatroom.event.title %>...">
+    <h2 class="htwo"></h2>
+  </div>
   </div>
 
   <div class="messages" data-chatroom-subscription-target="messages">
@@ -20,6 +22,7 @@
       placeholder: "Message ##{@chatroom.event.title}",
       wrapper_html: {class: "flex-grow-1 align-content-end"}
     %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+    <%= f.submit "Send", class: "chat-btn" %>
   <% end %>
 </div>
+ 
