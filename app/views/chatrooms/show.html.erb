@@ -14,15 +14,18 @@
     <% end %>
   </div>
 
+<div class="chat-form">
   <%= simple_form_for [@event, @chatroom, @message],
-    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
+    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "chat-form"} do |f|
   %>
     <%= f.input :content,
       label: false,
       placeholder: "Message ##{@chatroom.event.title}",
-      wrapper_html: {class: "flex-grow-1 align-content-end"}
+      wrapper_html: {class: "chat-typing-box"},
+      input_html: {class: "chat-input-box", }
     %>
     <%= f.submit "Send", class: "chat-btn" %>
   <% end %>
 </div>
- 
+
+</div>
