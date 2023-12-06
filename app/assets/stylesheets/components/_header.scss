@@ -2,13 +2,16 @@
   font-family: $headers-font;
   font-weight: 900;
   font-size: 55px;
-  margin: 35px;
-  position: fixed;
+  margin: 35PX;
   z-index: 100;
   line-height: 55px;
   color: #FF744A;
   text-shadow: 2px 2px 2px black;
 
+}
+
+.typed-cursor {
+  color: transparent;
 }
 
 .h3 {
