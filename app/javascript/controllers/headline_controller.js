@@ -9,7 +9,8 @@ export default class extends Controller {
     events: String,
     talk: String,
     new: String,
-    edit: String
+    edit: String,
+    chat: String
   }
 
   connect() {
