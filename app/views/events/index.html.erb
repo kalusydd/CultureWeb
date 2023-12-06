@@ -20,24 +20,28 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
-        <div class="modal-body">
-          <div class="search_form">
+        <div class="modal-body" data-controller="search-form">
+          <div class="search-form" data-search-form-target="form">
             <%= form_with url: root_path, method: :get do |form| %>
+            <div class="reset">
+              <%= button_tag 'Reset', class: "reset-btn", :type => 'reset' %>
+            </div>
               <%= text_field_tag :query, params[:query],
                                 class: "form-control",
                                 placeholder: "I'm looking for..." %>
-              <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+              <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="search-text">
+                <%= form.label :location, "Location:" %>
                 <%= form.text_field :location, id: "location", placeholder: "Location", class: "d-none",
                                     data: {address_autocomplete_target: "location" }%>
               </div>
               <%= form.date_field :date, value: params[:date], placeholder: "Date", class: "form-control", placeholder: "Select a date" %>
               <div class="row">
-                <div class="col-6">
+                <div class="col-6 search-text">
                   <%= form.label :capacity, "Capacity" %>
                   <%= form.select :capacity, [["All events", "ALL"] ,["Keep it cozy", "<30"], ["I'm feeling social", "30-60"], ["The bigger the better!", "60+"]], selected: "ALL" %>
                 </div>
                 <div class="col-3"></div>
-                <div class="col-3">
+                <div class="col-3 search-text">
                   <%= form.check_box :price %>
                   <%= form.label :price, "FREE" %>
                 </div>
@@ -52,8 +56,10 @@
                   </div>
                 <% end %>
               </fieldset>
-            <%= submit_tag "Search", class: "btn btn-ghost-orange-search" %>
+              <%= form.submit "Search", class: "btn btn-ghost-orange-search", data: { action: "click->search-form#submit" } %>
+              <!--<%= submit_tag "Search", class: "btn btn-ghost-orange-search" %>-->
             <% end %>
+
           </div>
         </div>
 
@@ -65,43 +71,49 @@
   </div>
 
 
-  <div class="toggle" data-controller="toggle">
-    <div class="toggle-btn">
-      <label class="switch">
-        <input type="checkbox" id="togBtn" data-action="click->toggle#checked">
-          <div class="slider round">
-            <span class="list">List</span>
-            <span class="map">Map</span>
-          </div>
-      </label>
+  <% if @events.empty? %>
+    <div class="no-match">
+      <h4>No events match your search, but fear not! We have plenty of other cool events for you to check out <u><%= link_to "HERE", root_path %></u></h4>
     </div>
+  <% else %>
+    <div class="toggle" data-controller="toggle">
+      <div class="toggle-btn">
+        <label class="switch">
+          <input type="checkbox" id="togBtn" data-action="click->toggle#checked">
+            <div class="slider round">
+              <span class="list">List</span>
+              <span class="map">Map</span>
+            </div>
+        </label>
+      </div>
 
-    <div class="events-list" data-toggle-target="list">
-      <% @events.each do |event| %>
-        <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
+      <div class="events-list" data-toggle-target="list">
+        <% @events.each do |event| %>
+          <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
 
-          <div class="event-title">
-            <h3 class="h3"><%= link_to event.title, event_path(event) %></h3>
+            <div class="event-title">
+              <h3 class="h3"><%= link_to event.title, event_path(event) %></h3>
+            </div>
+
+            <div class="event-infos">
+              <p class="body-all"><%= event.date.strftime('%a. %e %b')%>  <%= event.time.strftime('%-l%P').downcase%></p>
+              <p class="body-all-venue"><%= event.venue_name %></p>
+            </div>
+
           </div>
+        <% end %>
+      </div>
 
-          <div class="event-infos">
-            <p class="body-all"><%= event.date.strftime('%a. %e %b')%>  <%= event.time.strftime('%-l%P').downcase%></p>
-            <p class="body-all-venue"><%= event.venue_name %></p>
-          </div>
-
+      <div class="d-none" data-toggle-target="mapbox" style="height: 400px">
+        <div>
+          <div class="mapstyle"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
-      <% end %>
-    </div>
-
-    <div class="d-none" data-toggle-target="mapbox" style="height: 400px">
-      <div>
-        <div class="mapstyle"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       </div>
     </div>
-  </div>
+  <% end %>
 
 </div>
 </div>

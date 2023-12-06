@@ -1,11 +1,3 @@
-.search_form {
-  padding: 10px;
-  background-color:  #FF744A;
-  border-radius: 10px;
-  width: 100%;
-
-}
-
 .form-control {
   background-color:  #FF744A;
   border-radius: 10px;
@@ -27,8 +19,26 @@
   border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
   border-radius: 20px;
   outline: 0;
+
+  .search-text {
+    color: white;
+  }
 }
 
+.reset {
+  display: flex;
+  justify-content: flex-end;
+}
+.reset-btn {
+  color: #FF744A;;
+  border: 3px solid #ffffff;
+  background-color:   #ffffff;
+  border-radius: 50px;
+  font-weight: medium;
+  transition: opacity 0.3s ease;
+  margin-top: 20px;
+  width: 33%;
+}
 
 
 .btn-ghost-orange-search {
