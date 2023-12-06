@@ -43,6 +43,7 @@
   flex-direction: column;
   background-color: $dark-gray;
   align-items: flex-end;
+  width: 100vw;
 }
 
 .chat-btn {
@@ -63,6 +64,7 @@
 .chat-input-box {
   background-color: $dark-gray;
   width: 90vw;
+  justify-content: center;
 }
 
 .chat-typing-box {
