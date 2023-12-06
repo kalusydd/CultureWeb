@@ -1,104 +1,20 @@
 .chat-dashboard-background {
   background-color: $dark-gray;
   color: $light-gray;
-  height: 2000px;
+  min-height: 100vh;
+  min-width: 100vw;
   padding: 20px;
 
+  .toggle-row {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .chat-toggle {
-    display: block;
-    position: fixed;
-    margin-top: 50px;
-    margin-left: 160px;
-  }
-
-  .chat-switch {
     position: relative;
-    display: inline-block;
-    width: 180px;
-    height: 40px;
-  }
-
-  .chat-switch input {
-    display:none;
-  }
-
-  .chat-slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border: 3px solid $light-orange;
-    background-color: rgba(255, 255, 255, 0);
-  }
-
-  .chat-slider:before {
-    position: absolute;
-    content: "";
-    height: 34px;
-    width: 34px;
-    -webkit-transition: .4s;
-    transition: .4s;
-    background-color: $light-orange;
-  }
-
-  input:checked + .chat-slider {
-    background-color: $light-gray;
-  }
-
-  input:focus + .chat-slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-
-  input:checked + .chat-slider:before {
-    -webkit-transform: translateX(55px);
-    -ms-transform: translateX(55px);
-    transform: translateX(60px);
-  }
-
-  .attending {
-  color: $light-orange;
-  position: absolute;
-  transform: translate(-160%,-50%);
-  top: 50%;
-  left: 65%;
-  font-size: 16px;
-  }
-
-  .organising {
-  color: $light-orange;
-  position: absolute;
-  transform: translate(-33%,-50%);
-  top: 50%;
-  left: 65%;
-  font-size: 16px;
-  }
-
-  input:checked+ .chat-slider .attending {
-    display: block;
-  }
-
-  input:checked+ .chat-slider .organising{
-    display: none;
-  }
-
-  .chat-slider.round {
-    border-radius: 34px;
-  }
-
-  .chat-slider.round:before {
-    border-radius: 50%;
-  }
-
-  .chat-slider.round:after {
-    border-radius: 50%;
-  }
-
-  .chatroom-list {
-    margin-top:150px;
+    display: inline;
+    left: 71%;
+    top: 53px;
   }
 
   h1 {
@@ -111,7 +27,6 @@
   }
 
   .attendee-chat-list {
-    margin-top: 50px;
 
     h1 {
       color: $light-orange;

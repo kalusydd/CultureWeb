@@ -2,11 +2,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="popup"
 export default class extends Controller {
-  static targets = ["list", "map", "attending", "organising"]
+  static targets = ["list", "map", "attChatList", "orgChatList"]
 
   connect() {
     console.log("hello");
-    console.log(this.mapTarget);
+    // console.log(this.mapTarget);
   }
 
   checked(event) {
@@ -15,9 +15,9 @@ export default class extends Controller {
     this.mapTarget.style.display = isChecked ? 'block' : 'none';
   }
 
-  chat_checked(event) {
+  toggleChatList(event) {
     const isChecked = event.target.checked;
-    this.attendingTarget.style.display = isChecked ? 'none' : 'block';
-    this.organisingTarget.style.display = isChecked ? 'block' : 'none';
+    this.attChatListTarget.style.display = isChecked ? 'none' : 'block';
+    isChecked ? this.orgChatListTarget.classList.remove("d-none") : this.orgChatListTarget.classList.add("d-none")  ;
   }
 }
