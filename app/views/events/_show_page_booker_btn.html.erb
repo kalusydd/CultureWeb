@@ -1,7 +1,7 @@
 <% if (@event.user != current_user) && (!(@event.bookings.select { |booking| booking.user == current_user }.empty?)) %>
   <div class="show_buttons_three">
-    <button class="btn-ghost-neutral">Attending</button>
     <%= link_to "Let's talk!", event_chatroom_path(@event.id, @event.chatroom.id), data: {turbo: false}, class:"btn-ghost-neutral" %>
+    <button class="btn-orange">Attending</button>
     <%= link_to "My bookings", dashboard_path(@event.id, @event.chatroom.id), class:"btn-ghost-neutral" %>
   </div>
 <% elsif @event.user == current_user %>
