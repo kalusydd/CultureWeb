@@ -32,11 +32,12 @@
 }
 
 .mapstyle {
-  margin: 380px auto;
+  margin: 45px auto;
   background-size: cover;
   background-position: center;
   border-radius: 20px;
   width: 360px;
   height: 400px;
+  object-fit: cover;
   // padding: 20px;
 }
