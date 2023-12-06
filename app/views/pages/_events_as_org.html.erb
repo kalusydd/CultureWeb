@@ -1,10 +1,20 @@
-<h3>Upcoming events I've organised</h3>
 
 <div class= "my-bookings">
   <% @events_as_org.each do |event| %>
-  <h3><%=link_to event.title, event_path(event)%></h3>
-  <p><strong><%=event.date%></strong> // <%=event.time%></p>
-  <p><%= event.venue_name %></p>
-  <p><%= event.attendees %></p>
-<% end %>
+  <hr>
+    <div class="flex-container">
+        <div class="flex-box-one">
+          <p><%= event.venue_name %></p>
+          <h3><%=link_to event.title, event_path(event)%></h3>
+        <div class= "date-time">
+          <p><strong><%=event.date%></p>
+          <p></strong><%=event.time%></p>
+        </div>
+      </div>
+      <hr>
+    <div class="flex-box-one"><p><%= event.attendees %></p></div>
+  </div>
+  <% end %>
+
 </div>
+

@@ -18,12 +18,11 @@ color: #3E3E3E; /* Set text color to be visible against the background */
   transition: opacity 0.3s ease;
   text-align: center;
   vertical-align: middle;
-  position: fixed;
+  // position: fixed;
   width: 80%;
   margin-top: 200px;
   margin-left: 35px;
   font-size: 15px;
-  position: fixed;
 
 }
 
@@ -36,12 +35,11 @@ color: #3E3E3E; /* Set text color to be visible against the background */
   transition: opacity 0.3s ease;
   text-align: center;
   vertical-align: middle;
-  position: fixed;
+  // position: fixed;
   width: 80%;
   margin-top: 400px;
   margin-left: 35px;
   font-size: 15px;
-  position: fixed;
 
 
 }
@@ -53,7 +51,46 @@ body-all {
   line-height: 15px;
 }
 
-.my-events {
-  margin-top: 200px;
-  z-index: 100;
+.my-bookings {
+  color: #FF744A;
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+  .flex-box-one {
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 10px;
+}
+
+  .flex-container-two {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .date-time {
+   color: #FF744A;
+}
+a {
+  color: #FF744A;
+}
+
+
+.flex-container strong {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+
+}
+
+
+.flex-container p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+
+}
 }
