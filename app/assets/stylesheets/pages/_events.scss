@@ -63,5 +63,15 @@
       margin-top: 380px;
     }
 
+    .no-match {
+      h4 {
+        margin: 20px;
+        color: $light-gray;
+        a {
+          text-decoration: none;
+          color: $light-gray;
+        }
+      }
+    }
   }
 }

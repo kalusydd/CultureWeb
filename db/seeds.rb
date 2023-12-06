@@ -17,7 +17,7 @@ cat2 = URI.open('https://res.cloudinary.com/dnx58st8e/image/upload/v1701199970/d
 user_louise.photo.attach(io: cat2, filename: 'cat2.jpg', content_type: 'image/jpg')
 user_louise.save!
 
-user_kat = User.new(email: "kat@gmail.com", password: "123456", username: "Orange_Katy", bio: "Dynamic and passionate, Kat designs events that spark connections. Her commitment to authenticity and community ensures each gathering is a unique and memorable journey.")
+user_kat = User.new(email: "kat@gmail.com", password: "123456", username: "KittyO", bio: "Dynamic and passionate, Kat designs events that spark connections. Her commitment to authenticity and community ensures each gathering is a unique and memorable journey.")
 cat1 = URI.open('https://res.cloudinary.com/dnx58st8e/image/upload/v1701201117/cat1_sx541t.jpg')
 user_kat.photo.attach(io: cat1, filename: 'cat1.jpg', content_type: 'image/jpg')
 user_kat.save!
