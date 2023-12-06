@@ -8,13 +8,13 @@
           <h3><%=link_to event.title, event_path(event)%></h3>
         <div class= "date-time">
           <p><strong><%=event.date%></p>
-          <p></strong><%=event.time%></p>
         </div>
       </div>
       <hr>
-    <div class="flex-box-one"><p><%= event.attendees %></p></div>
+      <div class="attendees">
+
+    <div class="flex-box-one"><i class="fa-regular fa-user"></i><h3><%= event.attendees %></h3></div>
   </div>
-  <% end %>
-
 </div>
-
+  <% end %>
+</div>
