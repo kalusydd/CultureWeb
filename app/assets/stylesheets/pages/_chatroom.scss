@@ -1,6 +1,6 @@
 
 .chatroom {
-  background: white;
+  background: $dark-gray;
   margin-top: 9px;
   height: calc(100vh - 75px);
   display: flex;
@@ -8,10 +8,12 @@
   justify-content: space-between;
 
   h2 {
-    border-bottom: 1px solid $gray-200;
+    min-width: 100vw;
     margin-bottom: 0;
     padding: 1rem;
     position: fixed;
+    color: white;
+    background-color: $light-orange;
   }
 
   .messages {
