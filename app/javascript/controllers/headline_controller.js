@@ -7,7 +7,9 @@ export default class extends Controller {
     talk: String,
     bookings: String,
     events: String,
-    talk: String
+    talk: String,
+    new: String,
+    edit: String
   }
 
   connect() {
@@ -21,6 +23,10 @@ export default class extends Controller {
       this.activateTyped(headerElement, this.bookingsValue);
     } else if (this.hasEventsValue) {
       this.activateTyped(headerElement, this.eventsValue);
+    } else if (this.hasNewValue) {
+      this.activateTyped(headerElement, this.newValue);
+    } else if (this.hasEditValue) {
+      this.activateTyped(headerElement, this.editValue);
     }
   }
 

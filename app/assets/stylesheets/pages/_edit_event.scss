@@ -1,0 +1,16 @@
+.headline-form {
+  font-family: $headers-font;
+  font-weight: 900;
+  font-size: 55px;
+  padding: 35px;
+  z-index: 100;
+  line-height: 55px;
+  color: #FF744A;
+}
+
+.form-edit-event {
+  padding: 20px;
+  color: #ffffff;
+  background: rgb(255,116,74);
+  background: radial-gradient(circle, rgba(255,116,74,1) 13%, rgba(155,71,169,1) 57%);
+}

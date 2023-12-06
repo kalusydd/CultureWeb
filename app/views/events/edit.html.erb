@@ -1,3 +1,10 @@
+<div data-controller="headline" data-headline-edit-value="Edit<br>event">
+    <h1 class="header-all"></h1>
+</div>
+
+
+<div class="form-edit-event">
+
 <h2>Edit <%= @event.title %></h2>
 <%= simple_form_for(@event) do |f| %>
   <%= f.input :title %>
@@ -24,10 +31,4 @@
   <%= f.input :photo, as: :file %> <!-- should be image upload with Cloudinary -->
   <%= f.submit %>
 <% end %>
-
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
+</div>

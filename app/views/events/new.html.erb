@@ -1,4 +1,12 @@
-<h1>Create a new event</h1>
+
+
+<div data-controller="headline" data-headline-new-value="New<br>event">
+    <h1 class="header-all"></h1>
+</div>
+
+
+<div class="form-new-event">
+
 <%= simple_form_for(@event) do |f| %>
   <%= f.input :title %>
   <%= f.input :date %>
@@ -24,10 +32,4 @@
   <%= f.input :photo, as: :file %> <!-- should be image upload with Cloudinary -->
   <%= f.submit %>
 <% end %>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
+</div>
