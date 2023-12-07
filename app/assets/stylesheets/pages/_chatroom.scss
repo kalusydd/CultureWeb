@@ -20,20 +20,24 @@
   }
 
 .chatroom-container {
-  position: relative;
+  position: fixed;
+  bottom: 0;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  color: white;
 
   .messages {
+    order: -1;
     height: 100%;
     overflow: scroll;
-    padding: 1rem;
+    padding: 20px;
+    margin-bottom: 220px;
   }
 
   #new_message {
-    border-top: 1px solid $gray-200;
+    border-top: 1px solid $violet;
     padding: 1rem;
 
     .form-group {
@@ -47,10 +51,13 @@
 
   .chat-form {
     position: fixed;
+    bottom: 75px;
+    width: 100vw;
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     flex-direction: column;
-    min-width: 100vw;
+    background-color: $dark-gray;
+    align-items: flex-end;
 
     .chat-btn {
       text-decoration: none;
@@ -68,8 +75,10 @@
     }
 
     .chat-input-box {
-      background-color: $dark-gray;
+      background-color: $light-gray;
       width: 90vw;
+      color: $dark-gray;
+      border: 1px solid $violet;
     }
 
     .chat-typing-box {
