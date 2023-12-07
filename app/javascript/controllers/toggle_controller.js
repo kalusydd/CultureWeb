@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="popup"
 export default class extends Controller {
 
-  static targets = ["list", "mapbox", "attChatList", "orgChatList"]
+  static targets = ["list", "mapbox", "attChatList", "orgChatList", "attBookings", "orgBookings"]
 
   connect() {
     console.log("hello");
@@ -24,5 +24,11 @@ export default class extends Controller {
     const isChecked = event.target.checked;
     this.attChatListTarget.style.display = isChecked ? 'none' : 'block';
     isChecked ? this.orgChatListTarget.classList.remove("d-none") : this.orgChatListTarget.classList.add("d-none")  ;
+  }
+
+  toggleBookingList(event) {
+    const isChecked = event.target.checked;
+    this.attBookingsTarget.style.display = isChecked ? 'none' : 'block';
+    isChecked ? this.orgBookingsTarget.classList.remove("d-none") : this.orgBookingsTarget.classList.add("d-none")  ;
   }
 }

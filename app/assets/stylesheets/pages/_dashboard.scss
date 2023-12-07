@@ -8,6 +8,14 @@ justify-content: center;
 align-items: center;
 color: #3E3E3E; /* Set text color to be visible against the background */
 
+
+  .chat-toggle {
+    position: relative;
+    display: inline;
+    left: 71%;
+    top: 75px;
+    margin-right: 20px;
+  }
 }
 
 .not {
