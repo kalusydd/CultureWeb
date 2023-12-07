@@ -6,7 +6,7 @@ min-height: 100vh;
 min-width: 100vw;
 justify-content: center;
 align-items: center;
-color: #3E3E3E; /* Set text color to be visible against the background */
+color: $light-gray; /* Set text color to be visible against the background */
 
 
   .chat-toggle {
@@ -128,5 +128,10 @@ body-all {
     z-index: 100;
   }
 
+  .no-events {
+    p {
+      padding-left: 30px;
+    }
+  }
 
 }

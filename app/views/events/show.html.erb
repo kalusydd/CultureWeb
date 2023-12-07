@@ -6,6 +6,9 @@
       <h1><strong><%= @event.time.strftime('%-l%P').downcase %></strong></h1>
     </div>
   </div>
+  <div class="show-buttons">
+    <%= render "show_page_booker_btn" %>
+  </div>
   <div class="infos">
     <div class="event_info">
       <p class="info_heading">EVENT</p>
@@ -43,8 +46,5 @@
 
   <div class="show-map">
     <%= render "show_map" %>
-  </div>
-  <div class="show-buttons">
-    <%= render "show_page_booker_btn" %>
   </div>
 </div>

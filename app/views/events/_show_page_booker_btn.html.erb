@@ -1,14 +1,14 @@
 <% if (@event.user != current_user) && (!(@event.bookings.select { |booking| booking.user == current_user }.empty?)) %>
-  <div class="show_buttons_three">
-    <%= link_to "Let's talk!", event_chatroom_path(@event.id, @event.chatroom.id), data: {turbo: false}, class:"btn-ghost-neutral" %>
-    <button class="btn-orange">Attending</button>
-    <%= link_to "My bookings", dashboard_path(@event.id, @event.chatroom.id), class:"btn-ghost-neutral" %>
+  <div class="show_buttons_attending">
+    <button class="btn-ghost-violet">Attending</button>
+    <%= link_to "My bookings", dashboard_path(@event.id, @event.chatroom.id), class:"btn-violet btn-dashboard" %>
+    <%= link_to "Let's talk!", event_chatroom_path(@event.id, @event.chatroom.id), data: {turbo: false}, class:"btn-violet btn-chat" %>
   </div>
 <% elsif @event.user == current_user %>
-  <div class="show_buttons_three">
-    <%= link_to "Delete event", event_path(@event.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this event?"}, class:"btn-ghost-neutral" %>
-    <%= link_to "Edit event", edit_event_path(@event.id), class:"btn-ghost-neutral" %>
-    <%= link_to "Let's talk!", event_chatroom_path(@event.id, @event.chatroom.id), data: {turbo: false}, class:"btn-ghost-neutral" %>
+  <div class="show-buttons-org">
+    <%= link_to "Let's talk!", event_chatroom_path(@event.id, @event.chatroom.id), data: {turbo: false}, class:"btn-ghost-violet" %>
+    <%= link_to "Edit event", edit_event_path(@event.id), class:"btn-violet btn-edit" %>
+    <%= link_to "Delete event", event_path(@event.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this event?"}, class:"btn-violet btn-delete" %>
   </div>
 <% elsif (@event.user != current_user) && (@event.attendees == @event.capacity) %>
   <div class="show_button_one">
@@ -16,8 +16,6 @@
   </div>
 <% elsif @event.user != current_user %>
 <div class="show_button_one">
-  <%= link_to "I'm going!", event_bookings_path(@event.id), class:"btn-ghost-neutral", data: {turbo_method: :post} %>
+  <%= link_to "I'm going!", event_bookings_path(@event.id), class:"btn-violet", data: {turbo_method: :post} %>
 </div>
 <% end %>
-
-
