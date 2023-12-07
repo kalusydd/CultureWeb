@@ -239,7 +239,7 @@ image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701959114/Untitl
 EventCategory.create!(event: history_lecture, category: talks_category)
 Chatroom.create!(event: history_lecture)
 
-sculpture_tour = Event.create(title: "Arts & Farts Festival",
+sculpture_tour = Event.create(title: "Arts and Farts Festival",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
 description: "Embark on a journey of discovery with our Interactive Public Sculpture Tour, a unique exploration of Berlin's streets, where art comes to life through engaging narratives and interactive installations.",

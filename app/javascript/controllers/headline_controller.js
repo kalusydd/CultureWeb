@@ -29,9 +29,9 @@ export default class extends Controller {
     } else if (this.hasChatValue) {
       this.activateTyped(headertwoElement, this.chatValue);
     } else if (this.hasNewValue) {
-      this.activateTyped(headerElement, this.newValue);
+      this.activateTyped(headerindexElement, this.newValue);
     } else if (this.hasEditValue) {
-      this.activateTyped(headerElement, this.editValue);
+      this.activateTyped(headerindexElement, this.editValue);
     }
   }
 

@@ -40,6 +40,7 @@
 
     .info_heading{
       color: $dark-gray;
+      margin-top: 40px;
     }
 
     p {
@@ -51,6 +52,7 @@
     .event_info {
       margin-bottom: 30px;
       color: $light-gray;
+      margin-inline: 14px;
 
       .category_show_display {
         display: inline-block;
@@ -61,18 +63,25 @@
         color: $light-gray;
         border: 1px solid $violet;
         margin-right: 0.6rem;
-        margin-bottom: 0.4rem;
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+
+      .attendees {
+        color: $violet;
       }
     }
 
     .venue_info {
       margin-bottom: 30px;
       color: $light-gray;
+      margin-inline: 14px;
     }
 
     .org_info {
       margin-bottom: 30px;
       color: $light-gray;
+      margin-inline: 14px;
     }
   }
 
@@ -88,6 +97,8 @@
     margin-top: 10px;
     margin-bottom: 10px;
   }
+
+
 
   .show_buttons_attending {
     display: grid;
