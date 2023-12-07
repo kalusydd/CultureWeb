@@ -27,6 +27,7 @@
   flex-direction: column;
   justify-content: flex-end;
   color: white;
+  max-height: 88vh;
 
   .messages {
     order: -1;
@@ -41,12 +42,15 @@
       padding: 6px;
       margin: 20px;
       width: 70vw;
+      font-size: 14px;
     }
   }
 
   #new_message {
-    border-top: 1px solid $violet;
+    border-top: 1px solid $dark-gray;
     padding: 1rem;
+    margin-right: 4px;
+    font-size: 14px;
 
     .form-group {
       margin-bottom: 0;
@@ -87,6 +91,7 @@
       width: 90vw;
       color: $dark-gray;
       border: 1px solid $violet;
+      font-size: 14px;
     }
 
     .chat-typing-box {

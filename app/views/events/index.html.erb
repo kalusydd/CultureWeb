@@ -76,10 +76,12 @@
       <h4>No events match your search, but fear not! We have plenty of other cool events for you to check out <u><%= link_to "HERE", root_path %></u></h4>
     </div>
   <% else %>
-    <div class="toggle" data-controller="toggle">
+    <div class="toggle" data-controller="toggle map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       <div class="toggle-btn">
         <label class="switch">
-          <input type="checkbox" id="togBtn" data-action="click->toggle#checked">
+          <input type="checkbox" id="togBtn" data-action="click->toggle#checked click->map#resize">
             <div class="slider round">
               <span class="list">List</span>
               <span class="map">Map</span>
@@ -106,10 +108,7 @@
 
       <div class="d-none" data-toggle-target="mapbox" style="height: 400px">
         <div>
-          <div class="mapstyle"
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+          <div class="mapstyle" data-map-target="map"></div>
         </div>
       </div>
     </div>
