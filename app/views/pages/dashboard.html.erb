@@ -1,44 +1,57 @@
 <div class="dashboard-background">
 
-<div data-controller="headline" data-headline-bookings-value="My<br>bookings">
+<div data-controller="headline" data-headline-bookings-value="Events you're...">
     <h1 class="header-all"></h1>
 </div>
 
+<div class="booking-list" data-controller="toggle">
 
-<div class="container-booking">
-  <% if current_user.bookings.exists? %>
-    <%= render "bookings_as_attendee" %>
-  <% else %>
-    <div class= "not">
-        <body-all > Give a fuck (no attendance) </body-all>
-        </div>
-        <%= link_to "Check out cool events near you", root_path, class:"btn btn-ghost-orange-more" %>
+  <div class="chat-toggle">
+    <label class="switch">
+    <input type="checkbox" id="togBtn" data-action="click->toggle#toggleBookingList">
+    <div class="slider round">
+      <span class="attending"></span>
+      <span class="organising"></span>
+    </div>
+    </label>
+  </div>
+
+  <div class="container-booking" data-toggle-target="attBookings">
+    <% if current_user.bookings.exists? %>
+      <%= render "bookings_as_attendee" %>
+    <% else %>
+      <div class= "not">
+          <body-all > Give a fuck (no attendance) </body-all>
+          </div>
+          <%= link_to "Check out cool events near you", root_path, class:"btn btn-ghost-orange-more" %>
+        <% end %>
+  </div>
+
+
+
+  <!--<hr>
+  <div class="my-events">
+
+    <div class= "headline-my-events">
+    <div data-controller="headline" data-headline-events-value="My<br>events">
+        <h1 class="header-all"></h1>
+    </div>
+    </div>-->
+
+
+
+    <div class="container-event d-none" data-toggle-target="orgBookings">
+      <% if current_user.events.exists? %>
+        <%= render "events_as_org" %>
+      <% else %>
+        <div class= "not-two">
+            <body-all > You lazy fuck (no events) </body-all>
+            </div>
+        <%= link_to "New event, new life ", new_event_path, class:"btn btn-ghost-orange-new_event" %>
       <% end %>
+    </div>
+  </div>
+  <hr>
 </div>
 
-
-
-<hr>
-<div class="my-events">
-
-<div class= "headline-my-events">
-<div data-controller="headline" data-headline-events-value="My<br>events">
-    <h1 class="header-all"></h1>
-</div>
-</div>
-
-
-
-<div class="container-event">
-  <% if current_user.events.exists? %>
-    <%= render "events_as_org" %>
-  <% else %>
-    <div class= "not-two">
-        <body-all > You lazy fuck (no events) </body-all>
-        </div>
-    <%= link_to "New event, new life ", new_event_path, class:"btn btn-ghost-orange-new_event" %>
-  <% end %>
-</div>
-</div>
-<hr>
 </div>
