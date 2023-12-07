@@ -23,7 +23,7 @@
           <div class="flex-container">
             <div class="chatroom-card">
               <p><%= booking.event.venue_name %></p>
-              <h3>💬 <u><%=link_to "#{booking.event.title}", event_chatroom_path(booking.event.id, booking.event.chatroom.id)%></u></h3>
+              <h3>💬 <%=link_to "#{booking.event.title}", event_chatroom_path(booking.event.id, booking.event.chatroom.id)%></h3>
               <p><%= booking.event.date.strftime('%a. %e %b')%></p>
             </div>
             <hr>
@@ -45,7 +45,7 @@
         <div class="flex-container">
           <div class="chatroom-card flex-box-one">
             <p><%= event.venue_name %></p>
-            <h3>💬 <u><%=link_to "#{event.title}", event_chatroom_path(event.id, event.chatroom.id)%></u></h3>
+            <h3>💬 <%=link_to "#{event.title}", event_chatroom_path(event.id, event.chatroom.id)%></h3>
             <p><%= event.date.strftime('%a. %e %b')%></p>
           </div>
           <hr>
