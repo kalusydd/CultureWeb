@@ -1,16 +1,47 @@
-.headline-form {
-  font-family: $headers-font;
-  font-weight: 900;
-  font-size: 55px;
-  padding: 35px;
-  z-index: 100;
-  line-height: 55px;
-  color: #FF744A;
-}
+.edit-event-back {
 
-.form-edit-event {
-  padding: 20px;
-  color: #ffffff;
   background: rgb(255,116,74);
   background: radial-gradient(circle, rgba(255,116,74,1) 13%, rgba(155,71,169,1) 57%);
+  min-width: 100vw;
+  min-height: 100vh;
+  margin-bottom: 20px;
+
+  h3 {
+    margin-top: -50px;
+    margin-bottom: 30px;
+  }
+
+  .headline-form {
+    font-family: $headers-font;
+    font-weight: 900;
+    font-size: 55px;
+    padding: 35px;
+    z-index: 100;
+    line-height: 55px;
+    color: #FF744A;
+  }
+
+  .form-edit-event {
+    padding: 20px;
+    color: #ffffff;
+    background: rgb(255,116,74);
+    background: radial-gradient(circle, rgba(255,116,74,1) 13%, rgba(155,71,169,1) 57%);
+    padding-bottom: 80px;
+  }
+
+  .btn-new-event {
+    color: #ffffff;
+    border: 3px solid #FF744A;
+    background-color:  #FF744A;
+    padding: 5px 27px;
+    border-radius: 50px;
+    font-weight: medium;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 10px;
+    position: absolute;
+    z-index: 100;
+  }
+
 }
