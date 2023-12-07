@@ -16,9 +16,10 @@ export default class extends Controller {
   connect() {
     const headerElement = this.element.querySelector('.header-all');
     const headertwoElement = this.element.querySelector('.htwo');
+    const headerindexElement = this.element.querySelector('.header-index');
 
     if (this.hasNameValue) {
-      this.activateTyped(headerElement, `Hey ${this.nameValue},<br>wanna do some<br>culture?`);
+      this.activateTyped(headerindexElement, `Hey ${this.nameValue},<br>wanna do some<br>culture?`);
     } else if (this.hasTalkValue) {
       this.activateTyped(headerElement, this.talkValue);
     } else if (this.hasBookingsValue) {

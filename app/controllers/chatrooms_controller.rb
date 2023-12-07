@@ -9,6 +9,9 @@ class ChatroomsController < ApplicationController
   def create
   end
 
+  def update
+  end
+
   private
 
   def chatroom_params

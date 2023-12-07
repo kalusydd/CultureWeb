@@ -1,31 +1,39 @@
-<div class="chatroom"
+<div class="chatroom-back"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+  data-chatroom-subscription-current-user-id-value="<%= current_user.id %>"
 >
-  <div class="flex-grow-1 align-content-start chat-title" >
-    <div data-controller="headline" data-headline-chat-value="About joining <%= @chatroom.event.title %>...">
-    <h2 class="htwo"></h2>
-  </div>
-  </div>
 
+<div class="">
+  <div data-controller="headline" data-headline-chat-value="About joining <%= @chatroom.event.title %>...">
+  <h2 class="htwo"></h2>
+</div>
+</div>
+
+<div class="chatroom-container">
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
+    <div class= "<%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+      <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+        <%= render "messages/message", message: message %>
+      </div>
+    </div>
     <% end %>
   </div>
 
-<div class="chat-form">
-  <%= simple_form_for [@event, @chatroom, @message],
-    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "chat-form"} do |f|
-  %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Message ##{@chatroom.event.title}",
-      wrapper_html: {class: "chat-typing-box"},
-      input_html: {class: "chat-input-box", }
+  <div class="chat-form">
+    <%= simple_form_for [@event, @chatroom, @message],
+      html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "chat-form"} do |f|
     %>
-    <%= f.submit "Send", class: "chat-btn" %>
-  <% end %>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Message ##{@chatroom.event.title}",
+        wrapper_html: {class: "chat-typing-box"},
+        input_html: {class: "chat-input-box", }
+      %>
+      <%= f.submit "Send", class: "chat-btn" %>
+    <% end %>
+  </div>
 </div>
 
 </div>

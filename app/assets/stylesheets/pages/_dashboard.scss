@@ -6,8 +6,16 @@ min-height: 100vh;
 min-width: 100vw;
 justify-content: center;
 align-items: center;
-color: #3E3E3E; /* Set text color to be visible against the background */
+color: $light-gray; /* Set text color to be visible against the background */
 
+
+  .chat-toggle {
+    position: relative;
+    display: inline;
+    left: 71%;
+    top: 75px;
+    margin-right: 20px;
+  }
 }
 
 .not {
@@ -69,13 +77,16 @@ body-all {
   .flex-container {
     display: flex;
     justify-content: space-between;
+  }
 
-}
+  .no-events {
+    color: $light-gray;
+  }
 
   .flex-box-one {
     padding: 10px;
     margin: 10px;
-}
+  }
 
   .flex-container-two {
     display: flex;
@@ -84,46 +95,41 @@ body-all {
 
   .date-time {
   color: #FF744A;
-}
+  }
 
-a {
-  color: #ffffff;
-}
+  a {
+    color: #ffffff;
+  }
 
 
-.flex-container strong {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0px;
+  .flex-container strong {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+  }
 
-}
+  .flex-container p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+  }
 
-.flex-container p {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0px;
+  .attendees {
+    color: #9B47A9;
+    font-size: 15px;
+  }
 
-}
-
-.attendees {
-  color: #9B47A9;
-  font-size: 15px;
-
-}
-
-.btn-ghost-orange-chancel {
-  color:#FF744A;
-  border: 3px solid #FF744A;
-  padding: 5px 27px;
-  border-radius: 50px;
-  font-weight: medium;
-  transition: opacity 0.3s ease;
-  text-align: center;
-  vertical-align: middle;
-  margin-top: 15px;
-  z-index: 100;
-
-}
-
+  .btn-ghost-orange-chancel {
+    color:#FF744A;
+    border: 3px solid #FF744A;
+    padding: 5px 27px;
+    border-radius: 50px;
+    font-weight: medium;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 15px;
+    z-index: 100;
+  }
 
 }

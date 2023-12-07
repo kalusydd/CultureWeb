@@ -6,22 +6,25 @@
       <h1><strong><%= @event.time.strftime('%-l%P').downcase %></strong></h1>
     </div>
   </div>
+  <div class="show-buttons">
+    <%= render "show_page_booker_btn" %>
+  </div>
   <div class="infos">
     <div class="event_info">
       <p class="info_heading">EVENT</p>
       <div class="row">
         <div class="col-9">
-          <h3><u><%= @event.title %></u></h3>
+          <h3><%= @event.title %></h3>
         </div>
         <div class="col-3" style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
           <h3><i class="fa-regular fa-user"></i> <%= @event.capacity %></h3>
           <p><%= @event.price%> €</p>
         </div>
       </div>
-      <p>What to excepect: <%= @event.description %></p>
+      <p>What to expect: <%= @event.description %></p>
       <div>
         <% @event.categories.each do |category| %>
-          <span class="category_show_display">
+          <span class="category_show_display mt-2">
             <i class="<%=category.icon%>"></i> <%= category.name %>
           </span>
         <% end %>
@@ -30,12 +33,12 @@
     </div>
     <div class="org_info">
       <p class="info_heading">ORGANISER</p>
-      <h3><u><%= @event.user.username %></u></h3>
+      <h3><%= @event.user.username %></h3>
       <p><%= @event.user.bio %></p>
     </div>
     <div class="venue_info">
       <p class="info_heading">VENUE</p>
-      <h3><u><%= @event.venue_name %></u></h3>
+      <h3><%= @event.venue_name %></h3>
       <p><%= @event.venue_address %></p>
       <!--<p>Accessibilty: </p>-->
     </div>
@@ -44,8 +47,4 @@
   <div class="show-map">
     <%= render "show_map" %>
   </div>
-  <div class="show-buttons">
-    <%= render "show_page_booker_btn" %>
-  </div>
-
 </div>

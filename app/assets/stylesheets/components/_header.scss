@@ -6,6 +6,17 @@
   z-index: 100;
   line-height: 55px;
   color: #FF744A;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+.header-index {
+  font-family: $headers-font;
+  font-weight: 900;
+  font-size: 55px;
+  padding: 35px;
+  z-index: 100;
+  line-height: 55px;
+  color: #FF744A;
   text-shadow: 1px 1px 1px rgb(156, 156, 156);
 }
 
@@ -18,19 +29,12 @@
   font-weight: 700;
   font-size: 25px;
   line-height: 25px;
-}
+
+ }
 
 .body-all {
   font-family: $body-font;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 15px;
-}
-
-.htwo {
-  font-family: $headers-font;
-  font-weight: 900;
-  font-size: 28px;
-  // color: $violet;
-  text-shadow: 2px 2px 2px black;
 }

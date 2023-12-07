@@ -5,44 +5,53 @@
 
   <div class="chatroom-list" data-controller="toggle">
 
-        <div class="chat-toggle">
-          <label class="switch">
-          <input type="checkbox" id="togBtn" data-action="click->toggle#toggleChatList">
-            <div class="slider round">
-              <span class="attending"></span>
-              <span class="organising"></span>
-            </div>
-          </label>
-
+    <div class="chat-toggle">
+      <label class="switch">
+      <input type="checkbox" id="togBtn" data-action="click->toggle#toggleChatList">
+        <div class="slider round">
+          <span class="attending"></span>
+          <span class="organising"></span>
+        </div>
+      </label>
     </div>
 
     <div class="attendee-chat-list" data-toggle-target="attChatList" data-toggle-type="attendee">
       <h1>...attending:</h1>
       <% if @bookings_as_attendee.exists? %>
         <% @bookings_as_attendee.each do |booking| %>
-          <div class="chatroom-card">
-            <h3><u><%=link_to "#{booking.event.title}", event_chatroom_path(booking.event.id, booking.event.chatroom.id)%></u></h3>
-            <p><%= booking.event.date.strftime('%a. %e %b')%></p>
+          <hr>
+          <div class="flex-container">
+            <div class="chatroom-card">
+              <p><%= booking.event.venue_name %></p>
+              <h3>💬 <%=link_to "#{booking.event.title}", event_chatroom_path(booking.event.id, booking.event.chatroom.id)%></h3>
+              <p><%= booking.event.date.strftime('%a. %e %b')%></p>
+            </div>
+            <hr>
           </div>
         <% end %>
       <% else %>
-        <p>You aren't attending any upcoming events (yet 😉) - check out events near you <%= link_to "here", root_path%></p>
+        <hr>
+        <div class="no-events">
+          <p>You aren't attending any upcoming events (yet 😉) - check out events near you <u><%= link_to "here", root_path%></u></p>
+        </div>
+        <hr>
       <% end %>
     </div>
 
     <div class="org-chat-list d-none" data-toggle-target="orgChatList" data-toggle-type="organizer">
       <h1>...organizing:</h1>
       <% @events_as_org.each do |event| %>
-        <div class="chatroom-card">
-          <div class="row">
-            <div class="col-9">
-              <h3><u><%=link_to "#{event.title}", event_chatroom_path(event.id, event.chatroom.id)%></u></h3>
-            </div>
-            <div class="col-3" style="display: flex; justify-content: flex-end;">
-              <h3><i class="fa-regular fa-user"></i> <%= event.attendees %><h3>
-            </div>
+        <hr>
+        <div class="flex-container">
+          <div class="chatroom-card flex-box-one">
+            <p><%= event.venue_name %></p>
+            <h3>💬 <%=link_to "#{event.title}", event_chatroom_path(event.id, event.chatroom.id)%></h3>
+            <p><%= event.date.strftime('%a. %e %b')%></p>
           </div>
-          <p><%= event.date.strftime('%a. %e %b')%></p>
+          <hr>
+          <div class="attendees">
+            <div class="flex-box-one"><i class="fa-regular fa-user"></i> <h3><%= event.attendees %></h3></div>
+          </div>
         </div>
       <% end %>
     </div>
