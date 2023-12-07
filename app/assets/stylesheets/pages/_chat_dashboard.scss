@@ -1,13 +1,25 @@
 .chat-dashboard-background {
-  background-color: $dark-gray;
-  color: $light-gray;
+  background-color: #3E3E3E;
+  background: rgb(62,62,62);
+  background: radial-gradient(circle, rgba(62,62,62,1) 0%, rgba(0,0,0,1) 100%);
   min-height: 100vh;
   min-width: 100vw;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  color: #3E3E3E;
 
   .header-all {
-    padding: 0;
+    font-family: $headers-font;
+    font-weight: 900;
+    font-size: 55px;
+    padding: 35px, 35px, 0px, 35px;
+    z-index: 100;
+    line-height: 55px;
+    color: #FF744A;
+    text-shadow: 1px 1px 1px rgb(156, 156, 156);
+    margin-top: 0px;
   }
+
 
   .toggle-row {
     display: flex;
@@ -18,11 +30,11 @@
     position: relative;
     display: inline;
     left: 71%;
-    top: 53px;
+    top: 80px;
   }
 
   h1 {
-    margin: 10px 10px 20px 10px;
+    margin: 10px 10px 0px 10px;
   }
 
   a {
@@ -31,6 +43,7 @@
   }
 
   .attendee-chat-list {
+    padding: 30px;
 
     h1 {
       color: $light-orange;
@@ -39,20 +52,50 @@
   }
 
   .org-chat-list {
+    padding: 30px;
+
     h1 {
       color: $light-orange;
       font-weight: bolder;
     }
   }
 
+  .flex-box-one {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .flex-container {
+    // padding: 10px, 20px, 10px, 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  hr {
+    color: #FF744A;
+  }
+
   .chatroom-card {
-    background-color: rgba($violet, 0.8);
-    margin: 15px auto;
-    padding: 10px 15px;
-    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 10px;
+    h3 {
+      color: $light-gray;
+    }
+
+    p {
+      color: $light-orange;
+    }
 
     p {
       margin-bottom: 5px;
     }
+  }
+
+  .attendees {
+    margin-right: 10px;
+    color: #9B47A9;
+    font-size: 15px;
+
   }
 }
