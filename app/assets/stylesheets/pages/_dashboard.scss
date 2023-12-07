@@ -79,6 +79,10 @@ body-all {
     justify-content: space-between;
   }
 
+  .no-events {
+    color: $light-gray;
+  }
+
   .flex-box-one {
     padding: 10px;
     margin: 10px;
@@ -126,12 +130,6 @@ body-all {
     vertical-align: middle;
     margin-top: 15px;
     z-index: 100;
-  }
-
-  .no-events {
-    p {
-      padding-left: 30px;
-    }
   }
 
 }
