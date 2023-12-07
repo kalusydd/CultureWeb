@@ -24,7 +24,7 @@
       <p>What to expect: <%= @event.description %></p>
       <div>
         <% @event.categories.each do |category| %>
-          <span class="category_show_display">
+          <span class="category_show_display mt-2">
             <i class="<%=category.icon%>"></i> <%= category.name %>
           </span>
         <% end %>
