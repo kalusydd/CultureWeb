@@ -33,16 +33,41 @@
     order: -1;
     height: 100%;
     overflow: scroll;
-    padding: 20px;
+    padding: 8px;
     margin-bottom: 220px;
+    display: flex;
+    flex-direction: column;
 
-    .message-card {
-      background-color: #FF744A;
+
+    .sender-style, .receiver-style {
       border-radius: 10px;
       padding: 6px;
       margin: 20px;
       width: 70vw;
       font-size: 14px;
+      display: flex;
+      flex-direction: column;
+
+      .avatar {
+        margin-right: 4px;
+        margin-bottom: 4px;
+      }
+    }
+
+    .sender-style {
+      background-color: #FF744A;
+      justify-content: end;
+      margin-left: auto;
+      padding: 10px;
+
+    }
+
+    .receiver-style {
+      background-color: $violet;
+      justify-content: start;
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
     }
   }
 
