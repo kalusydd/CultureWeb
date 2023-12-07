@@ -1,35 +1,37 @@
 
+<div class="new-event-back">
+  <div data-controller="headline" data-headline-new-value="I want to organize something<br>...">
+      <h1 class="header-all"></h1>
+  </div>
 
-<div data-controller="headline" data-headline-new-value="New<br>event">
-    <h1 class="header-all"></h1>
-</div>
 
+  <div class="form-new-event">
 
-<div class="form-new-event">
-
-<%= simple_form_for(@event) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :date %>
-  <%= f.input :time %>
-  <%= f.input :description %>
-  <%= f.label :category_ids, "Categories - please choose between 1-3:" %>
-  <div data-controller="categoryselect">
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name_with_icon do |category| %>
-    <div class = "tag-item">
-      <%= category.check_box class:"tag-selector", data: {action: "click->categoryselect#activate", categoryselect_target: "input" }%>
-      <%= category.label do %>
-        <%= content_tag(:i, '', class: category.object.icon) %> <%= category.object.name %>
+  <%= simple_form_for(@event) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :date %>
+    <%= f.input :time %>
+    <%= f.input :description %>
+    <%= f.label :category_ids, "Categories - please choose between 1-3:" %>
+    <div data-controller="categoryselect">
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name_with_icon do |category| %>
+      <div class = "tag-item">
+        <%= category.check_box class:"tag-selector", data: {action: "click->categoryselect#activate", categoryselect_target: "input" }%>
+        <%= category.label do %>
+          <%= content_tag(:i, '', class: category.object.icon) %> <%= category.object.name %>
+        <% end %>
+      </div>
       <% end %>
     </div>
-    <% end %>
+    <%= f.input :venue_name %>
+    <%= f.input :venue_address, wrapper_html: { data: { controller: 'address-autocomplete', address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } },
+                input_html: { data: { address_autocomplete_target: "location" },
+                style: "display: none;" } %>
+    <%= f.input :capacity %>
+    <%= f.input :price %>
+    <%= f.input :photo, as: :file %> <!-- should be image upload with Cloudinary -->
+    <%= f.submit "Create event", class:"btn-new-event" %>
+  <% end %>
   </div>
-  <%= f.input :venue_name %>
-  <%= f.input :venue_address, wrapper_html: { data: { controller: 'address-autocomplete', address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } },
-              input_html: { data: { address_autocomplete_target: "location" },
-              style: "display: none;" } %>
-  <%= f.input :capacity %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %> <!-- should be image upload with Cloudinary -->
-  <%= f.submit %>
-<% end %>
+
 </div>
