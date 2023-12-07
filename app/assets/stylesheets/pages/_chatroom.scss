@@ -1,20 +1,30 @@
 
-.chatroom {
+.chatroom-back {
   background: $dark-gray;
-  margin-top: 9px;
-  height: calc(100vh - 75px);
+  min-width: 100vw;
+  min-height: 100vh;
+  // justify-content: space-between;
+}
+
+.htwo {
+  min-width: 100vw;
+  margin-bottom: 0;
+  position: fixed;
+  color: $light-orange;
+  font-family: $headers-font;
+  font-weight: 900;
+  font-size: 28px;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  padding: 20px;
+  background-color: $dark-gray;
+  }
+
+.chatroom-container {
+  position: relative;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
-  h2 {
-    min-width: 100vw;
-    margin-bottom: 0;
-    padding: 1rem;
-    position: absolute;
-    color: white;
-    background-color: $violet;
-  }
+  justify-content: flex-end;
 
   .messages {
     height: 100%;
@@ -34,39 +44,37 @@
   .chat-title {
     margin-bottom: 100px;
   }
-}
 
-.chat-form {
-  display: flex;
-  // justify-content: space-evenly;
-  // align-items: baseline;
-  flex-direction: column;
-  background-color: $dark-gray;
-  align-items: flex-end;
-  width: 100vw;
-}
+  .chat-form {
+    position: fixed;
+    display: flex;
+    justify-content:flex-end;
+    flex-direction: column;
+    min-width: 100vw;
 
-.chat-btn {
-  text-decoration: none;
-  color: #ffffff;
-  border: 3px solid #FF744A;
-  background-color:  #FF744A;
-  padding: 0.375rem 0.75rem;
-  border-radius: 50px;
-  font-weight: medium;
-  transition: opacity 0.3s ease;
-  text-align: center;
-  vertical-align: middle;
-  z-index: 100;
-  width: 20vw;
-}
+    .chat-btn {
+      text-decoration: none;
+      color: #ffffff;
+      border: 3px solid $violet;
+      background-color: $violet;
+      padding: 0.375rem 0.75rem;
+      border-radius: 50px;
+      font-weight: medium;
+      transition: opacity 0.3s ease;
+      text-align: center;
+      vertical-align: middle;
+      z-index: 100;
+      width: 20vw;
+    }
 
-.chat-input-box {
-  background-color: $dark-gray;
-  width: 90vw;
-}
+    .chat-input-box {
+      background-color: $dark-gray;
+      width: 90vw;
+    }
 
-.chat-typing-box {
-  width: 90vw;
-  background-color: $dark-gray;
+    .chat-typing-box {
+      width: 90vw;
+      background-color: $dark-gray;
+    }
+  }
 }
