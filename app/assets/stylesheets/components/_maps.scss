@@ -21,6 +21,12 @@
   padding: 16px;
   background-color: #ff744abf;
   font-size: 14px;
+  color: $dark-gray;
+
+  a {
+    text-decoration: none;
+    color: $violet;
+  }
 }
 
 .mapbox-index-img {
