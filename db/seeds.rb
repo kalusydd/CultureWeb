@@ -42,7 +42,7 @@ drag_category = Category.create!(name: "drag", icon: "fas fa-crown")
 wellness_category = Category.create!(name: "wellness", icon: "fas fa-spa")
 comedy_category = Category.create!(name: "comedy", icon: "fas fa-face-grin-tears")
 education_category = Category.create!(name: "education", icon: "fas fa-book-open-reader")
-
+fashion_category = Category.create!(name: "fashion", icon: "fas fa-vest-patches")
 
 
 # # titles = [
@@ -344,6 +344,64 @@ image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701186309/wellne
 EventCategory.create!(event: oasis_retreat, category: wellness_category)
 Chatroom.create!(event: oasis_retreat )
 
+flowers_magic = Event.create(title: "Flowers, Magic and the Universe",
+date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
+time: Time.parse(time_string.sample),
+description: "Immerse yourself in Simon's captivating inner world and embark on a transformative journey through him imaginative creations. Explore vibrant colours, intricate patterns, and surreal imagery that delve into human consciousness and the wonders of the universe. Don't miss this extraordinary event!",
+venue_name: "Gallery Good",
+venue_address: "Merseburgerstraße 3, 10823, Berlin",
+price: 0,
+capacity: 30,
+user: user_pascal,
+image_url: ""
+)
+EventCategory.create!(event: flowers_magic, category: art_category)
+Chatroom.create!(event: flowers_magic)
+
+fashion_show = Event.create(title: "CCG Charity Fashion Show",
+date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
+time: Time.parse(time_string.sample),
+description: "Christmas season has begun! Join us for a special, one off event full of cheerful festival colours, sparkling lights and of course, the hottest fashion of the coldest season designed by CCG. All proceeds will be donated to charity. See you on the runway!",
+venue_name: "Studio dB",
+venue_address: "Uferstraße 11, 13357, Berlin",
+price: 30,
+capacity: 150,
+user: user_kat,
+image_url: ""
+)
+EventCategory.create!(event: fashion_show, category: art_category)
+EventCategory.create!(event: fashion_show, category: fashion_category)
+Chatroom.create!(event: fashion_show)
+
+wine_tapas = Event.create(title: "Fiesta de Vino y Tapas",
+date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
+time: Time.parse(time_string.sample),
+description: "We look forward to open the doors of our restaurant, La Peccadille. We serve a fusion of classic Spanish tapas with some of the best French and Georgian wines in the city. Bring your friends and join us for free tapas, wine tasting and live music.",
+venue_name: "La Peccadille",
+venue_address: "Boxhagener Straße 85, 10245, Berlin",
+price: 0,
+capacity: 50,
+user: user_louise,
+image_url: ""
+)
+EventCategory.create!(event: wine_tapas, category: fooddrink_category)
+EventCategory.create!(event: wine_tapas, category: music_category)
+Chatroom.create!(event: wine_tapas)
+
+melodic_moments = Event.create(title: "Melodic Moments",
+date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
+time: Time.parse(time_string.sample),
+description: "Naranj presents Melodic Moments: an intimate gathering where talented musicians take the stage, weaving together acoustic strings and melodic synths in a mind-altering mix. Let the harmonious melodies transport you to a realm where soulful tunes meet electronic sounds.",
+venue_name: "Café&Bar Naranj",
+venue_address: "Gärtnerstraße 27, 10245, Berlin",
+price: 5,
+capacity: 25,
+user: user_kat,
+image_url: ""
+)
+EventCategory.create!(event: melodic_moments, category: fooddrink_category)
+EventCategory.create!(event: melodic_moments, category: music_category)
+Chatroom.create!(event: melodic_moments)
 
 
 puts 'Creating seeds...'
