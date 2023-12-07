@@ -1,7 +1,9 @@
 <div class="chatroom-back"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+  data-chatroom-subscription-current-user-id-value="<%= current_user.id %>"
 >
+
 <div class="">
   <div data-controller="headline" data-headline-chat-value="About joining <%= @chatroom.event.title %>...">
   <h2 class="htwo"></h2>
