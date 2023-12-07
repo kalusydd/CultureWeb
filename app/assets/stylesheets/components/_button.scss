@@ -33,9 +33,22 @@
   text-shadow: 2px 2px 2px black;
 }
 
-.btn-orange {
-  color: #FF744A;
-  border: 2px solid #FF744A;
+.btn-violet {
+  color: $light-gray;
+  border: 2px solid $violet;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: light;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  vertical-align: middle;
+  background-color: $violet;
+  text-decoration: none;
+}
+
+.btn-ghost-violet {
+  color: $violet;
+  border: 2px solid $violet;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: light;

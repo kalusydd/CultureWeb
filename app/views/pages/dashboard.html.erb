@@ -20,11 +20,12 @@
     <% if current_user.bookings.exists? %>
       <%= render "bookings_as_attendee" %>
     <% else %>
-      <div class= "not">
-          <body-all > Give a fuck (no attendance) </body-all>
-          </div>
-          <%= link_to "Check out cool events near you", root_path, class:"btn btn-ghost-orange-more" %>
-        <% end %>
+      <!--<div class= "not">
+        <body-all > Give a fuck (no attendance) </body-all>
+      </div>-->
+      <p>You don't have any upcoming events!</p>
+      <%= link_to "Check out cool events near you", root_path, class:"btn btn-ghost-orange-more" %>
+    <% end %>
   </div>
 
 
