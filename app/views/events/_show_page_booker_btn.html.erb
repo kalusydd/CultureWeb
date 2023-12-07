@@ -15,9 +15,7 @@
     <button class="btn-ghost-neutral">Join the waiting list</button>
   </div>
 <% elsif @event.user != current_user %>
-<div class="show_button_one">
-  <%= link_to "I'm going!", event_bookings_path(@event.id), class:"btn-ghost-neutral", data: {turbo_method: :post} %>
-</div>
+  <div class="show_button_one">
+    <%= link_to "I'm going!", event_bookings_path(@event.id), class:"btn-orange-attending", data: {turbo_method: :post} %>
+  </div>
 <% end %>
-
-

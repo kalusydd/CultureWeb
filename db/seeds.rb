@@ -195,22 +195,22 @@ capacity = [10, 20, 30, 50, 70, 100]
 # #   # event.image.attach(io: File.open(Rails.root.join("app", "assets", "images", event_data[:image_url])), filename: event_data[:image_path])
 # # end
 
-film_festival = Event.create!(title: "Avant-Garde Film Festival",
+film_festival = Event.create!(title: "FUCK FLASH CARDS",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
 description: "Immerse yourself in cinematic innovation at our Avant-Garde Film Festival, showcasing boundary-pushing works that challenge traditional storytelling and visual conventions.",
-venue_name: "Berliner Cineplex",
+venue_name: "Le Wagon Dark Room",
 venue_address: "Kurfürstendamm 123, 10711 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_louise,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701442606/Bildschirm_foto_2023-12-01_um_15.56.32_dqyffv.png",
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701959114/Untitled-_13__0003_Untitled-Kopie_xl1pnj.png",
 )
 EventCategory.create!(event: film_festival, category: art_category)
 EventCategory.create!(event: film_festival, category: cinema_category)
 Chatroom.create!(event: film_festival)
 
-theater_immersion = Event.create(title: "Alternative Theater Immersion",
+theater_immersion = Event.create(title: "Friday Drink's Drama",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
 description: "Explore the realms of unconventional storytelling and immersive experiences in our Alternative Theater Immersion, where traditional boundaries blur, inviting you into a world of creative expression.",
@@ -219,13 +219,13 @@ venue_address: "Friedrichstraße 45, 10117 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_pascal,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701443252/michael-kucharski-BxGI5vaNlAk-unsplash_y8gbiu.jpg"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701959114/Untitled-_13__0000_Untitled-_1_rpgrci.png"
 )
 EventCategory.create!(event: theater_immersion, category: theatre_category)
 EventCategory.create!(event: theater_immersion, category: literature_category)
 Chatroom.create!(event: theater_immersion)
 
-history_lecture = Event.create(title: "Berlin History Lecture Series",
+history_lecture = Event.create(title: "THE BOOTCAMP by le wagon",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
 description: "Delve into the rich tapestry of Berlin's past with our History Lecture Series, where engaging speakers unravel captivating stories, revealing the city's cultural evolution throughout the ages.",
@@ -234,12 +234,12 @@ venue_address: "Prenzlauer Allee 78, 10405 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_louise,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701443099/Bildschirm_foto_2023-12-01_um_16.04.42_v4bsxh.png"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701959114/Untitled-_13__0001_Ebene-1_zulyd1.png"
 )
 EventCategory.create!(event: history_lecture, category: talks_category)
 Chatroom.create!(event: history_lecture)
 
-sculpture_tour = Event.create(title: "Interactive Public Sculpture Tour",
+sculpture_tour = Event.create(title: "Arts & Farts Festival",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
 description: "Embark on a journey of discovery with our Interactive Public Sculpture Tour, a unique exploration of Berlin's streets, where art comes to life through engaging narratives and interactive installations.",
@@ -248,12 +248,12 @@ venue_address: "Prenzlauer Allee 78, 10405 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_louise,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701442764/Bildschirm_foto_2023-12-01_um_15.58.57_x854ys.png"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701963466/Untitled_15_xexgvx.png"
 )
 EventCategory.create!(event: sculpture_tour, category: art_category)
 Chatroom.create!(event: sculpture_tour)
 
-underground_poetry = Event.create(title: "Underground Poetry Salon",
+underground_poetry = Event.create(title: "Poetry Salon with Emma",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
 description: "Unearth the power of words in our Underground Poetry Salon, an intimate gathering where poets, spoken word artists, and enthusiasts come together to celebrate the eloquence and diversity of language.",
@@ -262,14 +262,14 @@ venue_address: "Wrangelstraße 66, 10997 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701443224/Bildschirm_foto_2023-11-28_um_16.29.02_ijswda.png"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701959742/emma_nsuzyj.png"
 )
 EventCategory.create!(event: underground_poetry, category: art_category)
 EventCategory.create!(event: underground_poetry, category: literature_category)
 EventCategory.create!(event: underground_poetry, category: talks_category)
 Chatroom.create!(event: underground_poetry)
 
-artisan_market = Event.create(title: "DIY Artisan Market",
+artisan_market = Event.create(title: "The new Le Wagon Restaurant",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
 description: "Celebrate craftsmanship and creativity at our DIY Artisan Market, a vibrant hub for local artists and makers to showcase and sell their unique, handcrafted treasures.",
@@ -278,13 +278,13 @@ venue_address: "Schönhauser Allee 176, 10119 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dnx58st8e/image/upload/v1701182949/art_b8y5x0.jpg"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701960969/FOOD_izkn0g.png"
 )
 EventCategory.create!(event: artisan_market, category: art_category)
 EventCategory.create!(event: artisan_market, category: craft_category)
 Chatroom.create!(event: artisan_market)
 
-cultural_forum = Event.create(title: "Cultural Diversity Forum",
+cultural_forum = Event.create(title: "Britney Spears Coding Splash",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
 description: "Embrace the mosaic of cultures shaping Berlin at our Cultural Diversity Forum, fostering dialogue, understanding, and appreciation for the city's diverse communities through insightful discussions and performances.",
@@ -293,13 +293,13 @@ venue_address: "Invalidenstraße 50, 10557 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701443356/randall-meng-fEtrdG0PCPM-unsplash_ok671j.jpg"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701959114/Untitled-_13__0002_Untitled-_12_wvusa9.png"
 )
 EventCategory.create!(event: cultural_forum, category: talks_category)
 EventCategory.create!(event: cultural_forum, category: dance_category)
 Chatroom.create!(event: cultural_forum)
 
-experimental_dance = Event.create(title: "Experimental Dance Performance",
+experimental_dance = Event.create(title: "NO ERROR MOOD",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
 description: "Witness the boundaries of movement and expression pushed in our Experimental Dance Performance, where dancers redefine traditional forms, creating a captivating spectacle of innovation and emotion.",
@@ -308,7 +308,7 @@ venue_address: "Karl-Marx-Straße 33, 12043 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701443347/hulki-okan-tabak-spmbpgtvOiw-unsplash_kr9ufp.jpg"
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701959114/Untitled-_13__0004_Ebene-1-Kopie_fyaylg.png"
 )
 EventCategory.create!(event: experimental_dance, category: dance_category)
 EventCategory.create!(event: experimental_dance, category: music_category)

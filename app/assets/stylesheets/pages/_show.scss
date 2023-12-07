@@ -116,4 +116,21 @@
   }
 
 
+  .btn-orange-attending {
+    color: #FF744A;
+    border: 2px solid #FF744A;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: light;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .btn-ghost-neutral:hover {
+    opacity: 2;
+  }
+
 }
