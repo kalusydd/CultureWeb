@@ -353,7 +353,7 @@ venue_address: "Merseburgerstraße 3, 10823, Berlin",
 price: 0,
 capacity: 30,
 user: user_pascal,
-image_url: ""
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701964398/IMG_8065_x6wpmq.jpg"
 )
 EventCategory.create!(event: flowers_magic, category: art_category)
 Chatroom.create!(event: flowers_magic)
@@ -367,7 +367,7 @@ venue_address: "Uferstraße 11, 13357, Berlin",
 price: 30,
 capacity: 150,
 user: user_kat,
-image_url: ""
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701963738/IMG_8066_zcz41j.jpg"
 )
 EventCategory.create!(event: fashion_show, category: art_category)
 EventCategory.create!(event: fashion_show, category: fashion_category)
@@ -382,7 +382,7 @@ venue_address: "Boxhagener Straße 85, 10245, Berlin",
 price: 0,
 capacity: 50,
 user: user_louise,
-image_url: ""
+image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701964398/IMG_8068_palvmw.jpg"
 )
 EventCategory.create!(event: wine_tapas, category: fooddrink_category)
 EventCategory.create!(event: wine_tapas, category: music_category)

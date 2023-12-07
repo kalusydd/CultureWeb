@@ -93,6 +93,7 @@
         <% @events.each do |event| %>
           <div class="event-card" style='background-image: url("<%= event.photo.attached? ? cl_image_tag(event.photo.key) : event.image_url%>")'>
 
+      <div class="event-container">
             <div class="event-title">
               <h3 class="h3"><%= link_to event.title, event_path(event) %></h3>
             </div>
@@ -101,7 +102,7 @@
               <p class="body-all"><%= event.date.strftime('%a. %e %b')%>  <%= event.time.strftime('%-l%P').downcase%></p>
               <p class="body-all-venue"><%= event.venue_name %></p>
             </div>
-
+              </div>
           </div>
         <% end %>
       </div>
