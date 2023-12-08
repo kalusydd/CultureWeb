@@ -14,7 +14,7 @@ Event.destroy_all
 
 user_louise = User.new(email: "louise@gmail.com", password: "123456", username: "Loulou44", bio: "Energetic and creative, Louise crafts events that resonate with joy. Her attention to detail and vibrant ideas transform gatherings into unforgettable celebrations.")
 cat2 = URI.open('https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702031024/408acucwuaobez9cc4mjxv7rjtdd_qoajeu.jpg')
-user_louise.photo.attach(io: cat2, filename: 'cat2.jpg', content_type: 'image/jpg')
+user_louise.photo.attach(io: cat2, filename: '0b8sl6kqt1bvy376znqt88ytsfy9.jpg', content_type: 'image/jpg')
 user_louise.save!
 
 user_kat = User.new(email: "kat@gmail.com", password: "123456", username: "KittyO", bio: "Dynamic and passionate, Kat designs events that spark connections. Her commitment to authenticity and community ensures each gathering is a unique and memorable journey.")
