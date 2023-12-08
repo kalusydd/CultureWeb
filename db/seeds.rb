@@ -265,8 +265,8 @@ description: "Step into the enchanting realm of verse at the Poetry Salon with E
 venue_name: "Poetry Lounge Berlin",
 venue_address: "Wrangelstraße 66, 10997 Berlin, Germany",
 price: prices.sample,
-attendees: 26,
-capacity: 30,
+attendees: 20,
+capacity: 26,
 user: user_louise,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702033647/Untitled_24_vzfnnf.png"
 )
