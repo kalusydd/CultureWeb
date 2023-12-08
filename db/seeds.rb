@@ -13,6 +13,7 @@ User.destroy_all
 Event.destroy_all
 
 user_louise = User.new(email: "louise@gmail.com", password: "123456", username: "Loulou44", bio: "Energetic and creative, Louise crafts events that resonate with joy. Her attention to detail and vibrant ideas transform gatherings into unforgettable celebrations.")
+
 cat2 = URI.open('https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702035414/blue_cart_lzy7de.jpg')
 user_louise.photo.attach(io: cat2, filename: 'blue_cart.jpg', content_type: 'image/jpg')
 user_louise.save!
@@ -202,7 +203,8 @@ description: "Immerse yourself in cinematic innovation at our Avant-Garde Film F
 venue_name: "Le Wagon Dark Room",
 venue_address: "Kurfürstendamm 123, 10711 Berlin, Germany",
 price: prices.sample,
-capacity: capacity.sample,
+capacity: 80,
+attendees: 45,
 user: user_louise,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701959114/Untitled-_13__0003_Untitled-Kopie_xl1pnj.png",
 )
@@ -217,7 +219,8 @@ description: "Explore the realms of unconventional storytelling and immersive ex
 venue_name: "Immersive Theater Space",
 venue_address: "Friedrichstraße 45, 10117 Berlin, Germany",
 price: prices.sample,
-capacity: capacity.sample,
+capacity: 22,
+attendees: 5,
 user: user_pascal,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702030920/Bildschirm_foto_2023-12-08_um_11.21.31_yzgyqc.png"
 )
@@ -232,7 +235,8 @@ description: "Delve into the rich tapestry of Berlin's past with our History Lec
 venue_name: "City Achives Auditorium",
 venue_address: "Prenzlauer Allee 78, 10405 Berlin, Germany",
 price: prices.sample,
-capacity: capacity.sample,
+capacity: 12,
+attendees: 5,
 user: user_louise,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702031865/Untitled_19_fi26ha.png"
 )
@@ -246,7 +250,8 @@ description: "Embark on a journey of discovery with our Interactive Public Sculp
 venue_name: "City Archives Auditorium",
 venue_address: "Prenzlauer Allee 78, 10405 Berlin, Germany",
 price: prices.sample,
-capacity: capacity.sample,
+capacity: 110,
+attendees: 34,
 user: user_louise,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701963466/Untitled_15_xexgvx.png"
 )
@@ -254,14 +259,15 @@ EventCategory.create!(event: sculpture_tour, category: art_category)
 Chatroom.create!(event: sculpture_tour)
 
 underground_poetry = Event.create(title: "Poetry Salon with Emma",
-date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
+date: Date.new(2023, 12, 9),
 time: Time.parse(time_string.sample),
-description: "Unearth the power of words in our Underground Poetry Salon, an intimate gathering where poets, spoken word artists, and enthusiasts come together to celebrate the eloquence and diversity of language.",
+description: "Step into the enchanting realm of verse at the Poetry Salon with Emma. Amidst the soft glow of words, Emma invites you to a poetic haven. Unwind in the cadence of stanzas, explore the beauty of language, and let emotions cascade through carefully crafted lines. Whether you're a seasoned poet or an eager listener, join Emma in a celebration of lyrical expression. Let the Poetry Salon be a sanctuary where words dance, emotions linger, and the artistry of language takes center stage.",
 venue_name: "Poetry Lounge Berlin",
 venue_address: "Wrangelstraße 66, 10997 Berlin, Germany",
 price: prices.sample,
-capacity: capacity.sample,
-user: user_kat,
+attendees: 26,
+capacity: 30,
+user: user_louise,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702033647/Untitled_24_vzfnnf.png"
 )
 EventCategory.create!(event: underground_poetry, category: art_category)
@@ -276,7 +282,8 @@ description: "Celebrate craftsmanship and creativity at our DIY Artisan Market, 
 venue_name: "Handcrafted Haven",
 venue_address: "Schönhauser Allee 176, 10119 Berlin, Germany",
 price: prices.sample,
-capacity: capacity.sample,
+capacity: 25,
+attendees: 23,
 user: user_kat,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702032949/Untitled_22_hgwvuz.png"
 )
@@ -287,11 +294,12 @@ Chatroom.create!(event: artisan_market)
 cultural_forum = Event.create(title: "Britney Spears Coding Splash",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
-description: "Embrace the mosaic of cultures shaping Berlin at our Cultural Diversity Forum, fostering dialogue, understanding, and appreciation for the city's diverse communities through insightful discussions and performances.",
+description: "Dive into the Britney Spears Coding Splash—an electrifying tech extravaganza merging the pop sensation's spirit with cutting-edge coding! Immerse yourself in workshops, hackathons, and innovation, as Britney's beats set the rhythm for a coding experience like no other. Unleash creativity, code, and pop brilliance at this unique fusion event!",
 venue_name: "ArtHouse Berlin",
 venue_address: "Invalidenstraße 50, 10557 Berlin, Germany",
 price: prices.sample,
-capacity: capacity.sample,
+capacity: 75,
+attendees: 54,
 user: user_kat,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702029397/Bildschirm_foto_2023-12-08_um_10.56.07_nxw6er.png"
 )
@@ -306,7 +314,8 @@ description: "Witness the boundaries of movement and expression pushed in our Ex
 venue_name: "Innovative Dance Studio",
 venue_address: "Karl-Marx-Straße 33, 12043 Berlin, Germany",
 price: prices.sample,
-capacity: capacity.sample,
+capacity: 50,
+attendees: 40,
 user: user_kat,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702031294/Untitled_18_xoqnb8.png"
 )
@@ -322,7 +331,8 @@ description: 'Immerse yourself in the enchanting world of "Harmony Unleashed," w
 venue_name: "Innovative Dance Studio",
 venue_address: "Karl-Marx-Straße 33, 12043 Berlin, Germany",
 price: prices.sample,
-capacity: capacity.sample,
+capacity: 30,
+attendees: 28,
 user: user_kat,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702032553/Untitled_21_ev1hor.png"
 )
@@ -337,7 +347,8 @@ description: 'Embark on a journey of self-discovery at the "Zen Oasis Retreat." 
 venue_name: "Serenity Center",
 venue_address: "Danziger Straße 12, 10435 Berlin, Germany",
 price: prices.sample,
-capacity: capacity.sample,
+capacity: 150,
+attendees: 99,
 user: user_pascal,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702030055/Untitled_16_dnq83d.png"
 )
@@ -352,6 +363,7 @@ venue_name: "Gallery Good",
 venue_address: "Merseburgerstraße 3, 10823, Berlin",
 price: 0,
 capacity: 30,
+attendees: 12,
 user: user_pascal,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701964398/IMG_8065_x6wpmq.jpg"
 )
@@ -381,6 +393,7 @@ venue_name: "La Peccadille",
 venue_address: "Boxhagener Straße 85, 10245, Berlin",
 price: 0,
 capacity: 50,
+attendees: 31,
 user: user_louise,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701964398/IMG_8068_palvmw.jpg"
 )
@@ -396,6 +409,7 @@ venue_name: "Café&Bar Naranj",
 venue_address: "Gärtnerstraße 27, 10245, Berlin",
 price: 5,
 capacity: 25,
+attendees: 3,
 user: user_kat,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702030753/Untitled_17_vjdc0q.png"
 )
