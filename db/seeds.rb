@@ -13,18 +13,12 @@ User.destroy_all
 Event.destroy_all
 
 user_louise = User.new(email: "louise@gmail.com", password: "123456", username: "Loulou44", bio: "Energetic and creative, Louise crafts events that resonate with joy. Her attention to detail and vibrant ideas transform gatherings into unforgettable celebrations.")
-cat2 = URI.open('https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702035414/blue_cart_lzy7de.jpg')
-user_louise.photo.attach(io: cat2, filename: 'blue_cart.jpg', content_type: 'image/jpg')
 user_louise.save!
 
 user_kat = User.new(email: "kat@gmail.com", password: "123456", username: "KittyO", bio: "Dynamic and passionate, Kat designs events that spark connections. Her commitment to authenticity and community ensures each gathering is a unique and memorable journey.")
-cat1 = URI.open('https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702035414/green_cat_kuq2ds.jpg')
-user_kat.photo.attach(io: cat1, filename: 'green_cat.jpg', content_type: 'image/jpg')
 user_kat.save!
 
 user_pascal = User.new(email: "pascal@gmail.com", password: "123456", username: "Pascou", bio: "Visionary event architect, Pascal transforms concepts into reality. With a keen eye for elegance and innovation, he curates experiences that captivate and inspire.")
-cat3 = URI.open('https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702035414/balck_cat_pyow9v.jpg')
-user_pascal.photo.attach(io: cat3, filename: 'black_cat.jpg', content_type: 'image/jpg')
 user_pascal.save!
 
 art_category = Category.create!(name: "art", icon: "fas fa-palette")
@@ -203,6 +197,7 @@ venue_name: "Le Wagon Dark Room",
 venue_address: "Kurfürstendamm 123, 10711 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
+attendees: 10,
 user: user_louise,
 image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701959114/Untitled-_13__0003_Untitled-Kopie_xl1pnj.png",
 )
@@ -218,8 +213,8 @@ venue_name: "Immersive Theater Space",
 venue_address: "Friedrichstraße 45, 10117 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
+attendees: 2,
 user: user_pascal,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702030920/Bildschirm_foto_2023-12-08_um_11.21.31_yzgyqc.png"
 )
 EventCategory.create!(event: theater_immersion, category: theatre_category)
 EventCategory.create!(event: theater_immersion, category: literature_category)
@@ -234,12 +229,10 @@ venue_address: "Prenzlauer Allee 78, 10405 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_louise,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702031865/Untitled_19_fi26ha.png"
 )
 EventCategory.create!(event: history_lecture, category: talks_category)
 Chatroom.create!(event: history_lecture)
-
-sculpture_tour = Event.create(title: "Arts and Farts Festival",
+sculpture_tour = Event.create!(title: "Arts & Farts Festival",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
 description: "Embark on a journey of discovery with our Interactive Public Sculpture Tour, a unique exploration of Berlin's streets, where art comes to life through engaging narratives and interactive installations.",
@@ -262,7 +255,6 @@ venue_address: "Wrangelstraße 66, 10997 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702033647/Untitled_24_vzfnnf.png"
 )
 EventCategory.create!(event: underground_poetry, category: art_category)
 EventCategory.create!(event: underground_poetry, category: literature_category)
@@ -278,7 +270,6 @@ venue_address: "Schönhauser Allee 176, 10119 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702032949/Untitled_22_hgwvuz.png"
 )
 EventCategory.create!(event: artisan_market, category: art_category)
 EventCategory.create!(event: artisan_market, category: craft_category)
@@ -293,7 +284,6 @@ venue_address: "Invalidenstraße 50, 10557 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702029397/Bildschirm_foto_2023-12-08_um_10.56.07_nxw6er.png"
 )
 EventCategory.create!(event: cultural_forum, category: talks_category)
 EventCategory.create!(event: cultural_forum, category: dance_category)
@@ -308,14 +298,13 @@ venue_address: "Karl-Marx-Straße 33, 12043 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702031294/Untitled_18_xoqnb8.png"
 )
 EventCategory.create!(event: experimental_dance, category: dance_category)
 EventCategory.create!(event: experimental_dance, category: music_category)
 EventCategory.create!(event: experimental_dance, category: art_category)
 Chatroom.create!(event: experimental_dance)
 
-harmony_unleashed = Event.create(title: "Harmony Unleashed",
+harmony_unleashed = Event.create!(title: "Harmony Unleashed",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
 description: 'Immerse yourself in the enchanting world of "Harmony Unleashed," where the rhythmic synergy of dance and music creates an extraordinary spectacle. Experience the fluid elegance of dance intertwined with soul-stirring melodies, promising an evening of unparalleled artistic fusion. Join us for a celebration of movement and sound, where every beat tells a story, and every step resonates with the melody of pure joy. Let "Harmony Unleashed" captivate your senses and ignite the spirit of creative collaboration.',
@@ -324,13 +313,12 @@ venue_address: "Karl-Marx-Straße 33, 12043 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702032553/Untitled_21_ev1hor.png"
 )
 EventCategory.create!(event: harmony_unleashed, category: dance_category)
 EventCategory.create!(event: harmony_unleashed, category: music_category)
 Chatroom.create!(event: harmony_unleashed)
 
-oasis_retreat = Event.create(title: "RELAXE YOUR FREAKING MIND",
+oasis_retreat = Event.create!(title: "RELAX YOUR FEAKING MIND",
 date: Faker::Date.between(from: Date.today, to: 30.days.from_now),
 time: Time.parse(time_string.sample),
 description: 'Embark on a journey of self-discovery at the "Zen Oasis Retreat." Immerse yourself in rejuvenating practices that harmonize mind, body, and soul. From guided meditation to invigorating yoga sessions, indulge in a holistic experience designed to cultivate inner peace and well-being. Escape the hustle and embrace tranquility, as expert instructors lead you through a transformative day of self-care. Rediscover balance, vitality, and a renewed sense of serenity at the "Zen Oasis Retreat.',
@@ -339,7 +327,6 @@ venue_address: "Danziger Straße 12, 10435 Berlin, Germany",
 price: prices.sample,
 capacity: capacity.sample,
 user: user_pascal,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702030055/Untitled_16_dnq83d.png"
 )
 EventCategory.create!(event: oasis_retreat, category: wellness_category)
 Chatroom.create!(event: oasis_retreat )
@@ -353,7 +340,6 @@ venue_address: "Merseburgerstraße 3, 10823, Berlin",
 price: 0,
 capacity: 30,
 user: user_pascal,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701964398/IMG_8065_x6wpmq.jpg"
 )
 EventCategory.create!(event: flowers_magic, category: art_category)
 Chatroom.create!(event: flowers_magic)
@@ -367,7 +353,6 @@ venue_address: "Uferstraße 11, 13357, Berlin",
 price: 30,
 capacity: 150,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701963738/IMG_8066_zcz41j.jpg"
 )
 EventCategory.create!(event: fashion_show, category: art_category)
 EventCategory.create!(event: fashion_show, category: fashion_category)
@@ -382,7 +367,6 @@ venue_address: "Boxhagener Straße 85, 10245, Berlin",
 price: 0,
 capacity: 50,
 user: user_louise,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1701964398/IMG_8068_palvmw.jpg"
 )
 EventCategory.create!(event: wine_tapas, category: fooddrink_category)
 EventCategory.create!(event: wine_tapas, category: music_category)
@@ -397,7 +381,6 @@ venue_address: "Gärtnerstraße 27, 10245, Berlin",
 price: 5,
 capacity: 25,
 user: user_kat,
-image_url: "https://res.cloudinary.com/dsj3cc5zj/image/upload/v1702030753/Untitled_17_vjdc0q.png"
 )
 EventCategory.create!(event: melodic_moments, category: fooddrink_category)
 EventCategory.create!(event: melodic_moments, category: music_category)
