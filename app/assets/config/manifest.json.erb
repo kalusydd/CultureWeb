@@ -1,7 +1,7 @@
 {
   "background_color": "white",
   "description": "A social platform for discovering cultural events around you",
-  "display": "fullscreen",
+  "display": "standalone",
   "name": "CultureWeb",
   "icons": [
     <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
@@ -11,8 +11,7 @@
         "src": "<%= image_path "icons/#{file}" %>",
         "sizes": "<%= match && match[:size] %>",
         "type": "image/png"
-      }
-      <%= "," unless (files.size - 1) == index %>
+      }<%= "," unless (files.size - 1) == index %>
     <% end %>
   ]
 }
